@@ -14,4 +14,4 @@ speaks in   english
 dev?        probabbyl
 wishes      to be better
 ```
-Check out full @ [about](./about)
+Check out full @ [./about](./about)
