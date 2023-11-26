@@ -23,6 +23,10 @@ I also designed a few icons and stuff for people in the past, you can find them 
 - [Valery]() (Icon)
 - [Parousia](https://havoc.app/package/parousia) (Icons / Banner) (on mobile!)
 - - This was my first theme for iOS, check it out, it's not great but some people seem to like it, also it was all designed on mobile in a span of a week so props to me there I'm so good
+- [r/Jailbreak](nope)
+- - I made some icons for this including some of the wwdc ones and yea
+- [r/Apple](https://reddit.com/r/Apple)
+- - I made the iOS 17-inspired icon for this community one time, was used for awhile (you can see it [here](https://web.archive.org/web/20230628032109/https://www.reddit.com/r/apple/))
 
 ## Usernames / Preferred names
 I have many names! As you can see
