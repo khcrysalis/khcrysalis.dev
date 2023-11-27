@@ -72,8 +72,8 @@ Stuff like devices n all that stuff
 
 
 
-**BWAH**
+**BWAH!!**
 
-![BWAH](../images/bwah-small.png)
+![BWAH](../images/bwah_scary.jpg)
 
 Also I developed stuff! Check out my contributions here @ [./projects](../projects)

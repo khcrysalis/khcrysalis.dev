@@ -2,9 +2,9 @@
 
 I'm me, and thyself.
 
-**BWAH**
+**MWAHAWHAHA**
 
-![BWAH](images/bwah-small.png)
+![BWAH](../images/bwah_mayhem.png)
 
 Brief overview of ME!
 ```

@@ -24,8 +24,8 @@ Some projects I've developed in / contributed in
 Theres probably more, but I don't remember what they are!
 
 
-**BWAH**
+**PET PET PET**
 
-![BWAH](../images/bwah-small.png)
+![BWAH](../images/bwah-pet.gif)
 
 End of website
