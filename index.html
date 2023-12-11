@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home | samara's site</title>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#ff6699">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ff6699">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="card-container" onclick="flipCard(this)">
+        <div class="card">
+            
+            <!-- Inside the card-face font -->
+            <div class="card-face front">
+                <img src="img/flower.png" alt="Flower Image" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100px; height: 100px; opacity: 0.3;">
+            </div>
+            
+            <!-- Inside the card-face back -->
+            <div class="card-face back" style="text-align: left;">
+                <div class="profile">
+                    <div style="text-align: center;">
+                        <img src="https://github.com/ssalggnikool.png" alt="Profile Image" style="display: inline-block;">
+                    </div>
+
+                    <div class="text-container">
+                        <div style="font-size: 0.9em; text-align: left; background: linear-gradient(45deg, #ff699c, #ff3c76); -webkit-background-clip: text; color: transparent;">
+                            <p>samara</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-container">
+                        <div style="margin-top: 1em; font-size: 0.6em; text-align: left; overflow: hidden;">
+                            <p style="color: #999; margin-bottom: 0.2em; font-size: 0.6em; ">PRONOUNS</p>
+                            <p>she/they</p>
+                        </div>
+                        <div style="margin-top: 1em; font-size: 0.6em; text-align: left; overflow: hidden;">
+                            <p style="color: #999; margin-bottom: 0.2em; font-size: 0.6em; ">FIELD</p>
+                            <p>Software Developer & Designer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <!-- ASS!!! -->
+    <div class="buttons-container">
+        <a class="button-cell" href="https://twitter.com/ssaIggnikool" target="_blank" rel="noopener noreferrer">
+            <img class="icon" src="svg/twitter_w.svg" alt="Twitter Icon">
+        </a>
+        <a class="button-cell" href="https://github.com/ssalggnikool" target="_blank" rel="noopener noreferrer">
+            <img class="icon" src="svg/github_w.svg" alt="GitHub Icon">
+        </a>
+        <a class="button-cell" href="mailto:flower@palera.in" target="_blank" rel="noopener noreferrer">
+            <img class="icon" src="svg/email.svg" alt="GitHub Icon">
+        </a>
+    </div>
+
+    <script>
+        let sparkles = [];
+
+        function flipCard(element) {
+            const card = element.querySelector('.card');
+            card.classList.toggle('flipped');
+
+            if (card.classList.contains('flipped')) {
+                sparkles = createSparkles(50);
+            } else {
+                removeSparkles();
+            }
+        }
+
+        function createSparkles(numSparkles) {
+            const createdSparkles = [];
+
+            for (let i = 0; i < numSparkles; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.classList.add('shooting-star');
+                document.body.appendChild(sparkle);
+                
+                const randomX = Math.random() * window.innerWidth;
+                const randomY = Math.random() * window.innerHeight;
+
+                sparkle.style.left = `${randomX}px`;
+                sparkle.style.top = `${randomY}px`;
+                sparkle.style.animationDelay = `-${i * 50}ms`;
+
+                createdSparkles.push(sparkle);
+            }
+
+            return createdSparkles;
+        }
+
+        function removeSparkles() {
+            sparkles.forEach(sparkle => {
+                document.body.removeChild(sparkle);
+            });
+            sparkles = [];
+        }
+    </script>
+
+
+
+
+</body>
+</html>
