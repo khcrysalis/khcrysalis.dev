@@ -192,10 +192,28 @@ body {
 
 
 .buttons-container {
-    margin-top: 20px;
     display: flex;
     justify-content: center;
     width: 100%;
+    padding: 1em;
+    position: fixed;
+    z-index: 999;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.buttons-container.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.buttons-container.top {
+    top: 0;
+}
+
+.buttons-container.bottom {
+    bottom: 0;
 }
 
 .button-cell {
@@ -207,11 +225,6 @@ body {
     align-items: center;
     justify-content: center;
     height: 30px;
-}
-
-.button-cell:hover {
-    background-color: #666;
-    color: #fff;
 }
 
 .button-cell .icon {

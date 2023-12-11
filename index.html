@@ -3,15 +3,27 @@
 <head>
     <title>Home | samara's site</title>
     <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#ff6699">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ff6699">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <!-- Buttons container at the top -->
+    <div class="buttons-container hidden top">
+        <a class="button-cell" href="https://twitter.com/ssaIggnikool" target="_blank" rel="noopener noreferrer">
+            <img class="icon" src="svg/twitter_w.svg" alt="Twitter Icon">
+        </a>
+        <a class="button-cell" href="https://github.com/ssalggnikool" target="_blank" rel="noopener noreferrer">
+            <img class="icon" src="svg/github_w.svg" alt="GitHub Icon">
+        </a>
+        <a class="button-cell" href="mailto:flower@palera.in" target="_blank" rel="noopener noreferrer">
+            <img class="icon" src="svg/email.svg" alt="GitHub Icon">
+        </a>
+    </div>
+
     <div class="card-container" onclick="flipCard(this)">
         <div class="card">
-            
             <!-- Inside the card-face font -->
             <div class="card-face front">
                 <img src="img/flower.png" alt="Flower Image" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100px; height: 100px; opacity: 0.3;">
@@ -42,21 +54,19 @@
                     </div>
                 </div>
             </div>
-            
-            
         </div>
     </div>
-    
-    <!-- ASS!!! -->
-    <div class="buttons-container">
+
+    <!-- Buttons container at the bottom -->
+    <div class="buttons-container bottom hidden">
         <a class="button-cell" href="https://twitter.com/ssaIggnikool" target="_blank" rel="noopener noreferrer">
-            <img class="icon" src="svg/twitter_w.svg" alt="Twitter Icon">
-        </a>
-        <a class="button-cell" href="https://github.com/ssalggnikool" target="_blank" rel="noopener noreferrer">
-            <img class="icon" src="svg/github_w.svg" alt="GitHub Icon">
+            <img class="icon" src="svg/people.svg" alt="People Icon">
         </a>
         <a class="button-cell" href="mailto:flower@palera.in" target="_blank" rel="noopener noreferrer">
-            <img class="icon" src="svg/email.svg" alt="GitHub Icon">
+            <img class="icon" src="svg/phone.svg" alt="Devices Icon">
+        </a>
+        <a class="button-cell" href="https://github.com/ssalggnikool" target="_blank" rel="noopener noreferrer">
+            <img class="icon" src="svg/info.svg" alt="More About Me Icon">
         </a>
     </div>
 
@@ -67,12 +77,44 @@
             const card = element.querySelector('.card');
             card.classList.toggle('flipped');
 
+            const buttonsContainerTop = document.querySelector('.buttons-container.top');
+            const buttonsContainerBottom = document.querySelector('.buttons-container.bottom');
+
             if (card.classList.contains('flipped')) {
                 sparkles = createSparkles(50);
+
+                setTimeout(() => {
+                    buttonsContainerTop.classList.remove('hidden');
+                    buttonsContainerBottom.classList.remove('hidden');
+                }, 500);
             } else {
-                removeSparkles();
+                removeSparklesWithFade();
+
+                setTimeout(() => {
+                    buttonsContainerTop.classList.add('hidden');
+                    buttonsContainerBottom.classList.add('hidden');
+                }, 500);
             }
         }
+
+        function removeSparklesWithFade() {
+            const fadeDuration = 500;
+
+            sparkles.forEach((sparkle, index) => {
+                sparkle.style.transition = `opacity ${fadeDuration}ms ease-in-out`;
+                sparkle.style.opacity = 0;
+
+                setTimeout(() => {
+                    document.body.removeChild(sparkle);
+
+                    if (index === sparkles.length - 3) {
+                        sparkles = [];
+                    }
+                }, fadeDuration);
+            });
+        }
+
+
 
         function createSparkles(numSparkles) {
             const createdSparkles = [];
@@ -93,13 +135,6 @@
             }
 
             return createdSparkles;
-        }
-
-        function removeSparkles() {
-            sparkles.forEach(sparkle => {
-                document.body.removeChild(sparkle);
-            });
-            sparkles = [];
         }
     </script>
 
