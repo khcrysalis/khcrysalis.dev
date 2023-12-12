@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Stuffs | samara's site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#ff6699">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ff6699">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <p>hiiiii</p>
+    <script>
+        let sparkles = [];
+
+        function createSparkles(numSparkles) {
+            const createdSparkles = [];
+
+            for (let i = 0; i < numSparkles; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.classList.add('shooting-star');
+                document.body.appendChild(sparkle);
+
+                const randomX = Math.random() * window.innerWidth;
+                const randomY = Math.random() * window.innerHeight;
+
+                sparkle.style.left = `${randomX}px`;
+                sparkle.style.top = `${randomY}px`;
+                sparkle.style.animationDelay = `-${i * 50}ms`;
+
+                createdSparkles.push(sparkle);
+            }
+
+            return createdSparkles;
+        }
+
+        // Call createSparkles when the page loads
+        window.addEventListener('load', function () {
+            sparkles = createSparkles(50);
+            
+            setTimeout(() => {
+                buttonsContainerTop.classList.remove('hidden');
+                buttonsContainerBottom.classList.remove('hidden');
+            }, 250);
+        });
+    </script>
+</body>
+</html>

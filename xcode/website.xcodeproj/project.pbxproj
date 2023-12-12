@@ -9,6 +9,8 @@
 /* Begin PBXFileReference section */
 		33596F5C2B26F17A00348EEA /* flower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flower.png; sourceTree = "<group>"; };
 		33596F5D2B275B5C00348EEA /* people.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = people.svg; sourceTree = "<group>"; };
+		33596F5F2B281CE300348EEA /* arrowup.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = arrowup.svg; sourceTree = "<group>"; };
+		33596F612B2827CE00348EEA /* friends.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = friends.html; path = ../friends.html; sourceTree = "<group>"; };
 		33D2287C2B26A94500A70A69 /* github_w.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = github_w.svg; sourceTree = "<group>"; };
 		33D2287D2B26A94500A70A69 /* github.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = github.svg; sourceTree = "<group>"; };
 		33D2287E2B26A94500A70A69 /* twitter_w.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = twitter_w.svg; sourceTree = "<group>"; };
@@ -29,6 +31,7 @@
 			children = (
 				33D2288B2B26A94500A70A69 /* index.css */,
 				33D2288A2B26A94500A70A69 /* index.html */,
+				33596F612B2827CE00348EEA /* friends.html */,
 				33D228832B26A94500A70A69 /* img */,
 				33D2287B2B26A94500A70A69 /* svg */,
 			);
@@ -37,6 +40,7 @@
 		33D2287B2B26A94500A70A69 /* svg */ = {
 			isa = PBXGroup;
 			children = (
+				33596F5F2B281CE300348EEA /* arrowup.svg */,
 				33D2287C2B26A94500A70A69 /* github_w.svg */,
 				33D2287D2B26A94500A70A69 /* github.svg */,
 				33D2287E2B26A94500A70A69 /* twitter_w.svg */,
