@@ -248,3 +248,10 @@ body {
     width: 24px;
     height: 24px;
 }
+
+footer {
+    width: 100%;
+    text-align: center;
+    font-size: 0.8em;
+    color: #555;
+}
