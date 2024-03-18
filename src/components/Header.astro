@@ -64,9 +64,8 @@
         <li class="header-tab"><a style="font-family: 'Tewi';" href="/journal">Journal</a></li>
     </ul>
 </header>
-
 <script>
-    var currentPage = window.location.href;
+    var currentPage = window.location.pathname;
     var tabLinks = document.querySelectorAll('.header-tab a');
 
     tabLinks.forEach(function(link) {
