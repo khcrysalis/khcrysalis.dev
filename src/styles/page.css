@@ -1,0 +1,233 @@
+@font-face {
+    font-family: "Nintendo-DS-BIOS";
+    src: url("../fonts/Nintendo-DS-BIOS.ttf");
+}
+
+body {
+    color: #ffffff;
+    font-family: Nintendo-DS-BIOS;
+    font-size: 21px;
+    line-height: 15px;
+}
+
+h1,
+h2,
+h3 {
+    font-size: 16px;
+    color: white;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: normal;
+    color: white;
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: 16px;
+    color: white;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+strong {
+    color: #487566;
+}
+
+.column {
+    float: left;
+}
+
+.row {
+    background-color: black
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.txt {
+    display: none;
+}
+
+p:hover .txt {
+    display: block;
+}
+
+
+a:link {
+    color: #487566;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #487566;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.hehe {
+    font-weight: bold;
+    text-shadow: 0px 0px 20px #fff, 0px 0px 20px #fff;
+}
+
+.box {
+
+
+
+    border: 1px dashed #ffffff;
+    border-radius: 0px;
+    padding: 15px;
+}
+
+.boxnav {
+    background-color: black;
+    list-style-type: none;
+    text-align: center;
+    width: 100%;
+    overflow: auto;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+.boxgal {
+    background-color: black;
+    border: 1px dashed white;
+    border-radius: 25px;
+    padding: 15px;
+    margin: 40px;
+    display: inline-block;
+    overflow: auto;
+}
+
+.date {
+    background-color: black;
+    border: 1px dashed white;
+    text-align: left;
+    text-decoration: none;
+    font-weight: bold;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    padding-left: 10px;
+}
+
+
+.collapsible {
+    background-color: black;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border: 1px solid white;
+    text-align: left;
+    outline: none;
+}
+
+.active,
+.collapsible:hover {
+    background-color: gray;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: black;
+}
+
+.wrapper {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1160px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+.tab {
+    overflow: hidden;
+    border: none;
+    background-color: transparent;
+}
+
+.tablinks {
+    background-color: transparent;
+    cursor: pointer;
+    color: #487566;
+    outline: transparent;
+    border: none;
+    font-family: ms gothic;
+}
+
+.tablinks:hover {
+    color: white;
+}
+
+.quote {
+    text-indent: 2em;
+}
+
+.tabo {
+    display: inline-block;
+    margin-left: 2em;
+}
+
+.tabcontent {
+    display: none;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: white;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+.blink {
+    animation: blink 2s steps(1, start) infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.column-inner {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

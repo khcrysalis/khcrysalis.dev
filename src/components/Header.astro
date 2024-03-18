@@ -1,0 +1,77 @@
+---
+
+---
+
+<style>
+    @font-face {
+        font-family: 'Tewi';
+        src: url('../fonts/Nintendo-DS-BIOS.ttf') format('truetype');
+    }
+    .header-container {
+        color: #fff;
+        font-size: 16px;
+        max-width: 750px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        z-index: 1000;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    header {
+        max-width: 750px;
+        margin: 20px auto 0;
+        text-align: center;
+    }
+    .header-tabs {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+    .header-tab {
+        margin-right: 20px;
+    }
+    .header-tab:last-child {
+        margin-right: 0;
+    }
+    .header-tab a {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 0;
+        width: 102px;
+        border-radius: 50px;
+        background-color: transparent;
+        display: inline-block;
+        text-align: center;
+    }
+    .active-tab a {
+        font-weight: bold;
+        border: 2px dotted white;
+    }
+</style>
+
+<header>
+    <ul class="header-tabs">
+        <li class="header-tab"><a style="font-family: 'Tewi';" href="/">Home</a></li>
+        <li class="header-tab"><a style="font-family: 'Tewi';" href="/about">About</a></li>
+        <li class="header-tab"><a style="font-family: 'Tewi';" href="/journal">Journal</a></li>
+    </ul>
+</header>
+
+<script>
+    var currentPage = window.location.pathname;
+    var tabLinks = document.querySelectorAll('.header-tab a');
+
+    tabLinks.forEach(function(link) {
+        if (link.getAttribute('href') === currentPage) {
+            link.parentNode.classList.add('active-tab');
+        }
+    });
+</script>

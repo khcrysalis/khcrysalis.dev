@@ -1,0 +1,76 @@
+---
+import Layout from "../layouts/Default.astro";
+import "../styles/page.css";
+import Code from "../components/Block.astro";
+---
+
+<Layout>
+  <style>
+    .social-logo {
+      width: 50px;
+      height: 50px;
+      margin-inline: 10px;
+      display: inline-block;
+    }
+  </style>
+  <script src="../scripts/friends.js"></script>
+
+	<div class="box" style="position: relative;border:none; width:500px; height:1000px;overflow:hidden;margin: 0 auto;">
+      
+    <div class="row" style="padding-top:10px;">
+      <div class="column" style="width:42%; background-color:transparent; border: 2px dotted white;">
+        <a href="https://github.com/ssalggnikool/" target="_blank">
+          <img src="https://github.com/ssalggnikool.png" style="width:194px; height: 194px;">
+        </a>
+      </div>
+
+      <div class="column" style="width:56%; background-color:transparent; float: right; display: flex; flex-direction: column;">
+        <div style="background-color:#8783d2; text-align: center; line-height: 45px; vertical-align: middle;">導入</div>
+        <div class="box" style="flex-grow: 1; height: 152px; overflow:auto;">
+            <div style="font-size:18px;">
+                <p>Hi, I'm Samara! Or as you may know, Ssalggnikool.</p>
+                <p><br/>This is my personal site.</p>
+                <p><br/>You'll be able to find the projects I work on, contacts, and other things I do here, so feel free to look around.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row" style="padding-top:10px;">
+      <div class="column" style="width: 100%; background-color:transparent; float: right; display: flex; flex-direction: column;">
+        <div style="background-color: rgb(87, 184, 127); text-align: center; line-height: 45px; vertical-align: middle;">について</div>
+        <div class="box" style="flex-grow: 1; overflow:auto;">
+          <div style="font-size:18px;">
+            <p>I'm a programmer who's worked on a ton of projects, some relating to ios-jailbreak and some of my own personal ones as well.</p>
+            <p><br/>I often play games such as <Code>Geometry Dash</Code>, <Code>Terraria</Code>, and <Code>Minecraft..</Code> Nothing really else sadly but I do want to get into other games.</p>
+            <p><br/>Also listen to music, I fucking love breakcore and emo-like songs. My favorite song is <a href="https://soundcloud.com/electr-nics/illusionary-night">Illusionary Night [Fuwa Fuwa Spring Storm] - ELECTR" 🎶</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row" style="padding-top:10px;">
+      <div class="column" style="width: 100%; background-color:transparent; float: right; display: flex; flex-direction: column;">
+        <div style="background-color: #C96FAD; text-align: center; line-height: 45px; vertical-align: middle;">社交</div>
+        <div class="box" style="flex-grow: 1; overflow:auto;">
+          <div style="display: flex; justify-content: center;">
+            <a href="https://github.com/ssalggnikool"><img src="assets/svg/github.svg" alt="GitHub Logo" class="social-logo"></a>
+            <a href="https://twitter.com/ssaIggnikool"><img src="assets/svg/twitter.svg" alt="Twitter Logo" class="social-logo"></a>
+            <a href="https://discord.com/users/836452332387565589"><img src="assets/svg/discord.svg" alt="Discord Logo" class="social-logo"></a>
+            <a href="https://signal.me/#eu/JzmWxsZcQ2VBgixHquYkspQ9fJM9Hkqo0WsM8N5u19cNlpKAPHpKZY7r/MLlAYew"><img src="assets/svg/signal.svg" alt="Signal Logo" class="social-logo"></a>
+          </div>        
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="padding-top:10px;">
+      <div class="column" style="width: 100%; background-color:transparent; float: right; display: flex; flex-direction: column;">
+        <div style="background-color: #c98d5f; text-align: center; line-height: 45px; vertical-align: middle;">友達</div>
+        <div class="box" style="flex-grow: 1; overflow:auto;">
+          <div id="imageLinks" style="display: flex; flex-wrap: wrap; justify-content: center;"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</Layout>
