@@ -1,11 +1,3 @@
-# palera1n website
-
-palera1n website written using Astro
-
-# Commands
-
-All commands are run from the root of the project, from a terminal:
-
 | Command                 | Action                                           |
 | :---------------------- | :----------------------------------------------- |
 | `pnpm install`          | Installs dependencies                            |
