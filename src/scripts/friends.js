@@ -6,6 +6,7 @@
     "https://github.com/dhinakg",
     "https://github.com/llsc12",
     "https://github.com/Vendicated",
+"https://github.com/fawni",
   ];
 
   function generateGithubAvatarLink(profileUrl) {
