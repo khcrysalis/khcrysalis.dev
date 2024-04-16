@@ -5,6 +5,7 @@
     "https://github.com/HAHALOSAH",
     "https://github.com/dhinakg",
     "https://github.com/llsc12",
+    "https://github.com/Vendicated",
   ];
 
   function generateGithubAvatarLink(profileUrl) {
