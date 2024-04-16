@@ -2,21 +2,9 @@
     "https://github.com/asdfugil",
     "https://github.com/overestimate",
     "https://github.com/kok3shidoll",
-    "https://github.com/staturnzz",
-    "https://github.com/mineek",
-    "https://github.com/Lrdsnow",
-    "https://github.com/ainaracatgirl",
     "https://github.com/HAHALOSAH",
-    "https://github.com/voiidiot",
-    "https://github.com/eepymeowers",
-    "https://github.com/alexiayaa",
-    "https://github.com/circularsprojects",
-    "https://github.com/MicrowavedToast21",
-    "https://github.com/RoootTheFox",
     "https://github.com/dhinakg",
-    "https://github.com/torchgm",
     "https://github.com/llsc12",
-    "https://github.com/voidlovescats"
   ];
 
   function generateGithubAvatarLink(profileUrl) {
