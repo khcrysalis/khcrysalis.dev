@@ -1,76 +1,224 @@
 ---
 import Layout from "../layouts/Default.astro";
 import "../styles/page.css";
-import Code from "../components/Block.astro";
+import "../styles/thelittlethings.css";
 ---
 
 <Layout>
-  <style>
-    .social-logo {
-      width: 50px;
-      height: 50px;
-      margin-inline: 10px;
-      display: inline-block;
-    }
-  </style>
-  <script src="../scripts/friends.js"></script>
 
-	<div class="box" style="position: relative;border:none; max-width:500px; height:1000px;overflow:hidden;margin: 0 auto;">
-      
-    <div class="row" style="padding-top:10px;">
-      <div class="column" style="width:42%; background-color:transparent; border: 2px dotted white;">
-        <a href="https://github.com/ssalggnikool/" target="_blank" style="display: block; width: 100%; height: 100%;">
-          <img src="https://github.com/ssalggnikool.png" style="width:100%; height: 100%; object-fit: cover;">
-        </a>
-      </div>
+  <script src="../scripts/time.js"/>
+  <script src="../scripts/friends.js"/>
 
-      <div class="column" style="width:56%; background-color:transparent; float: right; display: flex; flex-direction: column;">
-        <div style="background-color:#8783d2; text-align: center; line-height: 45px; vertical-align: middle;">導入</div>
-        <div class="box" style="flex-grow: 1; height: 152px; overflow:auto;">
-            <div style="font-size:18px;">
-                <p>Hi, I'm Samara! Or as you may know, Ssalggnikool.</p>
-                <p><br/>This is my personal site.</p>
-                <p><br/>You'll be able to find the projects I work on, contacts, and other things I do here, so feel free to look around.</p>
-            </div>
-        </div>
+  <div class="layout">
+    <div class="general-title">₊ ݁. Personal Page :3 .º₊</div>
+
+    <!--- Picture -->
+
+    <a href="https://twitter.com/paccha_7/status/1712248447741432185">
+      <img
+        src="assets/characters/F8Mg4maXAAAs4TS.png"
+        class="dancing-cutie"
+        alt="cute character 2"
+      />
+    </a>
+
+    <a href="https://twitter.com/paccha_7/status/1727035930920304940">
+      <img
+        src="assets/characters/F__tmEHWUAApmj2.gif"
+        class="sitting-cutie"
+        alt="cute chibi character"
+      />
+    </a>
+
+    <div style="margin-top: 200px;" class="image-box">
+      <img
+        src="assets/photos/dandelion.png"
+        alt="Dandelion"
+        class="dandelion-image"
+      />
+    </div>
+
+    <div style="padding-inline: 20px;" class="main-box">
+      <div class="centered-content">
+        <p> 。°。*。•˚ *。•˚˚˛˚˛•。</p>
       </div>
     </div>
-    
-    <div class="row" style="padding-top:10px;">
-      <div class="column" style="width: 100%; background-color:transparent; float: right; display: flex; flex-direction: column;">
-        <div style="background-color: rgb(87, 184, 127); text-align: center; line-height: 45px; vertical-align: middle;">について</div>
-        <div class="box" style="flex-grow: 1; overflow:auto;">
-          <div style="font-size:18px;">
-            <p>I'm a programmer who's worked on a ton of projects, some relating to ios-jailbreak and some of my own personal ones as well.</p>
-            <p><br/>I often play games such as <Code>Geometry Dash</Code>, <Code>Terraria</Code>, and <Code>Minecraft..</Code> Nothing really else sadly but I do want to get into other games.</p>
-            <p><br/>Also listen to music, I fucking love breakcore and emo-like songs. My favorite song is <a href="https://soundcloud.com/electr-nics/illusionary-night">Illusionary Night [Fuwa Fuwa Spring Storm] - ELECTR" 🎶</a></p>
+
+    <!--- Main Content -->
+
+    <div class="main-box">
+      <div style="margin-bottom:20px;" class="avatar-border">
+        <img
+          class="avatar-squircle"
+          src="https://github.com/ssalggnikool.png"
+          alt="Profile Picture"
+        />
+        <h2>samara</h2>
+        <p style="text-align: center;"><b-bold>she / her</b-bold></p>
+        <p style="text-align: center;"><g-bold>they / them</g-bold></p>
+      </div>
+
+      <div style="margin-left: 30px">
+        <h3>About Me ⛧</h3>
+        <p style="padding-right: 17px">
+          I'm <p-bold>samara</p-bold>!! This is my personal-site where I share
+          all about me and what I do. To get this started off..
+          <br/>
+          <br/>
+          I'm extremely interested in <g-bold>front-end</g-bold> development, though
+          I mainly develop for apple-related products but I'm looking into expanding
+          my own interests to other operating systems outside as well.
+          <br/>
+          <br/>
+          I specialize in using <y-bold>Swift</y-bold>, <y-bold>Objective-C</y-bold>, and is somewhat experienced in using <y-bold>SwiftUI</y-bold> and <y-bold>Cocoa</y-bold>.
+        </p>
+      </div>
+    </div>
+
+    <!--- General Sepeator -->
+
+    <div style="padding-inline: 20px;" class="main-box">
+      <div class="centered-content">
+        <p>*。•˚˚˛˚˛•。*。°。*。•˚</p>
+      </div>
+    </div>
+
+    <!--- Social Links -->
+
+    <div class="links-container">
+
+      <div style="margin-bottom:20px;" class="links-panel">
+        <h2 id="pst-time"/>
+      </div>
+
+      <div class="links-panel" style="margin-bottom:20px;">
+        <div style="padding:20px;text-align:center;">
+          <a href="https://twitter.com/ssaIggnikool">
+            <img
+              src="assets/svg/twitter_hd.png"
+              alt="Twitter"
+              class="svg-class"
+            />
+          </a><br/>
+
+          <a href="https://discord.com/users/836452332387565589">
+            <img
+              src="assets/svg/discord_hd.png"
+              alt="Discord"
+              class="svg-class"
+            />
+          </a><br/>
+
+          <a href="https://signal.me/#eu/JzmWxsZcQ2VBgixHquYkspQ9fJM9Hkqo0WsM8N5u19cNlpKAPHpKZY7r/MLlAYew">
+            <img
+              src="assets/svg/signal_hd.png"
+              alt="Signal"
+              class="svg-class"
+            />
+          </a><br/>
+
+          <a href="https://github.com/ssalggnikool">
+            <img
+              src="assets/svg/github_hd.png"
+              alt="Github"
+              class="svg-class"
+            />
+          </a>
+          <a href="mailto:flower@palera.in">
+            <img
+              src="assets/svg/email_hd.png"
+              alt="Email"
+              class="svg-class"
+              style="padding-bottom: 0px;"
+            />
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!--- More About Me -->
+
+    <div class="container">
+      <div class="other-box">
+        <div class="favorite-song">
+          <h3>Favorite Song (for now)</h3>
+          <div style="display: flex; align-items: center;">
+            <img
+              class="album-cover"
+              src="assets/songs/iris.jpg"
+              alt="Album Cover"
+            />
+            <div class="album-info">
+              <a href="https://www.youtube.com/watch?v=MuvruEhW9w0">
+                <p class="song-title">Iris (Bloom/Bleed)</p>
+              </a>
+              <p class="song-artist">lexycat</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    
-    <div class="row" style="padding-top:10px;">
-      <div class="column" style="width: 100%; background-color:transparent; float: right; display: flex; flex-direction: column;">
-        <div style="background-color: #C96FAD; text-align: center; line-height: 45px; vertical-align: middle;">社交</div>
-        <div class="box" style="flex-grow: 1; overflow:auto;">
-          <div style="display: flex; justify-content: center;">
-            <a href="https://github.com/ssalggnikool"><img src="assets/svg/github.svg" alt="GitHub Logo" class="social-logo"></a>
-            <a href="https://twitter.com/ssaIggnikool"><img src="assets/svg/twitter.svg" alt="Twitter Logo" class="social-logo"></a>
-            <a href="https://discord.com/users/836452332387565589"><img src="assets/svg/discord.svg" alt="Discord Logo" class="social-logo"></a>
-            <a href="https://signal.me/#eu/JzmWxsZcQ2VBgixHquYkspQ9fJM9Hkqo0WsM8N5u19cNlpKAPHpKZY7r/MLlAYew"><img src="assets/svg/signal.svg" alt="Signal Logo" class="social-logo"></a>
-          </div>        
+
+      <div class="other-box" style="overflow-y: auto;">
+        <div style="margin-left: 10px">
+          <h3>Some Facts About Me</h3>
+          <p style="padding-right: 70px">
+            > I started to learned how to program in mid 2022!<br/><br/>
+            > On the Xcode grind<br/><br/>
+            > Even though I have little to no interest in developing for other platforms,
+            I am looking to experiment more...<br/><br/>
+            > I have 3 pets, they are all cats and I love them to bits<br/><br/>
+            > I'm a huge fan of spicy foods, though not *that* spicy because I don't
+            want to be hurting for an entire day lol<br/><br/>
+            > HUGE music fan, favorite genre is breakcore and as seen from the side
+            box, I love lexycat<br/><br/>
+            > I also do photography occasionally when I'm like out of ideas on what
+            to do for the day<br/><br/>
+            > Flower fan of course<br/><br/>
+            > Windows not really using for manipulating OSX images, compiled in mingw
+            tool for this working unstable and incorrectly
+          </p>
         </div>
       </div>
     </div>
 
-    <div class="row" style="padding-top:10px;">
-      <div class="column" style="width: 100%; background-color:transparent; float: right; display: flex; flex-direction: column;">
-        <div style="background-color: #c98d5f; text-align: center; line-height: 45px; vertical-align: middle;">友達</div>
-        <div class="box" style="flex-grow: 1; overflow:auto;">
-          <div id="imageLinks" style="display: flex; flex-wrap: wrap; justify-content: center;"></div>
-        </div>
+    <div style="padding-inline: 20px;" class="main-box">
+      <div class="centered-content">
+        <p> 。°。*。•˚ *。•˚˚˛˚˛•。</p>
       </div>
     </div>
 
+
+    <div style="padding-inline: 20px;" class="main-box">
+      <div class="top-buttons">
+        <h3>Silly Buttons</h3>
+      <p style="margin-top:0px;">
+        <a href="https://ssalggnikool.xyz/"><img src="assets/services/88x31.png"></a>
+        <a href="https://vendicated.dev/"><img src="assets/services/vee.png"></a>
+        <a href="https://fawn.moe/"><img src="https://fawn.moe/buttons/fawn.png"></a>
+      </p>
+
+      <p style="margin-top:0px;">
+        <a href="https://apple.com/"><img src="https://anlucas.neocities.org/apple.gif"></a>
+        <a href="."><img src="https://anlucas.neocities.org/macos.gif"></a>
+      </p>
+
+      </div>
+    </div>
+
+    <div style="padding-inline: 20px;" class="main-box">
+      <div>
+        <h3>Friends</h3>
+        <p>Here are some of my friends that I've met online! They're all really cool and you should check them out!</p>
+        <div id="imageLinks" style="display: flex; flex-wrap: wrap; justify-content: center; margin-bottom:17px;"></div>
+      </div>
+    </div>
+
+    <div style="padding-inline: 20px;" class="main-box">
+      <p>This site is a <y-bold>WIP</y-bold>! More to add when I can..</p>
+    </div>
+
+
+    <!--- Something something -->
   </div>
 </Layout>

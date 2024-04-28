@@ -1,35 +1,34 @@
 ---
-import "../styles/global.css";
-import "../styles/snowflakes.css";
-
-import Header from "../components/Header.astro";
 import Head from "../components/Head.astro";
+import "../styles/page.css";
 ---
 
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>    <style>
-        .footer-gif {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 150px; /* Set your desired height */
-            background: url('../components/footer-assets/blink-ezgif.avif') repeat-x;
-            background-size: contain;
-        }
-    </style>
-</head>
 
-<body class="bg-black text-white">
-    <Header/>
-    <div class="footer-gif"></div>
-    <main>
-        <slot/>
-    </main>
-    <div id="snowflakes" aria-hidden="true"></div>
-    <script src="../scripts/snowflakes.js"></script>
-</body>
+    <!-- Head -->
+
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+        />
+    </head>
+
+    <!-- Default Layout -->
+
+    <body>
+        <main style="">
+            <slot/>
+        </main>
+
+        <div style="margin-bottom:50px;">
+            <h5 style="margin-bottom: 0; margin-top: 50px;">Meant to be viewed on browser :)</h5>
+            <h4 style="margin-bottom: 0; margin-top: 5px;">© Copyright 2024 ssalggnikool. All Rights Reserved</h4>
+        </div>
+
+        <script src="../scripts/oneko.js"/>
+    </body>
+
 </html>

@@ -1,25 +1,9 @@
 ---
 export const prerender = true;
 import Layout from "../layouts/Default.astro";
+import "../styles/page.css";
 ---
 
 <Layout>
-    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-        <div style="text-align: center;">
-            <h1 style="font-family: 'Tewi';">404</h1>
-            <p style="font-family: 'Tewi';">Are we here?</p>
-            <a href="/" style="color: #d7b3f2; font-family: 'Tewi';">Go back to ...</a>
-        </div>
-    </div>
+    
 </Layout>
-
-<style>
-    @font-face {
-        font-family: 'Tewi';
-        src: url('../fonts/Nintendo-DS-BIOS.ttf') format('truetype');
-    }
-    a {
-        color: #fff;
-        text-decoration: none;
-    }
-</style>
