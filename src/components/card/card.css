@@ -1,0 +1,45 @@
+.profile-card {
+    background-color: light-dark(#e5e6e9, #1a1a1a);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    width: 200px;
+    height: 260px;
+    transform: rotate(-2deg);
+}
+
+.profile-image-wrapper {
+    position: relative;
+}
+
+.pin-icon {
+    position: absolute;
+    top: -30px;
+    right: 10px;
+    width: 60px;
+    height: auto;
+    z-index: 1;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    padding-bottom: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.profile-card b {
+    padding-left: 10px;
+    font-size: 18px;
+    color: light-dark(#000000, #ffffff);
+    text-align: left; 
+}
+
+.profile-card p {
+    font-weight: 600;
+    padding-left: 10px;
+    margin: 6px 0;
+    font-size: 12px;
+    color: #939393;
+    text-align: left; 
+}

@@ -1,0 +1,92 @@
+---
+import "../../styles/page.css";
+---
+
+<contacts>
+    <style>
+        .contact-pill {
+            padding: 8px 12px;
+            border-radius: 12px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            background-color: light-dark(#e5e6e9, #1a1a1a);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            color: #fa374a;
+        }
+
+        .contact-pill:not(:first-child)::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -25px;
+            width: 30px;
+            height: 5px;
+            background-color: light-dark(#e5e6e9, #1a1a1a);
+            transform: translateY(-50%);
+        }
+
+        .contact-pill img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            filter: invert(50%);
+        }
+
+        .contact-name {
+            position: relative;
+            top: 1px;
+        }
+
+        .stupid-helo {
+            width: 245px;
+            margin: 0 auto;
+            height: 65px;
+        }
+
+        .stupid-lamp {
+            width: 100px;
+            position: relative;
+            height: 100px;
+            margin-top: -6px;
+            margin-left: 250px;
+        }
+
+        @media screen and (max-width: 700px) {
+            .stupid-lamp {
+                display: none;
+            }
+        }
+    </style>
+    <div style="margin-top: -50px;">
+        <h1>Socials</h1>
+        <div style="display: flex; flex-wrap: wrap; gap:20px; padding-top:20px">
+            <a style="transform: rotate(-2deg);" class="contact-pill" href="https://discord.com/users/836452332387565589">
+                <img src="/assets/svg/discord.svg" />
+                <span class="contact-name">Discord</span>
+            </a>
+
+            <a style="transform: rotate(5deg);" class="contact-pill" href="https://github.com/ssalggnikool">
+                <img src="/assets/svg/github.svg" />
+                <span class="contact-name">Github</span>
+            </a>
+
+            <a style="transform: rotate(1deg);" class="contact-pill" href="https://twitter.com/ssaIggnikool">
+                <img src="/assets/svg/twitter.svg" />
+                <span class="contact-name">Twitter</span>
+            </a>
+
+            <a style="transform: rotate(5deg);" class="contact-pill" href="mailto:flower@palera.in">
+                <img src="/assets/svg/email.svg" />
+                <span class="contact-name">Email</span>
+            </a>
+
+            <a style="transform: rotate(-5deg);" class="contact-pill" href="https://signal.me/#eu/JzmWxsZcQ2VBgixHquYkspQ9fJM9Hkqo0WsM8N5u19cNlpKAPHpKZY7r/MLlAYew">
+                <img src="/assets/svg/signal.svg" />
+                <span class="contact-name">Signal</span>
+            </a>
+        </div>
+    </div>
+    <img src="/assets/Sayhello.png" class="stupid-helo"/>
+    <img src="/assets/lamp.png" class="stupid-lamp"/>
+</contacts>

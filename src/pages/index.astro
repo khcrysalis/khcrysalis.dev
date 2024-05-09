@@ -1,224 +1,46 @@
 ---
 import Layout from "../layouts/Default.astro";
+import Contacts from "../components/contacts/contacts.astro";
 import "../styles/page.css";
-import "../styles/thelittlethings.css";
+import "../components/card/card.css";
+import Friends from "../components/friends/friends.astro";
+import Projects from "../components/projectcard/Projects.astro";
 ---
 
 <Layout>
-
   <script src="../scripts/time.js"/>
-  <script src="../scripts/friends.js"/>
+  <script src="../components/card/card.js"/>
+  <div class="layout" style="margin-top: 100px;">
 
-  <div class="layout">
-    <div class="general-title">₊ ݁. Personal Page :3 .º₊</div>
-
-    <!--- Picture -->
-
-    <a href="https://twitter.com/paccha_7/status/1712248447741432185">
-      <img
-        src="assets/characters/F8Mg4maXAAAs4TS.png"
-        class="dancing-cutie"
-        alt="cute character 2"
-      />
-    </a>
-
-    <a href="https://twitter.com/paccha_7/status/1727035930920304940">
-      <img
-        src="assets/characters/F__tmEHWUAApmj2.gif"
-        class="sitting-cutie"
-        alt="cute chibi character"
-      />
-    </a>
-
-    <div style="margin-top: 200px;" class="image-box">
-      <img
-        src="assets/photos/dandelion.png"
-        alt="Dandelion"
-        class="dandelion-image"
-      />
-    </div>
-
-    <div style="padding-inline: 20px;" class="main-box">
-      <div class="centered-content">
-        <p> 。°。*。•˚ *。•˚˚˛˚˛•。</p>
-      </div>
-    </div>
-
-    <!--- Main Content -->
-
-    <div class="main-box">
-      <div style="margin-bottom:20px;" class="avatar-border">
-        <img
-          class="avatar-squircle"
-          src="https://github.com/ssalggnikool.png"
-          alt="Profile Picture"
-        />
-        <h2>samara</h2>
-        <p style="text-align: center;"><b-bold>she / her</b-bold></p>
-        <p style="text-align: center;"><g-bold>they / them</g-bold></p>
-      </div>
-
-      <div style="margin-left: 30px">
-        <h3>About Me ⛧</h3>
-        <p style="padding-right: 17px">
-          I'm <p-bold>samara</p-bold>!! This is my personal-site where I share
-          all about me and what I do. To get this started off..
-          <br/>
-          <br/>
-          I'm extremely interested in <g-bold>front-end</g-bold> development, though
-          I mainly develop for apple-related products but I'm looking into expanding
-          my own interests to other operating systems outside as well.
-          <br/>
-          <br/>
-          I specialize in using <y-bold>Swift</y-bold>, <y-bold>Objective-C</y-bold>, and is somewhat experienced in using <y-bold>SwiftUI</y-bold> and <y-bold>Cocoa</y-bold>.
-        </p>
-      </div>
-    </div>
-
-    <!--- General Sepeator -->
-
-    <div style="padding-inline: 20px;" class="main-box">
-      <div class="centered-content">
-        <p>*。•˚˚˛˚˛•。*。°。*。•˚</p>
-      </div>
-    </div>
-
-    <!--- Social Links -->
-
-    <div class="links-container">
-
-      <div style="margin-bottom:20px;" class="links-panel">
-        <h2 id="pst-time"/>
-      </div>
-
-      <div class="links-panel" style="margin-bottom:20px;">
-        <div style="padding:20px;text-align:center;">
-          <a href="https://twitter.com/ssaIggnikool">
-            <img
-              src="assets/svg/twitter_hd.png"
-              alt="Twitter"
-              class="svg-class"
-            />
-          </a><br/>
-
-          <a href="https://discord.com/users/836452332387565589">
-            <img
-              src="assets/svg/discord_hd.png"
-              alt="Discord"
-              class="svg-class"
-            />
-          </a><br/>
-
-          <a href="https://signal.me/#eu/JzmWxsZcQ2VBgixHquYkspQ9fJM9Hkqo0WsM8N5u19cNlpKAPHpKZY7r/MLlAYew">
-            <img
-              src="assets/svg/signal_hd.png"
-              alt="Signal"
-              class="svg-class"
-            />
-          </a><br/>
-
-          <a href="https://github.com/ssalggnikool">
-            <img
-              src="assets/svg/github_hd.png"
-              alt="Github"
-              class="svg-class"
-            />
-          </a>
-          <a href="mailto:flower@palera.in">
-            <img
-              src="assets/svg/email_hd.png"
-              alt="Email"
-              class="svg-class"
-              style="padding-bottom: 0px;"
-            />
-          </a>
+    <h1>About</h1>
+    <div style="display:flex;">
+      <div style="margin-left: -5px;" class="profile-card" id="profileCard">
+        <div class="profile-image-wrapper">
+          <img id="profileImage" class="profile-image" alt="Profile Image"/>
+          <img class="pin-icon" src="/assets/pin.png"/>
         </div>
+        <b id="profileName"/>
+        <p id="profileUsername"/>
       </div>
 
+      <b>
+        <h2>Hey!</h2>
+        I'm a software developer from California, specializing towards software development for Apple-based systems & Darwin platforms.
+        <br/><br/>
+        I usually spend my free time doing things for others such as writing any sort of user-interface or even doing some icon Designing! As well as playing games and just generally having fun with others.
+        <br/><br/>
+        I have quite a bit of a tongue for designing or making stuff look good (at least to me) in general, I've started off as a designer making icons for friends but then when I got into coding those skills seemed to benefit me a lot there.
+        <br/>
+        <img src="/assets/line.png" class="stupid-line"/>
+      </b>
     </div>
 
-    <!--- More About Me -->
+    <Contacts/>
 
-    <div class="container">
-      <div class="other-box">
-        <div class="favorite-song">
-          <h3>Favorite Song (for now)</h3>
-          <div style="display: flex; align-items: center;">
-            <img
-              class="album-cover"
-              src="assets/songs/iris.jpg"
-              alt="Album Cover"
-            />
-            <div class="album-info">
-              <a href="https://www.youtube.com/watch?v=MuvruEhW9w0">
-                <p class="song-title">Iris (Bloom/Bleed)</p>
-              </a>
-              <p class="song-artist">lexycat</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="other-box" style="overflow-y: auto;">
-        <div style="margin-left: 10px">
-          <h3>Some Facts About Me</h3>
-          <p style="padding-right: 70px">
-            > I started to learned how to program in mid 2022!<br/><br/>
-            > On the Xcode grind<br/><br/>
-            > Even though I have little to no interest in developing for other platforms,
-            I am looking to experiment more...<br/><br/>
-            > I have 3 pets, they are all cats and I love them to bits<br/><br/>
-            > I'm a huge fan of spicy foods, though not *that* spicy because I don't
-            want to be hurting for an entire day lol<br/><br/>
-            > HUGE music fan, favorite genre is breakcore and as seen from the side
-            box, I love lexycat<br/><br/>
-            > I also do photography occasionally when I'm like out of ideas on what
-            to do for the day<br/><br/>
-            > Flower fan of course<br/><br/>
-            > Windows not really using for manipulating OSX images, compiled in mingw
-            tool for this working unstable and incorrectly
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div style="padding-inline: 20px;" class="main-box">
-      <div class="centered-content">
-        <p> 。°。*。•˚ *。•˚˚˛˚˛•。</p>
-      </div>
-    </div>
-
-
-    <div style="padding-inline: 20px;" class="main-box">
-      <div class="top-buttons">
-        <h3>Silly Buttons</h3>
-      <p style="margin-top:0px;">
-        <a href="https://ssalggnikool.xyz/"><img src="assets/services/88x31.png"></a>
-        <a href="https://vendicated.dev/"><img src="assets/services/vee.png"></a>
-        <a href="https://fawn.moe/"><img src="https://fawn.moe/buttons/fawn.png"></a>
-      </p>
-
-      <p style="margin-top:0px;">
-        <a href="https://apple.com/"><img src="https://anlucas.neocities.org/apple.gif"></a>
-        <a href="."><img src="https://anlucas.neocities.org/macos.gif"></a>
-      </p>
-
-      </div>
-    </div>
-
-    <div style="padding-inline: 20px;" class="main-box">
-      <div>
-        <h3>Friends</h3>
-        <p>Here are some of my friends that I've met online! They're all really cool and you should check them out!</p>
-        <div id="imageLinks" style="display: flex; flex-wrap: wrap; justify-content: center; margin-bottom:17px;"></div>
-      </div>
-    </div>
-
-    <div style="padding-inline: 20px;" class="main-box">
-      <p>This site is a <y-bold>WIP</y-bold>! More to add when I can..</p>
-    </div>
-
-
-    <!--- Something something -->
+    <h1 style="margin-top: 0px;">Projects</h1>
+    <Projects/>
+      
+    <img src="/assets/moreongh2.png" class="stupid-more"/>
+    <Friends/>
   </div>
 </Layout>

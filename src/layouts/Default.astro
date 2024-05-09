@@ -1,6 +1,7 @@
 ---
 import Head from "../components/Head.astro";
 import "../styles/page.css";
+import Footer from '../components/Footer.astro';
 ---
 
 <!doctype html>
@@ -17,18 +18,11 @@ import "../styles/page.css";
     </head>
 
     <!-- Default Layout -->
-
+    <script src="../scripts/oneko.js"/>
     <body>
         <main style="">
             <slot/>
         </main>
-
-        <div style="margin-bottom:50px;">
-            <h5 style="margin-bottom: 0; margin-top: 50px;">Meant to be viewed on browser :)</h5>
-            <h4 style="margin-bottom: 0; margin-top: 5px;">© Copyright 2024 ssalggnikool. All Rights Reserved</h4>
-        </div>
-
-        <script src="../scripts/oneko.js"/>
     </body>
-
+    <Footer/>
 </html>

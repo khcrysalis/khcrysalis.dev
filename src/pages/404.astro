@@ -5,22 +5,25 @@ import "../styles/page.css";
 ---
 
 <Layout>
-    <div class="layout" style="margin-top: 100px;">
-
-        <a href="https://twitter.com/paccha_7">
-            <img
-              src="assets/characters/GLquV7LXMAAofS4.jpg"
-              class="sitting-cutie"
-              alt="cute chibi character"
-              style="width: 300px; content-align: center; margin: 0 auto; display: block;"
-            />
-          </a>
-
-        <div style="padding-inline: 20px;" class="main-box">
-            <div>
-                <h1>404</h1>
-                <a href="/"><p>Go home</p></a>
-            </div>
-        </div>
+    <style>
+        .layout.centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .huge-text {
+            font-size: 5em;
+        }
+        .home-link {
+            filter: invert(1);
+            margin-top: 50px;
+            width: 68px;
+            height: 68px;
+        }
+    </style>
+    <div class="layout centered">
+        <h1 class="huge-text">404</h1>
+        <a href="/"><img src="/assets/svg/icons8-home-96.png" alt="Home" class="home-link"/></a>
     </div>
 </Layout>
