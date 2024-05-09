@@ -8,39 +8,25 @@ import Projects from "../components/projectcard/Projects.astro";
 ---
 
 <Layout>
-  <script src="../scripts/time.js"/>
-  <script src="../components/card/card.js"/>
-  <div class="layout" style="margin-top: 100px;">
-
-    <h1>About</h1>
-    <div style="display:flex;">
-      <div style="margin-left: -5px;" class="profile-card" id="profileCard">
-        <div class="profile-image-wrapper">
-          <img id="profileImage" class="profile-image" alt="Profile Image"/>
-          <img class="pin-icon" src="/assets/pin.png"/>
-        </div>
-        <b id="profileName"/>
-        <p id="profileUsername"/>
-      </div>
-
-      <b>
-        <h2>Hey!</h2>
-        I'm a software developer from California, specializing towards software development for Apple-based systems & Darwin platforms.
-        <br/><br/>
-        I usually spend my free time doing things for others such as writing any sort of user-interface or even doing some icon Designing! As well as playing games and just generally having fun with others.
-        <br/><br/>
-        I have quite a bit of a tongue for designing or making stuff look good (at least to me) in general, I've started off as a designer making icons for friends but then when I got into coding those skills seemed to benefit me a lot there.
-        <br/>
-        <img src="/assets/line.png" class="stupid-line"/>
-      </b>
-    </div>
-
-    <Contacts/>
-
-    <h1 style="margin-top: 0px;">Projects</h1>
-    <Projects/>
-      
-    <img src="/assets/moreongh2.png" class="stupid-more"/>
-    <Friends/>
+  <style>
+      .layout.centered {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+      }
+      .huge-text {
+          font-size: 5em;
+      }
+      .home-link {
+          filter: invert(1);
+          margin-top: 50px;
+          width: 68px;
+          height: 68px;
+      }
+  </style>
+  <div class="layout centered">
+      <h1 class="huge-text">404</h1>
+      <a href="/"><img src="/assets/svg/icons8-home-96.png" alt="Home" class="home-link"/></a>
   </div>
 </Layout>
