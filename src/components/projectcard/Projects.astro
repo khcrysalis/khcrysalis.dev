@@ -26,7 +26,7 @@ const repoData = await Promise.all(
             const token = getEnv(Astro.locals, env, "GITHUB_TOKEN");
 
             requestInit.headers.set("Accept", "application/vnd.github.v3+json");
-            requestInit.headers.set("Authorization", `Bearer $(token)`); // $(token)
+            requestInit.headers.set("Authorization", `Bearer ${token}`); // ${token}
         }
 
         return fetch(repo, requestInit)
