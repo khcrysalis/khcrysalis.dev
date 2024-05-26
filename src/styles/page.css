@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-:root {
-  color-scheme: light dark;
-}
-
 body {
-  color: light-dark(#000000, #ffffff);
+  color: #ffffff;
   font-size: 16px;
   line-height: 15px;
   font-family: Nunito, "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -18,10 +14,10 @@ body {
        var(--d) 
        var(--d), 
        
-    light-dark(#929292, #959595) calc(var(--d) - 1px), 
+       #281d1d calc(var(--d) - 1px), 
     #0000 var(--d)
   ) 0 0 / 20px 20px;
-  background-color: light-dark(#ffffff, #000000);
+  background-color: #0d0d0d;
 }
 
 /* mweowmeowmewoemwoemwoe */
@@ -38,7 +34,7 @@ body {
 
 @media screen and (min-width: 700px) {
   .layout {
-    max-width: 600px;
+    max-width: 700px;
   }
 }
 
@@ -62,14 +58,14 @@ h2 {
 }
 
 p {
-  color: light-dark(#000000, #ffffff);
+  color: #ffffff;
   font-weight:800;
   z-index: 3;
 }
 
 b {
   padding: 15px;
-  color: light-dark(#000000, #ffffff);
+  color: #ffffff;
   font-weight:400;
   z-index: 3;
 }
@@ -105,47 +101,4 @@ b-bold {
 .centered-content {
   text-align: center;
   letter-spacing: 22px;
-}
-
-.stupid-line {
-  height: 20px; 
-  margin-top:10px;
-  filter: invert(50%);
-  
-}
-
-@media screen and (min-width: 700px) {
-  .stupid-line {
-    display: block;
-    height: 30px; 
-  }
-}
-
-.stupid-heart {
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  width: 30px;
-  height: 30px;
-}
-
-.stupid-more {
-  justify-content: right;
-  align-items: right;
-  height: 100px; 
-  width: 300px;
-  margin-top:-20px;
-}
-
-@media screen and (min-width: 700px) {
-  .stupid-more {
-    height: 150px; 
-    width: 550px;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  .stupid-more {
-    filter: invert(100%);
-  }
 }

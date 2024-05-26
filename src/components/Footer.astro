@@ -4,46 +4,29 @@
 
 <style>
     .footer-container {
-        text-align: left;
+        text-align: center;
         color: #fff;
         font-size: 12px;
-        max-width: 600px;
-        margin-top: auto;
-        padding: 20px;
-        justify-content: center;
-        align-items: center;
+        max-width: auto;
         margin: 0 auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    .footer-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .footer-content > div {
-        display: flex;
-        align-items: center;
-    }
-
-    .stupid-sep {
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 20px;
-        margin: 0 auto;
-        filter: invert(70%);
+    @media screen and (min-width: 800px) {
+        .footer-container {
+            max-width: 700px;
+            background-color: #1c1c1c;
+        }
     }
 </style>
 
 <footer>
-    <div class="footer-container" style="margin-top: 100px;">
-        <div class="footer-content">
-            <div>
-                <p>Copyright (c) 2024 ssalggnikool</p>
-            </div>
-        </div>
-        <img src="/assets/seperator.png" class="stupid-sep" />
-        <p>Source code can be found @ <a href="https://github.com/ssalggnikool/ssalggnikool.xyz">here</a></p>
+    <div class="footer-container">
+        <p style="padding:10px">
+            Copyright (c) 2024 khcrysalis · <a
+                href="https://github.com/khcrysalis/ssalggnikool.xyz"
+                >Source Code</a>
+        </p>
     </div>
 </footer>

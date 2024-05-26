@@ -6,7 +6,7 @@ function setProfile(imageUrl, name, username) {
 
 // Example usage
 setProfile(
-    'https://github.com/ssalggnikool.png',
-    'samara',
-    'ssalggnikool • she / they'
+    'https://github.com/khcrysalis.png',
+    'sam',
+    'khcrysalis · she/her'
 );

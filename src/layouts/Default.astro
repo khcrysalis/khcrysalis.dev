@@ -2,6 +2,7 @@
 import Head from "../components/Head.astro";
 import "../styles/page.css";
 import Footer from '../components/Footer.astro';
+import "../components/snowflake.css";
 ---
 
 <!doctype html>
@@ -17,10 +18,11 @@ import Footer from '../components/Footer.astro';
         />
     </head>
 
-    <!-- Default Layout -->
-    <script src="../scripts/oneko.js"/>
+    <div id="snowflakes" aria-hidden="true"></div>
+    <script src="../scripts/snowflake.js"></script>
+
     <body>
-        <main style="">
+        <main style="margin-bottom: 100px;">
             <slot/>
         </main>
     </body>

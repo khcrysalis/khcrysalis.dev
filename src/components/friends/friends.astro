@@ -3,10 +3,30 @@ import "../../styles/page.css";
 ---
 
 <friemds>
-    <script src="../../scripts/friends.js"/>
-    <div style="display: flex; align-items: center; margin-bottom:17px;">
-        <h1>Friends</h1>
-        <img src="/assets/heart.png" style="margin-left: 10px; margin-top: 10px;" class="stupid-heart" />
+    <style>
+        .friends-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            border-radius: 8px;
+            background-color: #1c1c1c;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        span {
+            margin-top: 12px;
+            color: #e05757;
+        }
+
+    </style>
+
+    <div style="margin-bottom: 18px;" class="friends-container">
+        <span>Friends I've met on the internet!</span>
+        <div id="imageLinks" style="flex-wrap: wrap; justify-content: center; padding-top:12px;padding-left:12px;"/>
     </div>
-    <div id="imageLinks" style="display: flex; flex-wrap: wrap; justify-content: center; margin-bottom:17px;"></div>
+    <div class="friends-container">
+        <span style="padding:10px;margin-top: 0px;">インターネットを使うのをやめろ！</span>
+    </div>
+
 </friemds>
+<script src="../../scripts/friends.js"/>

@@ -2,31 +2,42 @@
 import Layout from "../layouts/Default.astro";
 import Contacts from "../components/contacts/contacts.astro";
 import "../styles/page.css";
-import "../components/card/card.css";
+import Card from "../components/card/card.astro";
 import Friends from "../components/friends/friends.astro";
-import Projects from "../components/projectcard/Projects.astro";
+import About from "../components/about/about.astro";
+import Time from "../components/time/time.astro";
 ---
 
 <Layout>
+  <script src="../scripts/time.js"/>
+
   <style>
-      .layout.centered {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-      }
-      .huge-text {
-          font-size: 5em;
-      }
-      .home-link {
-          filter: invert(1);
-          margin-top: 50px;
-          width: 68px;
-          height: 68px;
-      }
+    .meow { display:contents; }
+    .meow2 { margin-right: 0px; }
+    .meow3 { margin-left:20px }
+    @media screen and (min-width: 600px) {
+      .meow { display:flex; }
+      .meow2 { margin-right: 15px; }
+      .meow3 { margin: 0 auto }
+    }
   </style>
-  <div class="layout centered">
-      <h1 class="huge-text">404</h1>
-      <a href="/"><img src="/assets/svg/icons8-home-96.png" alt="Home" class="home-link"/></a>
+
+  <img class="meow3" style="display: block;width: 20%;height: auto;" src="/assets/kh.png"/>
+
+  <div class="layout">
+    <div class="meow">
+
+      <div class="meow2">
+        <Card/>
+        <Contacts/>
+        <Time/>
+      </div>
+
+      <div>
+        <About/>
+        <Friends/>
+      </div>
+
+    </div>
   </div>
 </Layout>

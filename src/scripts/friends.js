@@ -34,13 +34,14 @@ shuffledProfiles.forEach(profileUrl => {
   image.src = imageUrl;
   image.alt = "GitHub Avatar";
 
-  image.style.width = "50px";
-  image.style.height = "50px";
-  image.style.margin = "6px";
-  image.style.borderRadius = "50%";
+  image.style.width = "53.9px";
+  image.style.height = "53.9px";
+  image.style.marginRight = "12px";
+  image.style.marginBottom = "12px";
+  image.style.borderRadius = "10%";
   image.style.borderColor = "#545454";
   image.style.borderStyle = "solid";
-  image.style.borderWidth = "2px";
+  image.style.borderWidth = "0.7px";
   image.style.boxShadow = "0 2px 4px rgba(0, 0, 0, 0.3)";
   anchor.appendChild(image);
   imageContainer.appendChild(anchor);

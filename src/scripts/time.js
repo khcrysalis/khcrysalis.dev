@@ -9,7 +9,7 @@ function updateTime() {
       second: '2-digit'
     });
 
-    document.getElementById("pst-time").textContent = timeString;
+    document.getElementById("pst-time").textContent = "PST · " + timeString;
   }
 
   setInterval(updateTime, 500);
