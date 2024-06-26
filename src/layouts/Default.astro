@@ -1,24 +1,31 @@
 ---
 import Head from "../components/Head.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import "../styles/page.css";
-import Footer from '../components/Footer.astro';
-import "../components/snowflake.css";
 ---
 
 <!doctype html>
 <html lang="en">
-
-    <!-- Head -->
-
-    <head><meta charset="utf-8" /></head>
-    <Head/>
-    <div id="snowflakes" aria-hidden="true"></div>
-    <script src="../scripts/snowflake.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" />
+        <Head />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        />
+    </head>
 
     <body>
-        <main style="margin-bottom: 100px;">
-            <slot/>
-        </main>
+        <div class="layout">
+            <Header/>
+            <div class="main-container">
+                <main style="min-width:100%;">
+                    <slot/>
+                </main>
+            </div>
+            <Footer/>
+        </div>
     </body>
-    <Footer/>
 </html>

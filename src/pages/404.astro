@@ -1,29 +1,45 @@
 ---
-export const prerender = true;
 import Layout from "../layouts/Default.astro";
 import "../styles/page.css";
+
 ---
 
+<style>
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #bdc3c9;
+}
+
+.error-page h1 {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+.error-page p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.error-page a {
+  text-decoration: none;
+  color: #f5cdff;
+  font-size: 1.2rem;
+}
+
+.error-page a:hover {
+  color: #ff88f3;
+  text-decoration: underline;
+}
+</style>
+
 <Layout>
-    <style>
-        .layout.centered {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .huge-text {
-            font-size: 5em;
-        }
-        .home-link {
-            filter: invert(1);
-            margin-top: 50px;
-            width: 68px;
-            height: 68px;
-        }
-    </style>
-    <div class="layout centered">
-        <h1 class="huge-text">404</h1>
-        <a href="/">Go Home</a>
-    </div>
+  <div class="error-page">
+    <h1>404</h1>
+    <p>Page Not Found</p>
+    <a href="/">[ Go Home ]</a>
+  </div>
 </Layout>

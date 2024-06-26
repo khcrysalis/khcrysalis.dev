@@ -1,45 +1,108 @@
 ---
 import Layout from "../layouts/Default.astro";
-import Contacts from "../components/contacts/contacts.astro";
 import "../styles/page.css";
-import Card from "../components/card/card.astro";
-import Friends from "../components/friends/friends.astro";
-import About from "../components/about/about.astro";
-import Time from "../components/time/time.astro";
-import Send from "../components/send/sendmesomething.astro";
+import Skills from "../components/Skills/Skills.astro";
+
+const profileData = {
+  avatar: "https://github.com/khcrysalis.png",
+  avataralt: "Profile Picture",
+  name: "samara",
+  username: "@khcrysalis",
+  details: [
+    { icon: "location_on", text: "United States, California" },
+    { icon: "schedule", text: "Pacific Standard Time" },
+    { icon: "code", text: "Specializing in Darwin Software" },
+  ],
+  socials: [
+    { icon: "/assets/svg/github.svg", media: "Github", link: "https://github.com/khcrysalis" },
+    { icon: "/assets/svg/twitter.svg", media: "Twitter", link: "https://twitter.com/khcrysalis" },
+    { icon: "/assets/svg/email.png", media: "Email", link: "mailto://flower@palera.in" },
+    { icon: "/assets/svg/signal.svg", media: "Signal", link: "https://signal.me/#eu/JzmWxsZcQ2VBgixHquYkspQ9fJM9Hkqo0WsM8N5u19cNlpKAPHpKZY7r/MLlAYew" },
+    { icon: "/assets/svg/discord.svg", media: "Discord", link: "https://discord.com/users/836452332387565589" },
+  ],
+};
 ---
 
 <Layout>
   <script src="../scripts/time.js"/>
-
-  <style>
-    .meow { display:contents; }
-    .meow2 { margin-right: 0px; }
-    .meow3 { margin-left:20px }
-    @media screen and (min-width: 600px) {
-      .meow { display:flex; }
-      .meow2 { margin-right: 15px; }
-      .meow3 { margin: 0 auto }
-    }
-  </style>
-
-<img class="meow3" style="display: block;width: 20%;height: auto;filter: hue-rotate(-150deg);" src="/assets/kh.png"/>
-
-  <div class="layout">
-    <div class="meow">
-
-      <div class="meow2">
-        <Card/>
-        <Contacts/>
-        <Time/>
-        <Send/>
-      </div>
-
+  <div>
+    <div style="display: flex;justify-content: space-between;">
       <div>
-        <About/>
-        <Friends/>
-      </div>
-
+        <p class="name">{profileData.name}</p>
+        <p class="username">{profileData.username}</p>
+      </div>  
+      <img
+        src={profileData.avatar}
+        alt={profileData.avataralt}
+        class="profile-pic"
+      />
     </div>
+
+    <div style="margin-bottom: 10px;">
+      {
+        profileData.details.map((item) => (
+          <div style="display: flex; margin-top:10px;">
+            <span style="font-size: 20px;" class="material-symbols-outlined">
+              {item.icon}
+            </span>
+            <span style="margin-left: 5px; margin-top:-2px;">
+              {item.text}
+              {item.text === "Pacific Standard Time" && <div id="pst-time" style={{ color: '#adadad', display: 'inline-block' }}/>}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+
+    <div style="display: flex;flex-wrap: wrap;">
+      {
+        profileData.socials.map((item) => (
+          <a href={item.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+            <div class="contact-pill">
+              <img src={item.icon} alt={item.media} />
+              <span>{item.media}</span>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    <h2 style="margin-bottom: 10px;">About</h2>
+    <div style="margin-top: 10px;line-height: 1.6;">
+      <p>I'm a software developer from California, I often do UI/UX work on apple-based platforms (mainly open-source!)</p>
+    </div>
+    
+    <Skills/>
+
+    <div style="margin-top: 10px;line-height: 1.6;">
+      <p>
+        <strong>Some more about me and what I do:</strong>
+         I was and always am a person who had a taste in design, I got into it a while back when I was using a mobile application to make fun icons for myself and my friends. Then after that I got into coding, which funnily enough a lot of my skills in having an eye for design transferred over and now I mainly do work for others on my own freetime whenever I feel like I need to. Though, these are mainly for people who I feel close with and I do plan on looking to expand myself to more spaces later down the line.
+         <br/><br/>
+         I have a lot of projects that I've worked on which you can find on my Github, some of which (mainly organizations) I do own to some extent and related to (of course) Apple.
+      </p>
+    </div>
+
+    <h2 style="margin-bottom: 10px;">Hobbies</h2>
+    <div style="margin-top: 10px;line-height: 1.6;">
+      <p>
+        <strong>I play a lot of games:</strong>
+        These mainly consists of games which just allow me to do whatever I feel like without some straight linear path, often having their own level editor or way for me to express myself. Such as, GD, Terraria, & Minecraft
+
+        <br/><br/>
+        <strong>Geometry Dash:</strong>
+        I don't exactly have much an influence here but I've played the game on and off for multiple years now, maybe one day I will spend the time everyday to play but I don't have nearly as much time as I used to when it comes to playing games.
+
+        <br/><br/>
+        <strong>Designing:</strong>
+        Since I have skills in this specific area I like making icons and logos for fun, mainly for my close friends if they need any in particular. This includes any potential UI/UX work if they ever need it.
+
+        <br/><br/>
+        <strong>Biking:</strong>
+        I often go biking everyday in the morning, usually around my own area and I use it as a means to fully wake up.
+      </p>
+    </div>
+
+    <h2 style="margin-bottom: 10px;">The End</h2>
   </div>
 </Layout>

@@ -1,32 +1,65 @@
 ---
-
 ---
 
 <style>
     .footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 56px;
         text-align: center;
-        color: #fff;
-        font-size: 12px;
-        max-width: auto;
-        margin: 0 auto;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        border-top: 1px solid var(--site-card-border-color);
+        margin-inline: 20px;
     }
 
-    @media screen and (min-width: 800px) {
+    @media screen and (max-width: 450px) {
         .footer-container {
-            max-width: 700px;
-            background-color: #1c1c1c;
+            display: none;
+        }
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 10px;
+    }
+
+    .footer-links a {
+        color: var(--site-links-color);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+        color: var(--site-links-color-hover);
+        text-decoration: underline;
+    }
+
+    .random-text {
+        display: flex;
+        align-items: center;
+    }
+    @media screen and (max-width: 700px) {
+        .random-text {
+            display:none;
         }
     }
 </style>
 
 <footer>
+    <script src="../scripts/friends.js"/>
     <div class="footer-container">
-        <p style="padding:10px">
-            Copyright (c) 2024 khcrysalis · <a
-                href="https://github.com/khcrysalis/ssalggnikool.xyz"
-                >Source Code</a>
-        </p>
+        <div class="random-text">
+            <strong>Check out my friends!</strong>
+        </div>
+        <span/>
+        <div>
+            <div id="imageLinks" style="flex-wrap: wrap; justify-content: center; padding-top:12px;padding-left:12px;"/>
+        </div>
     </div>
 </footer>

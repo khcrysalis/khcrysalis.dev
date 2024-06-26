@@ -6,7 +6,11 @@ const githubProfiles = [
   "https://github.com/voidlovescats",
   "https://github.com/vendicated",
   "https://github.com/kok3shidoll",
-  "https://github.com/fawni"
+  "https://github.com/fawni",
+  "https://github.com/overestimate",
+  "https://github.com/qtlunya",
+  "https://github.com/roootthefox",
+  "https://github.com/adachireii",
 ];
 
 function generateGithubAvatarLink(profileUrl) {
@@ -34,11 +38,11 @@ shuffledProfiles.forEach(profileUrl => {
   image.src = imageUrl;
   image.alt = "GitHub Avatar";
 
-  image.style.width = "53.9px";
-  image.style.height = "53.9px";
-  image.style.marginRight = "12px";
+  image.style.width = "22px";
+  image.style.height = "22px";
+  image.style.marginLeft = "12px";
   image.style.marginBottom = "12px";
-  image.style.borderRadius = "10%";
+  image.style.borderRadius = "50%";
   image.style.borderColor = "#545454";
   image.style.borderStyle = "solid";
   image.style.borderWidth = "0.7px";

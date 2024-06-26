@@ -1,0 +1,56 @@
+---
+---
+
+<style>
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 56px;
+        text-align: center;
+        border-bottom: 1px solid var(--site-card-border-color);
+        margin-inline: 20px;
+    }
+
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .header-links {
+        display: flex;
+        gap: 10px;
+    }
+
+    .header-links a {
+        color: var(--site-links-color);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .header-links a:hover {
+        color: var(--site-pill-hover-color);
+        text-decoration: underline;
+    }
+
+    .random-text {
+        display: flex;
+        align-items: center;
+    }
+</style>
+
+<header>
+    <div class="header-container">
+        <div class="random-text">
+            <strong>:3</strong>
+        </div>
+        <div class="header-content">
+            <div class="header-links">
+                <a href="/"         >[   About  ]</a>
+                <a href="/projects" >[ Projects ]</a>
+                <a href="/blog"     >[   Blog   ]</a>
+            </div>
+        </div>
+    </div>
+</header>
