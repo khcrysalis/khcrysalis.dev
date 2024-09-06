@@ -10,7 +10,7 @@ const githubProfiles = [
   "https://github.com/overestimate",
   "https://github.com/qtlunya",
   "https://github.com/roootthefox",
-  "https://github.com/mineekdev"
+  "https://github.com/mineek"
 ];
 
 function generateGithubAvatarLink(profileUrl) {
