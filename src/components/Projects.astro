@@ -1,24 +1,30 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
+import { getEnv } from "../scripts-ssr/env";
 
 const repos = [
     "https://api.github.com/repos/khcrysalis/Feather",
     "https://api.github.com/repos/palera1n/palera1n",
     "https://api.github.com/repos/palera1n/palen1x",
     "https://api.github.com/repos/khcrysalis/Binder",
-    "https://api.github.com/repos/khcrysalis/Zcode",
-    "https://api.github.com/repos/khcrysalis/khcrysalis.dev",
 ];
 
 const repoData = await Promise.all(
     repos.map(async repo => {
         const requestInit = {
             headers: new Headers({
-                "User-Agent": "https://github.com/khcrysalis/khcrysalis.dev",
+                "User-Agent": "khcrysalis.dev",
             }),
         } satisfies RequestInit;
 
+        if (repo.includes("api.github.com")) {
+            const env = import.meta.env;
 
+            const token = getEnv(Astro.locals, env, "GITHUB_TOKEN");
+
+            requestInit.headers.set("Accept", "application/vnd.github.v3+json");
+            requestInit.headers.set("Authorization", `Bearer ${token}`);
+        }
 
         return fetch(repo, requestInit)
             .then(async r => {
@@ -39,7 +45,11 @@ const repoData = await Promise.all(
 ---
 
 <div>
-    {repoData.map(data => (data ? <ProjectCard {...data} /> : null))}
+    {
+        repoData.map(
+            data => (data ? <ProjectCard {...data} /> : null)
+        )
+    }
 </div>
 
 <style>

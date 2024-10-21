@@ -1,45 +1,10 @@
 ---
 import Layout from "../layouts/Default.astro";
 import "../styles/page.css";
-
 ---
 
-<style>
-.error-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #bdc3c9;
-}
-
-.error-page h1 {
-  font-size: 5rem;
-  margin-bottom: 2rem;
-}
-
-.error-page p {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.error-page a {
-  text-decoration: none;
-  color: #f5cdff;
-  font-size: 1.2rem;
-}
-
-.error-page a:hover {
-  color: #ff88f3;
-  text-decoration: underline;
-}
-</style>
-
 <Layout>
-  <div class="error-page">
-    <h1>404</h1>
-    <p>Page Not Found</p>
-    <a href="/">[ Go Home ]</a>
-  </div>
+	<h1>404</h1>
+	<p>Page Not Found</p>
+	<a href="/">Go Home</a>
 </Layout>

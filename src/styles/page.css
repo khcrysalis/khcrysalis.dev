@@ -1,152 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@font-face {
+	font-family: "Nunito";
+	src: url(/fonts/Nunito.ttf);
+	font-weight: 100 900;
+	font-style: normal;
+}
 
 :root {
-  --site-background-color: #11131a;
+	--site-background-color: #181818;
+	--site-primary-color: #202020;
+	--site-primary-alpha-color: #2020207b;
+	--site-secondary-color: #282828;
+	--site-tertiary-color: #383838;
 
-  --site-card-background-color: #171923;
-  --site-card-border-color: #2e293b;
-  
-  --site-general-text-color: #e1dede;
-  --site-secondary-text-color: #adadad;
+	--site-general-text-color: #f5f5f5;
+	--site-secondary-text-color: #cfcfcf;
 
-  --site-pill-color: #272a36;
-  --site-pill-hover-color: #3e4156;
+	--site-pill-color: #3a3a3a;
+	--site-pill-hover-color: #4a4a4a;
 
-  --site-links-color: #d4cdff;
-  --site-links-color-hover: #cba8f9;
+	--site-box-background-color: #2021287b;
+	--site-box-border-color: #676896;
+
+	--site-links-color: #8ab4f8;
+	--site-links-color-hover: #4a90e2;
+
+	--site-seperator-color: #808080;
 }
 
 body, html {
-  color: var(--site-general-text-color);
-  font-size: 16px;
-  line-height: 15px;
-  font-family: "IBM Plex Mono", sans-serif;
-  background: var(--site-background-color);
-  height: 100%;
-  margin: 0;
+	color: var(--site-general-text-color);
+	font-family: "Nunito", sans-serif;
+	background: var(--site-background-color);
+	margin: 0;
 }
 
 .layout {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  max-width:800px;
-  max-height: 900px;
-  background-color: var(--site-card-background-color);
-  border: 3px solid var(--site-card-border-color);
-  border-radius: 10px;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 20px;
 }
 
-@media screen and (max-width: 1900px) {
-  .layout {
-    width: 100%;
-    height: 100%;
-    max-width: 900px;
-    max-height: 100%;
-    border-radius: 0px;
-    border: 0px;
-  }
-  body, html {
-    background-color: var(--site-card-background-color);
-  }
+/* seperator, etc */
+
+.seperator {
+	margin: 20px 0; 
+	border: 0; 
+	border-top: 1px solid var(--site-secondary-color);
 }
 
-.main-container {
-  display: flex;
-  flex: 2;
-  padding: 20px;
-  max-height:100%;
-  /* background-color: #2c22314f; */
-  overflow: auto;
-}
-
-.profile-pic {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-left: 20px;
-  
-  filter: grayscale(70%) sepia(40%) hue-rotate(180deg);
-
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.name {
-  margin-top: 13px;
-  color: var(--site-general-text-color);
-  font-size: 1.4em;
-  font-weight: 700;
-}
-
-span {
-  color: var(--site-general-text-color);
-}
+/* text */
 
 p {
-  color: var(--site-general-text-color);
+	font-size: 1.2em;
+	color: var(--site-general-text-color);
 }
 
-.username {
-  margin-top: -14px;
-  color: var(--site-secondary-text-color);
-  font-size: 0.9em;
-  font-weight: 400;
-}
-.material-symbols-outlined {
-  color: var(--site-secondary-text-color);
-  margin-top: -5px;
-  margin-left: -3px;
-
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+h2 {
+	margin-bottom: 10px;
 }
 
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
+/* links */
 
-.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
-.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
-
-.material-icons.md-light { color: rgba(255, 255, 255, 1); }
-.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
-
-.contact-pill {
-  margin-left: -3px;
-  margin-top: 7px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 7px 13px;
-  border-radius: 10px;
-  margin-right: 9px;
-  background-color: var(--site-pill-color);
-  cursor: pointer;
-  transition: 0.3s;
-  color: white;
+a {
+	color: var(--site-links-color);
+	text-decoration: none;
 }
 
-.contact-pill:hover {
-  background-color: var(--site-pill-hover-color);
-}
-
-.contact-pill img {
-  width: 15px;
-  height: 15px;
-}
-
-.contact-pill span {
-  margin-left: 5px;
-  margin-top:0px;
-  font-size: 16px;
+a:hover {
+	color: var(--site-links-color-hover);
 }

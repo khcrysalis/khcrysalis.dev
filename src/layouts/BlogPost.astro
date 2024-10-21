@@ -1,0 +1,115 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { ViewTransitions } from 'astro:transitions';
+
+import BaseHead from '../components/Blog/BaseHead.astro';
+import Header from "../components/Blog/Header.astro";
+import Footer from '../components/Blog/Footer.astro';
+import FormattedDate from '../components/Blog/FormattedDate.astro';
+
+import "../styles/page.css";
+import "../styles/blog.css";
+import "../styles/page_components.css";
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <BaseHead title={title} description={description} />
+        <style>
+            .date {
+                margin-bottom: 0.5em;
+                color: rgb(var(--gray));
+            }
+            .last-updated-on {
+                font-style: italic;
+            }
+            .hero-container {
+                position: relative;
+            }
+            .hero-content {
+                position: absolute;
+                top: 0px;
+                left: 10px;
+                padding: 10px;
+            }
+            .hero-content h1 {
+                padding-top: 10px;
+                margin: 0;
+                text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+            }
+            .hero-content .date {
+                color: var(--site-secondary-text-color);
+                text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+            }
+            .hero-image img {
+                width: 100%;
+                height: auto;
+            }
+            .hero-description {
+                position: absolute;
+                bottom: 0px;
+                left: 10px;
+                padding: 10px;
+                text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+            }
+        </style>
+        <style>
+            @keyframes slideInFromRight {
+                from { 
+                    opacity: 0; 
+                    transform: translateX(100%);
+                }
+                to { 
+                    opacity: 1; 
+                    transform: translateX(0);
+                }
+            }
+
+            main {
+                animation: slideInFromRight 0.4s ease-in-out;
+            }
+        </style>
+    </head>
+
+    <ViewTransitions/>
+
+    <body>
+        <Header />
+        <main>
+            <article>
+                <div class="layout">
+                    {heroImage && (
+                        <div class="hero-container">
+                            <div class="hero-image">
+                                <img src={heroImage} />
+                            </div>
+                            <div class="hero-content">
+                                <h1>{title}</h1>
+                                <div class="date">
+                                    <FormattedDate date={pubDate} />
+                                    {updatedDate && (
+                                        <div class="last-updated-on">
+                                            Last updated on <FormattedDate date={updatedDate} />
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                            <div class="hero-description">
+                                <h2>{description}</h2>
+                            </div>
+                        </div>
+                    )}
+                    <div class="title">
+                        <hr />
+                    </div>
+                    <slot />
+                    <Footer/>
+                </div>
+            </article>
+        </main>
+    </body>
+</html>

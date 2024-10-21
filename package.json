@@ -1,29 +1,23 @@
 {
-  "name": "catepillar",
-  "type": "module",
-  "version": "0",
-  "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.7.0",
-    "@astrojs/markdown-remark": "^5.1.0",
-    "@astrojs/mdx": "^3.1.1",
-    "astro": "^4.11.0",
-    "astro-icon": "^0.8.2",
-    "astro-seo": "^0.7.6",
-    "css-houdini-squircle": "^0.3.0",
-    "lit": "^3.1.4",
-    "postcss": "^8.4.38",
-    "postcss-nesting": "^11.3.0",
-    "typescript": "^5.5.2"
-  },
-  "devDependencies": {
-    "sass": "^1.77.6"
-  }
+	"name": "catepillar",
+	"type": "module",
+	"version": "0",
+	"private": true,
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+	"@astrojs/cloudflare": "^6.2.4",
+		"@astrojs/svelte": "^2.1.1",
+		"astro": "^2.3.4",
+		"astro-icon": "^0.8.2",
+		"astro-seo": "^0.7.6",
+		"lit": "^3.1.4",
+		"svelte": "^3.54.0",
+		"typescript": "^4.1.2"
+	}
 }

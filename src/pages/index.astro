@@ -1,108 +1,132 @@
 ---
 import Layout from "../layouts/Default.astro";
+import Skills from "../components/Page/Skills.astro";
+import Footer from "../components/Page/Footer.astro";
+import Projects from "../components/Projects.astro";
+
 import "../styles/page.css";
-import Skills from "../components/Skills/Skills.astro";
 
 const profileData = {
-  avatar: "https://github.com/khcrysalis.png",
-  avataralt: "Profile Picture",
-  name: "samara",
-  username: "@khcrysalis",
-  details: [
-    { icon: "location_on", text: "United States, California" },
-    { icon: "schedule", text: "Pacific Standard Time" },
-    { icon: "code", text: "Specializing in Darwin Software" },
-  ],
-  socials: [
-    { icon: "/assets/svg/github.svg", media: "Github", link: "https://github.com/khcrysalis" },
-    { icon: "/assets/svg/twitter.svg", media: "Twitter", link: "https://twitter.com/khcrysalis" },
-    { icon: "/assets/svg/email.png", media: "Email", link: "mailto://flower@palera.in" },
-    { icon: "/assets/svg/signal.svg", media: "Signal", link: "https://signal.me/#eu/JzmWxsZcQ2VBgixHquYkspQ9fJM9Hkqo0WsM8N5u19cNlpKAPHpKZY7r/MLlAYew" },
-    { icon: "/assets/svg/discord.svg", media: "Discord", link: "https://discord.com/users/836452332387565589" },
-  ],
+	avatar: "https://github.com/khcrysalis.png",
+	avataralt: "Profile Picture",
+	name: "samsam",
+	username: "she / her",
+	details: [
+		{ icon: "location_on", text: "United States, California" },
+		{ icon: "schedule", text: "PST" },
+	],
 };
+
+const mediaThings = [
+	// le vendy machine
+	["https://vendicated.dev", "https://github.com/Vendicated/Vendicated/assets/45497981/5794a4e1-292f-46cc-af3a-b33a27a2f15e", "definitely a vending machine v2"],
+	// le vencord
+	["https://vencord.dev", "https://lewisakura.moe/_astro/vencord.JMrtUh0o_Zz5qYw.webp", "cutest client mod"],
+];
+
+const githubProfiles = [
+	// Nick Chan
+	["https://github.com/asdfugil", "https://github.com/asdfugil.png", "amazing nerd who uses default profile pictures, very mysterious"],
+	// HAHALOSAH
+	["https://hhls.xyz/", "https://github.com/HAHALOSAH.png", "a huge winner.. HAHAWINNAH"],
+	// Dhinak G
+	["https://github.com/dhinakg", "https://github.com/dhinakg.png", "opencore nerd and cool friend who likes sending kitty pictures, this guy is amazing"],
+	// llsc12
+	["https://llsc12.me/", "https://github.com/llsc12.png", "cute person who adores swift and macos... therapy may help"],
+	// Lunar (void)
+	["https://github.com/voidlovescats", "https://github.com/voidlovescats.png", "a kitty cat who loves their dolly"],
+	// Vendy Machine
+	["https://vendicated.dev/", "https://github.com/vendicated.png", "definitely a vending machine"],
+	// Kokeshi Doll
+	["https://kok3shidoll.web.app/index.html", "https://github.com/kok3shidoll.png", "nice to talk to, cool translator and developer.."],
+	// Fawni
+	["https://fawn.moe/", "https://codeberg.org/fawn.png?size=256", "big fawnie, very cute and adorable"],
+	// Emma (Overestimate)
+	["https://github.com/overestimate", "https://github.com/overestimate.png", "one of the cooler emma's, name too common though :("],
+	// RoootTheFox
+	["https://rooot.gay/", "https://github.com/roootthefox.png", "a cool fox who likes messing with their ipad"],
+	// mineek
+	["https://github.com/mineek", "https://github.com/mineek.png", "a genius, geniunely"],
+	// Paige, tiramisu
+	["https://tiramisu.gay/", "https://github.com/darwinx64.png", "lexycat enjoyer"]
+];
+
+function shuffle(array) {
+	return array.sort(() => Math.random() - 0.5);
+}
+
 ---
 
 <Layout>
-  <script src="../scripts/time.js"/>
-  <div>
-    <div style="display: flex;justify-content: space-between;">
-      <div>
-        <p class="name">{profileData.name}</p>
-        <p class="username">{profileData.username}</p>
-      </div>  
-      <img
-        src={profileData.avatar}
-        alt={profileData.avataralt}
-        class="profile-pic"
-      />
-    </div>
+  	<script src="../scripts/time.js"/>
+  	<div class="layout">
 
-    <div style="margin-bottom: 10px;">
-      {
-        profileData.details.map((item) => (
-          <div style="display: flex; margin-top:10px;">
-            <span style="font-size: 20px;" class="material-symbols-outlined">
-              {item.icon}
-            </span>
-            <span style="margin-left: 5px; margin-top:-2px;">
-              {item.text}
-              {item.text === "Pacific Standard Time" && <div id="pst-time" style={{ color: '#adadad', display: 'inline-block' }}/>}
-            </span>
-          </div>
-        ))
-      }
-    </div>
+		<div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+			<div>
+				<p class="name">
+					hi, i'm 
+					<span style="background: linear-gradient(to right, #a1c4fd, #c2e9fb); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">{profileData.name}</span>!
+				</p>
+				<p class="username">
+					{profileData.username} ∙ silly wannabe programmer
+				</p>
+			</div>
+		</div>
 
-    <div style="display: flex;flex-wrap: wrap;">
-      {
-        profileData.socials.map((item) => (
-          <a href={item.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-            <div class="contact-pill">
-              <img src={item.icon} alt={item.media} />
-              <span>{item.media}</span>
-            </div>
-          </a>
-        ))
-      }
-    </div>
+		<hr class="seperator"/>
 
-    <h2 style="margin-bottom: 10px;">About</h2>
-    <div style="margin-top: 10px;line-height: 1.6;">
-      <p>I'm a software developer from California, I often do UI/UX work on apple-based platforms (mainly open-source!)</p>
-    </div>
-    
-    <Skills/>
+		<h2>Small Summary</h2>
+		<div style="margin-bottom: 10px; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px;">
+			{
+				profileData.details.map((item) => (
+					<div style="display: flex; align-items: center;">
+						<span style="font-size: 20px;" class="box material-symbols-outlined">
+							{item.icon}
+						</span>
+						<span style="margin-left: 9px;">
+							{item.text}
+							{item.text === "PST" && <div id="pst-time" style={{ color: '#adadad', display: 'inline-block' }}/>}
+						</span>
+					</div>
+				))
+			}
+		</div>
 
-    <div style="margin-top: 10px;line-height: 1.6;">
-      <p>
-        <strong>Some more about me and what I do:</strong>
-         I was and always am a person who had a taste in design, I got into it a while back when I was using a mobile application to make fun icons for myself and my friends. Then after that I got into coding, which funnily enough a lot of my skills in having an eye for design transferred over and now I mainly do work for others on my own freetime whenever I feel like I need to. Though, these are mainly for people who I feel close with and I do plan on looking to expand myself to more spaces later down the line.
-         <br/><br/>
-         I have a lot of projects that I've worked on which you can find on my Github, some of which (mainly organizations) I do own to some extent and related to (of course) Apple.
-      </p>
-    </div>
 
-    <h2 style="margin-bottom: 10px;">Hobbies</h2>
-    <div style="margin-top: 10px;line-height: 1.6;">
-      <p>
-        <strong>I play a lot of games:</strong>
-        These mainly consists of games which just allow me to do whatever I feel like without some straight linear path, often having their own level editor or way for me to express myself. Such as, GD, Terraria, & Minecraft
+		<div class="box-special">
+		<p>
+			I'm a small programmer who likes doing things on their own, though also often works with other people in either teams or just in collaboration!<br/><br/>
 
-        <br/><br/>
-        <strong>Geometry Dash:</strong>
-        I don't exactly have much an influence here but I've played the game on and off for multiple years now, maybe one day I will spend the time everyday to play but I don't have nearly as much time as I used to when it comes to playing games.
+			<strong><em>Very</em></strong> interested in iOS/tvOS/macOS-related software, really anything Apple. First took interest several years ago with a small SE and now since I've taken interest, I've built a lot of software that people like to use :D
+		</p>
+		</div>
 
-        <br/><br/>
-        <strong>Designing:</strong>
-        Since I have skills in this specific area I like making icons and logos for fun, mainly for my close friends if they need any in particular. This includes any potential UI/UX work if they ever need it.
+		<h2>Projects I've Worked On</h2>
+		<Projects/>
 
-        <br/><br/>
-        <strong>Biking:</strong>
-        I often go biking everyday in the morning, usually around my own area and I use it as a means to fully wake up.
-      </p>
-    </div>
+		<h2>Friends :D</h2>
+		<div class="box" style="margin-bottom: 10px; display: grid; grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: 10px;">
+			{
+				mediaThings.map((thing) => (
+					<a style="display:flex;" href={thing[0]}>
+						<img src={thing[1]} title={thing[2]} />
+					</a>
+				))
+			}
+		</div>
 
-    <h2 style="margin-bottom: 10px;">The End</h2>
-  </div>
+		<div class="box" style="margin-bottom: 10px; display: grid; grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); gap: 10px;">
+			{
+				shuffle(githubProfiles).map((profile) => (
+					<a href={profile[0]} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+						<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+							<img src={profile[1]} alt={profile[2]} class="friend-avatar" />
+						</div>
+					</a>
+				))
+			}
+		</div>
+
+		<Footer/>
+	</div>
 </Layout>

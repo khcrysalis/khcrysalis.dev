@@ -1,0 +1,81 @@
+---
+import SocialCard from "./SocialCard.astro";
+
+const profileData = {
+    socials: [
+        {
+            description: "You can find me and the stuff I develop for here, all open-source projects from me are found here.",
+            percentage: 0,
+            icon: "/assets/svg/github.svg", 
+            media: "Github",
+            link: "https://github.com/khcrysalis",
+        },
+        { 
+            description: "I often use Twitter, this is probably the most accessible way to contact me.",
+            percentage: 0.9,
+            icon: "/assets/svg/twitter.svg", 
+            media: "Twitter",
+            link: "https://twitter.com/khcrysalis",
+        },
+        { 
+            description: "Well.. I get too many emails to count so I don't think its worth trying here.",
+            percentage: 0.25,
+            icon: "/assets/svg/email.png", 
+            media: "Email",
+            link: "mailto:flower@palera.in",
+        },
+        { 
+            description: "Use this if you want your messages to be encrypted between us, I'm sometimes on here.",
+            percentage: 0.4,
+            icon: "/assets/svg/signal.svg", 
+            media: "Signal",
+            link: "https://signal.me/#eu/JzmWxsZcQ2VBgixHquYkspQ9fJM9Hkqo0WsM8N5u19cNlpKAPHpKZY7r/MLlAYew",
+        },
+        { 
+            description: "If you have access to my discord, I'm always on there!",
+            percentage: 1,
+            icon: "/assets/svg/discord.svg", 
+            media: "Discord",
+            link: "https://discord.com/users/836452332387565589",
+        },
+        {
+            description: "My music tracker, take a look at the stuff I listen to :d",
+            percentage: 0,
+            icon: "/assets/svg/lastfm.svg",
+            media: "LastFM",
+            link: "https://www.last.fm/user/fivepetals",
+        },
+    ],
+};
+---
+
+<div>
+    {
+        profileData.socials
+            .sort((a, b) => b.percentage - a.percentage)
+            .map((item) => (
+                <SocialCard {...item} />
+            ))
+    }
+</div>
+
+<style>
+    div {
+        --cols: 2;
+        display: grid;
+        grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+        gap: 0.75em;
+    }
+
+    @media screen and (max-width: 1400px) {
+        div {
+            --cols: 2;
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        div {
+            --cols: 1;
+        }
+    }
+</style>

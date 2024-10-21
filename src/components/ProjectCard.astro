@@ -24,15 +24,14 @@ avatarUrl.searchParams.set("size", "64");
 
 <a href={html_url}>
     <span class="open-external">
-        <OpenExternalIcon />
+        <OpenExternalIcon/>
     </span>
 
     <div class="author">
         <img src={avatarUrl.toString()} alt="" />
-        <span>{owner.login}</span>
+        <span>{owner.login} / <strong>{name}</strong></span>
     </div>
 
-    <h3>{name}</h3>
     <span class="description">{description}</span>
 
     <div class="info">
@@ -43,7 +42,7 @@ avatarUrl.searchParams.set("size", "64");
             {language}
         </span>
         <div class="stars">
-            <Star />
+            <Star/>
             <span>{stars}</span>
         </div>
     </div>
@@ -54,15 +53,17 @@ avatarUrl.searchParams.set("size", "64");
         all: unset;
         cursor: pointer;
         position: relative;
-        background: var(--site-pill-color);
         padding: 1em;
-        border-radius: 10px;
+        border-radius: 5px;
         display: grid;
         transition: 0.3s;
+        background: var(--site-primary-color);
+        border: 1px solid var(--site-tertiary-color);
+	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     a:is(:hover, :active) {
-        background: var(--site-pill-hover-color);
+        background: var(--site-secondary-color);
     }
 
     h3 {
@@ -74,7 +75,7 @@ avatarUrl.searchParams.set("size", "64");
     }
 
     .description {
-        margin-top: 0.3em;
+        margin-top: -0.3em;
         margin-bottom: 0.8em;
     }
 
@@ -92,8 +93,8 @@ avatarUrl.searchParams.set("size", "64");
     .author img {
         width: 1.2em;
         height: 1.2em;
-        border-radius: 50%;
-        margin-right: 0.3em;
+        border-radius: 10%;
+        margin-right: 0.4em;
     }
 
     .info {
@@ -116,8 +117,9 @@ avatarUrl.searchParams.set("size", "64");
         display: inline-block;
         width: 0.8em;
         height: 0.8em;
-        transform: translateY(0.05em);
-        border-radius: 50%;
+        transform: translateY(0.02em);
+        border-radius: 20%;
+        margin-right: 0.2em;
         background: var(--lang-color);
     }
 

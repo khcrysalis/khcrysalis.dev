@@ -1,8 +1,12 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+
 import Head from "../components/Head.astro";
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+
 import "../styles/page.css";
+import "../styles/page_components.css";
+
 ---
 
 <!doctype html>
@@ -15,17 +19,32 @@ import "../styles/page.css";
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
         />
+        <style>
+            @keyframes slideInFromRight {
+                from { 
+                    opacity: 0; 
+                    transform: translateX(100%);
+                }
+                to { 
+                    opacity: 1; 
+                    transform: translateX(0);
+                }
+            }
+
+            main {
+                animation: slideInFromRight 0.4s ease-in-out;
+            }
+        </style>
     </head>
+    <ViewTransitions/>
 
     <body>
-        <div class="layout">
-            <Header/>
-            <div class="main-container">
-                <main style="min-width:100%;">
-                    <slot/>
-                </main>
-            </div>
-            <Footer/>
+        <Header/>
+        <div>
+            <main>
+            <slot/>
+            </main>
         </div>
     </body>
+    
 </html>

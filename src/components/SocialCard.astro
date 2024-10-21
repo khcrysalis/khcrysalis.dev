@@ -1,0 +1,88 @@
+---
+import OpenExternalIcon from "./Icons/OpenExternalIcon.astro";
+
+const {
+    description,
+    percentage,
+    icon,
+    media,
+    link,
+} = Astro.props;
+---
+
+<a href={link}>
+    <span class="open-external">
+        <OpenExternalIcon/>
+    </span>
+    <div class="author" style="display: flex; align-items: center;">
+        <img src={icon} alt="" />
+        <span style="margin-left: 10px;">{media}</span>
+    </div>
+
+    <span style="margin-top: 10px;" class="description">
+        {description}
+    </span>
+
+    <div style="margin-top: 10px;" class="box2">
+        {
+            (
+                link.includes("github.com") || link.includes("last.fm")
+            ) ? <span style={`color: hsl(0, 100%, 75%);`}>❤</span> : 
+            (
+                <span style={`color: hsl(${percentage * 120}, 100%, 75%);`}>
+                    {
+                        percentage >= 0.75 ? 'Highly likely' : 
+                        percentage >= 0.5 ? 'Likely' : 
+                        percentage >= 0.25 ? 'Less likely' : 
+                        percentage > 0.20 ? 'Least likely' :
+                        'Not going'
+                    } to respond ∙ {percentage * 100}%
+                </span>
+            )
+        }
+    </div>
+</a>
+
+<style>
+    .box2 {
+        align-items: center;
+        text-align: right;
+    }
+
+    a {
+        all: unset;
+        cursor: pointer;
+        position: relative;
+        padding: 1em;
+        border-radius: 5px;
+        display: grid;
+        transition: 0.3s;
+        background: var(--site-primary-color);
+        border: 1px solid var(--site-tertiary-color);
+	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    a:is(:hover, :active) {
+        background: var(--site-secondary-color);
+    }
+
+    img {
+        width: 1.6em;
+        height: 1.6em;
+    }
+
+    .open-external {
+        all: unset;
+        cursor: pointer;
+        color: var(--site-secondary-text-color);
+        position: absolute;
+        top: 1em;
+        right: 0.5em;
+        transition: 200ms color;
+    }
+
+    .open-external :global(svg) {
+        width: 1.2em;
+        height: 1.2em;
+    }
+</style>

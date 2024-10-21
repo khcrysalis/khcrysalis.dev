@@ -1,0 +1,138 @@
+---
+import Layout from "../layouts/Default.astro";
+import Skills from "../components/Page/Skills.astro";
+import Footer from "../components/Page/Footer.astro";
+
+const profileData = {
+    games: {
+        "Geometry Dash": { 
+            url: "https://store.steampowered.com/app/322170/Geometry_Dash/", 
+            color: "rgba(255, 255, 51, 0.1)" 
+        },
+        "Minecraft": { 
+            url: "https://www.minecraft.net/", 
+            color: "rgba(0, 128, 0, 0.1)" 
+        },
+        "Subnautica": { 
+            url: "https://store.steampowered.com/app/264710/Subnautica/", 
+            color: "rgba(0, 191, 255, 0.1)" 
+        },
+        "Terraria": { 
+            url: "https://store.steampowered.com/app/105600/Terraria/", 
+            color: "rgba(255, 69, 0, 0.1)" 
+        },
+        "Noita": { 
+            url: "https://store.steampowered.com/app/881100/Noita/", 
+            color: "rgba(255, 215, 0, 0.1)" 
+        },
+        "Half-Life 2": { 
+            url: "https://store.steampowered.com/app/220/HalfLife_2/", 
+            color: "rgba(128, 128, 128, 0.1)" 
+        },
+    },
+    songs: {
+        "lexycat": { 
+            url: "https://open.spotify.com/artist/4h2w55mRM0SkL9c0fu3qAC", 
+            color: "rgba(161, 51, 255, 0.1)" 
+        },
+        "Bladee": { 
+            url: "https://open.spotify.com/artist/2xvtxDNInKDV4AvGmjw6d1", 
+            color: "rgba(51, 255, 87, 0.1)" 
+        },
+        "okameP": { 
+            url: "https://open.spotify.com/artist/1KC8BTeLDKxPr4Z19HJ6mp", 
+            color: "rgba(51, 87, 255, 0.1)" 
+        },
+        "Sadness": { 
+            url: "https://open.spotify.com/artist/04tDiz6koPFuo5JBZyLgFg", 
+            color: "rgba(255, 51, 161, 0.1)" 
+        },
+        "Trhä": { 
+            url: "https://open.spotify.com/artist/5LCW1YUGpMpsWklZ36rp91", 
+            color: "rgba(255, 182, 193, 0.1)" 
+        },
+        "Team Grimoire": { 
+            url: "https://open.spotify.com/artist/3JL2xJoZQDP7NjNiEmVpfa", 
+            color: "rgba(128, 128, 128, 0.1)" 
+        },
+        "abriction": { 
+            url: "https://open.spotify.com/artist/72qOGv3zp1iEaOpQIHXF7g", 
+            color: "rgba(51, 87, 255, 0.1)" 
+        },
+        "Emray": { 
+            url: "https://open.spotify.com/artist/25gSGW8P5WC9C3vTSOYS0h", 
+            color: "rgba(87, 51, 255, 0.1)" 
+        },
+    }
+};
+
+---
+
+<Layout>
+    <div class="layout">
+        <h2>About Me</h2>
+        <div class="box-special">
+            <p>
+                I'm a small programmer who likes doing things on their own, though also often works with other people in either teams or just in collaboration!<br/><br/>
+    
+                <strong><em>Very</em></strong> interested in iOS/tvOS/macOS-related software, really anything Apple. First took interest several years ago with a small SE and now since I've taken interest, I've built a lot of software that people like to use :D
+            </p>
+        </div>
+        <p>
+            As shown above, yes I'm a programmer who likes all stuff Apple. I have a lot of projects that I've worked on which you can find on my Github, some of which (mainly organizations) I do own to some extent and related to (of course) Apple.<br/><br/>
+            
+            A lot of the projects I have are often open-source.
+        </p>
+
+
+        <h2>My Skills</h2>
+        <Skills/>
+
+
+        <h2>My Hobbies</h2>
+        <p>
+            I play a lot of games, mainly on my computer. These mainly consists of games which just allow me to do whatever I feel like without some straight linear path. 
+        </p>
+        <div style="display: flex;flex-wrap: wrap;">
+            {
+                Object.keys(profileData.games).map((item) => (
+                    <a href={profileData.games[item].url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                        <div class="contact-pill" style={{ backgroundColor: profileData.games[item].color, border: `1px solid rgba(255, 255, 255, 0.1)` }}>
+                            {item} ↗
+                        </div>
+                    </a>
+                ))
+            }
+        </div>
+        <p>
+            I also do a lot of biking on my own, also love trying to make food with other people!
+        </p>
+
+
+        <h2>Musical Artists I Love</h2>
+        <p>
+            I listen to a lot of music! Mainly from Spotify, but I also listen to music from other sources. Here are some of the artists!
+        </p>
+        <div style="display: flex;flex-wrap: wrap;">
+            {
+                Object.keys(profileData.songs).map((item) => (
+                    <a href={profileData.songs[item].url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                        <div class="contact-pill" style={{ backgroundColor: profileData.songs[item].color, border: `1px solid rgba(255, 255, 255, 0.1)` }}>
+                            {item} ↗
+                        </div>
+                    </a>
+                ))
+            }
+        </div>
+        <p>
+            I listen to music from artists which are more unknown, honestly I find more joy in that than traditional mainstream artists and music.
+        </p>
+        <a href="https://www.last.fm/user/fivepetals" style="display: flex;flex-wrap: wrap;">
+            <div class="contact-pill">
+                Check out my LastFM ↗
+            </div>
+        </a>
+        
+        <Footer/>
+    </div>
+</Layout>

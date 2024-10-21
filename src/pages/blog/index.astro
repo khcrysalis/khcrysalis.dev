@@ -1,0 +1,101 @@
+---
+import BaseHead from '../../components/Blog/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Page/Footer.astro';
+import { getCollection } from 'astro:content';
+import { ViewTransitions } from 'astro:transitions';
+import FormattedDate from '../../components/Blog/FormattedDate.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="g" description="a" />
+		<style>
+			ul {
+				list-style: none;
+				padding: 0;
+			}
+			li {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-bottom: 1rem;
+			}
+			li a {
+				display: flex;
+				align-items: center;
+				text-decoration: none;
+				color: inherit;
+				width: 100%;
+			}
+			li .content {
+				flex: 1;
+			}
+			li .content .title {
+				margin: 0;
+			}
+			li .content .date {
+				margin: 0;
+				font-size: 1rem;
+				color: var(--site-secondary-text-color);
+			}
+			li img {
+				margin-left: 1rem;
+				width: 120px;
+				height: auto;
+				border-radius: 5px;
+				border: 1px solid var(--site-tertiary-color);
+			}
+		</style>
+		<style>
+            @keyframes slideInFromRight {
+                from { 
+                    opacity: 0; 
+                    transform: translateX(100%);
+                }
+                to { 
+                    opacity: 1; 
+                    transform: translateX(0);
+                }
+            }
+
+            main {
+                animation: slideInFromRight 0.4s ease-in-out;
+            }
+        </style>
+	</head>
+	<ViewTransitions/>
+	<body>
+		<Header />
+		<main class="layout">
+			<section>
+				<ul>
+					{
+						posts.map((post, index) => (
+							<>
+								<li>
+									<a href={`/blog/${post.slug}/`}>
+										<div class="content">
+											<h2 class="title">{post.data.title}</h2>
+											<p class="date">
+												<FormattedDate date={post.data.pubDate} />
+											</p>
+										</div>
+										<img src={post.data.heroImage} alt="" />
+									</a>
+								</li>
+								{index < posts.length - 1 && <hr class="seperator" />}
+							</>
+						))
+					}
+				</ul>
+				<Footer/>
+			</section>
+		</main>
+	</body>
+</html>
