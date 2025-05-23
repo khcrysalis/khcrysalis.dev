@@ -11,14 +11,9 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/cloudflare": "^6.2.4",
-		"@astrojs/svelte": "^2.1.1",
-		"astro": "^2.3.4",
-		"astro-icon": "^0.8.2",
-		"astro-seo": "^0.7.6",
-		"lit": "^3.1.4",
-		"sakana-widget": "^2.7.0",
-		"svelte": "^3.54.0",
-		"typescript": "^4.1.2"
+		"@astrojs/cloudflare": "^12.5.3",
+		"astro": "^5.8.0",
+		"astro-seo": "^0.8.4",
+		"sakana-widget": "^2.7.0"
 	}
 }

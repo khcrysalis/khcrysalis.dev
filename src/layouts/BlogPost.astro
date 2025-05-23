@@ -1,15 +1,14 @@
 ---
-import { image, type CollectionEntry } from 'astro:content';
-import { ViewTransitions } from 'astro:transitions';
+import type { CollectionEntry } from 'astro:content';
 
-import BaseHead from '../components/Blog/BaseHead.astro';
-import Header from "../components/Blog/Header.astro";
-import Footer from '../components/Blog/Footer.astro';
-import FormattedDate from '../components/Blog/FormattedDate.astro';
+import BaseHead from '@components/Blog/BaseHead.astro';
+import Header from "@components/Blog/Header.astro";
+import Footer from '@components/Blog/Footer.astro';
+import FormattedDate from '@components/Blog/FormattedDate.astro';
 
-import "../styles/page.css";
-import "../styles/blog.css";
-import "../styles/page_components.css";
+import "@styles/page.css";
+import "@styles/blog.css";
+import "@styles/page_components.css";
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -65,8 +64,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
             }
         </style>
     </head>
-
-    <ViewTransitions/>
 
     <body>
         <Header />

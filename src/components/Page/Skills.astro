@@ -1,32 +1,41 @@
 ---
+import { Image } from "astro:assets"
+import type { ImageMetadata } from 'astro';
 
-const d = {
-	skills: [
-		{ icon: "/assets/svg/skills_swift.png", media: "Swift", link: "https://www.swift.org" },
-		{ icon: "/assets/svg/skills_swift.png", media: "SwiftUI", link: "https://developer.apple.com/xcode/swiftui/" },
-		{ icon: "/assets/svg/skills_objc.png", media: "Objective-C", link: "https://en.wikipedia.org/wiki/Objective-C" },
-		{ icon: "/assets/svg/skills_objc.png", media: "Cocoa Touch (UIKit / Appkit)", link: "https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/Cocoa.html" },
-		{ icon: "/assets/svg/skills_c.png", media: "C", link: "https://en.wikipedia.org/wiki/C_(programming_language)" },
-		{ icon: "", media: "C++", link: "https://en.wikipedia.org/wiki/C%2B%2B" },
-		{ icon: "", media: "Rust", link: "https://en.wikipedia.org/wiki/Rust_(programming_language)" },
-		{ icon: "/assets/svg/skills_html.png", media: "HTML", link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-		{ icon: "/assets/svg/skills_astro.png", media: "Astro", link: "https://astro.build" },
-	],
-};
+const skills = [
+	{ icon: "/src/assets/icons/skills/swift.svg", media: "Swift", link: "https://www.swift.org" },
+	{ icon: "/src/assets/icons/skills/swift.svg", media: "SwiftUI", link: "https://developer.apple.com/xcode/swiftui/" },
+	{ icon: "/src/assets/icons/skills/objc.svg", media: "Objective-C", link: "https://en.wikipedia.org/wiki/Objective-C" },
+	{ icon: "/src/assets/icons/skills/objc.svg", media: "Cocoa Touch (UIKit / AppKit)", link: "https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/Cocoa.html" },
+	{ icon: "/src/assets/icons/skills/c.svg", media: "C", link: "https://en.wikipedia.org/wiki/C_(programming_language)" },
+	{ icon: "/src/assets/icons/skills/cpp.svg", media: "C++", link: "https://en.wikipedia.org/wiki/C%2B%2B" },
+	{ icon: "/src/assets/icons/skills/rust.svg", media: "Rust", link: "https://en.wikipedia.org/wiki/Rust_(programming_language)" },
+	{ icon: "/src/assets/icons/skills/html.svg", media: "HTML", link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+	{ icon: "/src/assets/icons/skills/astro.svg", media: "Astro", link: "https://astro.build" },
+];
 
+const icons = import.meta.glob<{ default: ImageMetadata }>('/src/assets/icons/skills/*.svg');
 ---
 
-<skills>
-    <div style="display: flex;flex-wrap: wrap;">
-        {
-			d.skills.map((item) => (
-				<a href={item.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-					<div class="contact-pill">
-						<img src={item.icon} alt={item.media} />
-						<span>{item.media}</span>
-					</div>
-				</a>
-			))
-        }
-	</div>
-</skills>
+<div>
+    {
+		skills.map(item => 
+			<a href={item.link} class="contact-pill" target="_blank" rel="noopener noreferrer">
+				<Image width={16} height={16} src={icons[item.icon]()} alt={item.media} />
+				<span>{item.media}</span>
+			</a>
+		)
+    }
+</div>
+<style>
+	div {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	img {
+		object-fit: contain;
+	}
+	a {
+		--site-links-color-hover: none;
+	}
+</style>

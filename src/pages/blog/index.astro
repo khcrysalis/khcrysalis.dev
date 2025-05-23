@@ -1,10 +1,9 @@
 ---
-import BaseHead from '../../components/Blog/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Page/Footer.astro';
+import BaseHead from '@components/Blog/BaseHead.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Page/Footer.astro';
 import { getCollection } from 'astro:content';
-import { ViewTransitions } from 'astro:transitions';
-import FormattedDate from '../../components/Blog/FormattedDate.astro';
+import FormattedDate from '@components/Blog/FormattedDate.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -53,7 +52,6 @@ const posts = (await getCollection('blog')).sort(
 			}
 		</style>
 	</head>
-	<ViewTransitions/>
 	<body>
 		<Header />
 		<main class="layout">

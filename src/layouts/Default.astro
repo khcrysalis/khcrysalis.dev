@@ -1,13 +1,13 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 
-import Head from "../components/Head.astro";
-import Header from "../components/Header.astro";
+import Head from "@components/Head.astro";
+import Header from "@components/Header.astro";
 
-import "../styles/page.css";
-import "../styles/page_components.css";
+import "@styles/page.css";
+import "@styles/page_components.css";
 
-import OmgoshKorn from '../components/OmgoshKorn.astro';
+import OmgoshKorn from '@components/OmgoshKorn.astro';
 
 ---
 
@@ -17,12 +17,12 @@ import OmgoshKorn from '../components/OmgoshKorn.astro';
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width" />
         <Head />
+        <ClientRouter/>
         <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
         />
     </head>
-    <ViewTransitions/>
 
     <body>
         <Header/>

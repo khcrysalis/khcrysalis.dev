@@ -1,7 +1,8 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import '../../styles/page.css';
+import '@styles/page.css';
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
 	title: string;
@@ -44,3 +45,5 @@ const { title, description, image = '/blog.png' } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<ClientRouter />
