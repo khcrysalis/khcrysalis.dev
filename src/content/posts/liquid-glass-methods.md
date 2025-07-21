@@ -27,6 +27,8 @@ Let's do some experimentation...
 
 ---
 
+# Enabling Liquid Glass
+
 ## UserDefaults
 
 All applications are able to save persistent settings, in Apple OS's, conveniently we have a class specifically for setting these persistent settings using [UserDefaults](https://developer.apple.com/documentation/foundation/userdefaults). We can assume these defaults are booleens, at least indicated by the names.
@@ -123,7 +125,7 @@ It is now here in settings!
 
 ---
 
-## Disabling Liquid Glass (Globally)
+# Disabling Liquid Glass
 
 With the many ways of enabling Liquid Glass, we can also disable it with the defaults we found in the SwiftUI framework.
 
