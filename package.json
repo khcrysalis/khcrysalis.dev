@@ -13,6 +13,7 @@
         "@astrojs/markdown-remark": "^6.3.3",
         "astro": "^5.12.0",
         "astro-expressive-code": "^0.41.3",
+        "astro-og-canvas": "^0.7.0",
         "astro-seo": "^0.8.4",
         "sharp": "^0.34.3",
         "unist-util-visit": "^5.0.0"

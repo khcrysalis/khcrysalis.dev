@@ -2,13 +2,15 @@ import { type Friend } from './types';
 
 // MARK: MY STUFF
 
+export const SITE_TITLE    = "sammy's site";
+export const SITE_DESC     = "Programmer interested in darwin software.";
 export const MY_NAME       = "khcrysalis";
 export const WEBSITE_URL   = `https://${MY_NAME}.dev`;
 export const GITHUB_URL    = `https://github.com/${MY_NAME}`;
 export const TWITTER_URL   = `https://twitter.com/${MY_NAME}`;
 export const EMAIL_STRING  = "echo 'Zmxvd2VyQHBhbGVyYS5pbg==' | base64 -d";
 
-// MARK: FRIENDS
+// MARK: MY FRIENDS
 
 export const FRIEND_ARRAY: Friend[] = [
     {
@@ -83,6 +85,8 @@ export const FRIEND_ARRAY: Friend[] = [
     },
 ];
 
+// MARK: MY FRIENDS 88x31's
+
 export const X_ARRAY = [
     [
         "https://vendicated.dev",
@@ -103,6 +107,8 @@ export const X_ARRAY = [
         "https://wingio.xyz/88x31/badge.gif"
     ]
 ];
+
+// MARK: MY STACK
 
 export const STACK_DATA = {
     languages: [
@@ -126,12 +132,12 @@ export const STACK_DATA = {
         ["Pixelmator Pro", "https://www.pixelmator.com/pro/"]
     ],
     findme: [
-        ["Twitter", "https://twitter.com/khcrysalis"],
-        ["GitHub", "https://github.com/khcrysalis"]
+        ["Twitter", TWITTER_URL],
+        ["GitHub", GITHUB_URL]
     ]
 }
 
-// MARK: Repositories
+// MARK: MY REPOS
 
 export const REPO_ARRAY = [
     "https://api.github.com/repos/khcrysalis/Protokolle",

@@ -8,10 +8,17 @@ import type { PostLayoutProps } from "@/utils/types";
 import { formatDate } from "@/utils/utils";
 
 const { title, pubDate, toc } = Astro.props as PostLayoutProps
+
+const postSlug = Astro.url.pathname.split('/').filter(Boolean).pop() || ''
+const ogImage = `/open-graph/${postSlug}.png`
 ---
 
 <LayoutGeneral>
-    <Head title={title} description={formatDate(pubDate, 'YYYY-MM-DD')} slot="head"/>
+    <Head
+        title={title}
+        ogImage={ogImage}
+        slot="head"
+    />
     <div class="post-content">
         <TableOfContents toc={toc}/>
         <main>

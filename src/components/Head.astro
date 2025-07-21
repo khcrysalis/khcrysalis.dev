@@ -1,22 +1,18 @@
 ---
 import { SEO } from "astro-seo";
-import { GITHUB_URL, WEBSITE_URL } from "@/utils/constants";
+import { GITHUB_URL, SITE_DESC, SITE_TITLE, WEBSITE_URL } from "@/utils/constants";
 
-const { title, description } = Astro.props;
+const { title, ogImage } = Astro.props;
 
 const CANONICAL_URL = new URL(Astro.url.pathname, WEBSITE_URL)
-
-const DEFAULT_TITLE                 = "sammy's site";
-const DEFAULT_DESCRIPTION           = "Welcome to sammy's site";
-const DEFAULT_TWITTER_DESCRIPTION   = "I'm a small silly wannabe programmer who likes making software :)";
-const DEFAULT_IMAGE                 = `${GITHUB_URL}.png`;
+const DEFAULT_IMAGE = `${GITHUB_URL}.png`;
 ---
 
 <SEO
-    title={title ?? DEFAULT_TITLE}
-    description={description ?? DEFAULT_DESCRIPTION}
-    canonical={CANONICAL_URL}
-    extend={{
+    title = `🌱 ${title ?? SITE_TITLE}`
+    description = {SITE_DESC}
+    canonical = {CANONICAL_URL}
+    extend = {{
         link: [
             {
                 rel: "icon",
@@ -25,20 +21,49 @@ const DEFAULT_IMAGE                 = `${GITHUB_URL}.png`;
         ],
         meta: [
             {
-                name: "twitter:image",
-                content: DEFAULT_IMAGE
-            },
-            {
                 name: "twitter:title",
-                content: title ?? DEFAULT_TITLE
+                content: title ?? SITE_TITLE
             },
             {
                 name: "twitter:description",
-                content: description ?? DEFAULT_TWITTER_DESCRIPTION
+                content: SITE_DESC
+            },
+            {
+                name: "twitter:image",
+                content: ogImage ?? DEFAULT_IMAGE
+            },
+            {
+                name: "twitter:url",
+                content: Astro.url
+            },
+            {
+                name: "twitter:card",
+                content: "summary_large_image"
+            },
+            {
+                property: "og:title",
+                content: title ?? SITE_TITLE
+            },
+            {
+                property: "og:description",
+                content: SITE_DESC
+            },
+            {
+                property: "og:image",
+                content: ogImage ?? DEFAULT_IMAGE
+            },
+            {
+                property: "og:url",
+                content: Astro.url
+            },
+            {
+                property: "og:type",
+                content: "website"
             }
         ],
     }}
 />
 
+<meta name="generator" content={Astro.generator} />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
