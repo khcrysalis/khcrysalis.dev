@@ -22,7 +22,7 @@ const DEFAULT_IMAGE = `${GITHUB_URL}.png`;
         meta: [
             {
                 name: "twitter:title",
-                content: title ?? SITE_TITLE
+                content: `🌱 ${title ?? SITE_TITLE}`
             },
             {
                 name: "twitter:description",
@@ -42,7 +42,7 @@ const DEFAULT_IMAGE = `${GITHUB_URL}.png`;
             },
             {
                 property: "og:title",
-                content: title ?? SITE_TITLE
+                content: `🌱 ${title ?? SITE_TITLE}`
             },
             {
                 property: "og:description",
@@ -50,7 +50,7 @@ const DEFAULT_IMAGE = `${GITHUB_URL}.png`;
             },
             {
                 property: "og:image",
-                content: ogImage ?? DEFAULT_IMAGE
+                content: ogImage
             },
             {
                 property: "og:url",

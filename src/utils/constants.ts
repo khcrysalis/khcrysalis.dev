@@ -3,7 +3,7 @@ import { type Friend } from './types';
 // MARK: MY STUFF
 
 export const SITE_TITLE    = "sammy's site";
-export const SITE_DESC     = "Programmer interested in darwin software.";
+export const SITE_DESC     = "I'm a programmer interested in darwin software platforms.";
 export const MY_NAME       = "khcrysalis";
 export const WEBSITE_URL   = `https://${MY_NAME}.dev`;
 export const GITHUB_URL    = `https://github.com/${MY_NAME}`;
