@@ -1,0 +1,18 @@
+---
+import { formatDate } from '@/utils/utils'
+import type { FormattedDateProps } from '@/utils/types'
+
+const { date } = Astro.props as FormattedDateProps
+---
+<!-- formatting date is useless just use the raw string. -->
+<time datetime={date.toISOString()}>
+    <Fragment set:html={formatDate(date, 'YYYY-MM-DD')} />
+</time>
+
+<style>
+    .date-left {
+        display: inline-block;
+        min-width: 86px;
+        text-align: right;
+    }
+</style>

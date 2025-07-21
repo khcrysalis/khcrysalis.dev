@@ -1,0 +1,157 @@
+---
+import { getLanguageColor } from "@/utils/languageColors";
+import OpenExternalIcon from "../Icons/OpenExternalIcon.astro";
+
+import Star from "../Icons/Star.astro";
+
+const {
+    name,
+    description,
+    language,
+    owner,
+    stars_count,
+    stargazers_count,
+    html_url,
+} = Astro.props;
+
+const starCount = stars_count ?? stargazers_count;
+
+const stars = starCount > 1000 ? `${(starCount / 1000).toFixed(1)}k` : starCount;
+
+const avatarUrl = new URL(owner.avatar_url);
+avatarUrl.searchParams.set("size", "64");
+---
+
+<a href={html_url}>
+    <span class="open-external">
+        <OpenExternalIcon/>
+    </span>
+
+    <div class="author">
+        <img src={avatarUrl.toString()} alt="" />
+        <span>{owner.login} <span style="color: var(--text-quaternary);">/</span> {name}</span>
+    </div>
+
+    <span class="description">{description}</span>
+
+    <div class="info">
+        <div class="stars">
+            <Star/>
+            <span>{stars}</span>
+        </div>
+        <span class="language" style={`--lang-color: ${getLanguageColor(language)};`}/>
+    </div>
+</a>
+
+<style>
+    a {
+        all: unset;
+        cursor: pointer;
+        position: relative;
+        padding: 10px;
+        border-radius: 10px;
+        transition: all 0.2s ease;
+        background: var(--background-tertiary);
+        border: 1px solid var(--background-secondary);
+        box-shadow: 1px 1px 3px var(--shadow-color);
+    }
+
+    a:is(:hover, :active) {
+        background: var(--background-primary);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px var(--shadow-color), 0 4px 8px var(--shadow-color);
+    }
+
+    span {
+        font-size: 0.9em;
+        font-weight: 500;
+        color: var(--text-primary);
+    }
+
+    .description {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        line-height: 1.4;
+        color: var(--text-quaternary);
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .author,
+    .info,
+    .stars {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+    }
+
+    .author {
+        color: var(--text-primary);
+        font-weight: 500;
+        margin-bottom: 0.25em;
+    }
+
+    .author img {
+        width: 1.2em;
+        height: 1.2em;
+        border-radius: 50%;
+    }
+
+    .info {
+        line-height: 1.2em;
+        justify-content: space-between;
+    }
+
+    .stars {
+        font-size: 0.85em;
+    }
+
+    .stars span {
+        margin-bottom: -0.2em;
+        font-weight: 500;
+        color: var(--text-quaternary);
+    }
+
+    .stars :global(svg) {
+        width: 1.2em;
+        height: 1.2em;
+        margin-right: 0.1em;
+        color: var(--text-quaternary);
+    }
+
+    .language {
+        margin-bottom: -0.5em;
+        margin-right: -0.3em;
+        font-size: 0.8em;
+        font-weight: 500;
+        color: var(--text-secondary);
+    }
+
+    .language::before {
+        content: "";
+        display: inline-block;
+        width: 0.7em;
+        height: 0.7em;
+        border-radius: 50%;
+        margin-right: 0.4em;
+        background: var(--lang-color);
+    }
+
+    .open-external {
+        all: unset;
+        cursor: pointer;
+        color: var(--text-secondary);
+        position: absolute;
+        right: 0.1em;
+        transition: all 200ms ease;
+        opacity: 0.6;
+        margin-top: -0.2em;
+    }
+
+    .open-external :global(svg) {
+        width: 0.8em;
+        height: 0.8em;
+    }
+</style>

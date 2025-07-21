@@ -1,0 +1,362 @@
+/*
+    * This file contains global styles for the website
+    * It includes font imports, color variables, and basic layout styles
+    * This does not include markdown styles, WIP
+*/
+
+@import './fonts.css';
+
+// MARK: Colors
+
+:root {
+    --sans: "DM Sans", "Nunito", sans-serif;
+
+    --text-primary: #54534d;
+    --text-secondary: #555555;
+    --text-quaternary: #7a7a7a;
+    --text-prominent: #318172;
+
+    --background-primary: #E6DAC2;
+    --background-secondary: #cbc2af;
+    --background-tertiary: #dfd4c2;
+
+    --button-background: #56b4a3;
+    --button-background-hover: #348f7f;
+    --button-background-border: #3a9f8c;
+
+    --shadow-color: #0000001a;
+}
+
+@media (prefers-color-scheme: dark) { :root {
+    //
+
+    --text-primary: #d8d8d8;
+    --text-secondary: #d7d7d7;
+    --text-quaternary: #969696;
+    --text-prominent: #7bd6c6;
+
+    --background-primary: #151515;
+    --background-secondary: #2a2a2a;
+    --background-tertiary: #1e1e1e;
+
+    --button-background: #318172;
+    --button-background-hover: #22584f;
+    --button-background-border: #47ae9b;
+
+    --shadow-color: #00000066;
+}}
+
+body, html {
+    font-family: var(--sans);
+    color: var(--text-primary);
+    background-color: var(--background-primary);
+    // -webkit-font-smoothing: antialiased !important;
+}
+
+// MARK: Global Styles
+
+h1 {
+    font-size: 2.5em;
+    color: var(--text-prominent);
+}
+
+h5 {
+    font-size: 1rem;
+    color: var(--text-quaternary);
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+}
+
+a {
+    color: var(--text-prominent);
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+}
+
+footer {
+    font-size: 1.1em;
+    color: var(--text-quaternary);
+    padding-bottom: 10px;
+}
+
+hr {
+    border: none;
+    border-top: 1.9px solid var(--background-secondary);
+    margin: 20px 0;
+}
+
+blockquote {
+    border-left: 1.9px solid var(--text-prominent);
+    padding-left: 20px;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+span {
+    font-size: 0.9em;
+    color: var(--text-prominent);
+}
+
+mark {
+    background-color: var(--button-background);
+    color: var(--text-primary);
+    padding: 0.1em 0.2em;
+    border-radius: 4px;
+}
+
+pre {
+    padding: 10px;
+    overflow-x: auto;
+}
+
+pre, code {
+    font-family: monospace;
+    font-size: 0.9em;
+    background-color: var(--background-secondary);
+    border-radius: 5px;
+    padding: 0.1em 0.2em;
+}
+
+kbd {
+    display: inline-block;
+    padding: 0.1em 0.4em;
+    font-size: 0.85rem;
+    line-height: 1.4;
+
+    color: #2d2d2d;
+    background: linear-gradient(to bottom, #f9f9f9, #e3e3e3);
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    box-shadow:
+        inset 0 -2px 0 #ccc,
+        0 2px 3px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 1px 0 #fff;
+    cursor: pointer;
+
+    white-space: nowrap;
+    user-select: none;
+    margin: 0 0.2em;
+    transition: all 0.1s ease-in-out;
+
+    &:active {
+        transform: translateY(1px);
+        box-shadow:
+            inset 0 2px 3px rgba(0, 0, 0, 0.2),
+            0 1px 1px rgba(0, 0, 0, 0.05);
+        background: linear-gradient(to bottom, #e0e0e0, #cfcfcf);
+    }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    kbd {
+        color: #eee;
+        background: linear-gradient(to bottom, #2b2b2b, #1e1e1e);
+        border: 1px solid #444;
+        box-shadow:
+        inset 0 -2px 0 #111,
+        0 2px 3px rgba(0, 0, 0, 0.6);
+        text-shadow: none;
+
+        &:active {
+            transform: translateY(1px);
+            box-shadow:
+            inset 0 2px 3px rgba(0, 0, 0, 0.5),
+            0 1px 1px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to bottom, #1e1e1e, #151515);
+        }
+    }
+}
+
+
+
+ul, ol {
+    padding-left: 1.5rem;
+    line-height: 1.6;
+}
+
+li {
+    margin: 0.1rem 0;
+    color: var(--text-secondary);
+
+    &::marker {
+        color: var(--text-prominent);
+    }
+}
+
+li:has(input[type="checkbox"]) {
+    list-style: none;
+    margin-left: -1.2em;
+    &::before {
+        display: none;
+    }
+}
+
+ul li {
+    list-style-type: none;
+    position: relative;
+
+    &::before {
+        content: "•";
+        color: var(--text-prominent);
+        font-weight: bold;
+        position: absolute;
+        left: -1rem;
+    }
+}
+
+ol li {
+    &::marker {
+        font-weight: 600;
+        color: var(--text-prominent);
+    }
+}
+
+// MARK: Form Styles
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    background-color: var(--background-secondary);
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    list-style: none;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 1.9px;
+        left: 5px;
+        width: 4px;
+        height: 8px;
+        border: solid var(--text-primary);
+        border-width: 0 1.9px 1.9px 0;
+        transform: rotate(45deg);
+        opacity: 0;
+        transition: opacity 0.1s ease;
+    }
+
+    &:checked {
+        background-color: var(--button-background);
+
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    &:focus-visible {
+        outline: 1.9px solid var(--text-prominent);
+        outline-offset: 1.9px;
+    }
+}
+
+// MARK: Table Styles
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 20px 0;
+    border: 1.9px solid var(--background-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 1px 1px 3px var(--shadow-color);
+}
+
+th, td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1.9px solid var(--background-secondary);
+
+    &:not(:last-child) {
+        border-right: 1.9px solid var(--background-secondary);
+    }
+}
+
+th {
+    background-color: var(--background-tertiary);
+    font-weight: 800;
+    letter-spacing: 0.6px;
+}
+
+td {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+tr:last-child { td {
+    border-bottom: none;
+}}
+
+// MARK: Button Styles
+
+button {
+    background-color: var(--button-background);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 900;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1.9px solid var(--button-background-border);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 1.9px 4px var(--shadow-color);
+
+    &:hover {
+        background-color: var(--button-background-hover);
+    }
+}
+
+// MARK: Image Styles
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 1.9px solid var(--background-secondary);
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px var(--shadow-color);
+}
+
+// MARK: Anchor Styles for Headings
+
+h1, h2, h3, h4, h5, h6 {
+    position: relative;
+
+    .anchor {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        text-decoration: none;
+        margin: 0;
+        transition: opacity 0.25s;
+        text-align: right;
+        padding-left: 100%;
+        opacity: 0;
+        font-size: 0.8em;
+        color: var(--text-prominent);
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &:hover .anchor {
+        opacity: 1;
+    }
+}

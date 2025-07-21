@@ -1,0 +1,12 @@
+---
+import PostList from "@/components/ui/PostList.astro";
+import LayoutPage from "@/layouts/LayoutPage.astro";
+import { getSortedFilteredPosts } from "@/utils/utils";
+
+const posts = await getSortedFilteredPosts()
+---
+
+<LayoutPage>
+    <p>Um..! I post sometimes :)</p>
+    <PostList posts={posts} />
+</LayoutPage>

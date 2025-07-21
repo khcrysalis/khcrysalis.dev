@@ -1,31 +1,44 @@
 ---
 import { SEO } from "astro-seo";
+import { GITHUB_URL, WEBSITE_URL } from "@/utils/constants";
+
+const { title, description } = Astro.props;
+
+const CANONICAL_URL = new URL(Astro.url.pathname, WEBSITE_URL)
+
+const DEFAULT_TITLE                 = "sammy's site";
+const DEFAULT_DESCRIPTION           = "Welcome to sammy's site";
+const DEFAULT_TWITTER_DESCRIPTION   = "I'm a small silly wannabe programmer who likes making software :)";
+const DEFAULT_IMAGE                 = `${GITHUB_URL}.png`;
 ---
 
 <SEO
-    title="samara's site"
-    description="Welcome to"
-    canonical="https://khcrysalis.dev"
+    title={title ?? DEFAULT_TITLE}
+    description={description ?? DEFAULT_DESCRIPTION}
+    canonical={CANONICAL_URL}
     extend={{
         link: [
-            { 
-                rel: "icon", 
-                href: "https://github.com/khcrysalis.png" 
+            {
+                rel: "icon",
+                href: DEFAULT_IMAGE
             },
         ],
         meta: [
             {
                 name: "twitter:image",
-                content: "https://github.com/khcrysalis.png",
+                content: DEFAULT_IMAGE
             },
-            { 
-                name: "twitter:title", 
-                content: "samara's site" 
+            {
+                name: "twitter:title",
+                content: title ?? DEFAULT_TITLE
             },
-            { 
-                name: "twitter:description", 
-                content: "I'm a small silly wannabe programmer who likes making software :)" 
-            },
+            {
+                name: "twitter:description",
+                content: description ?? DEFAULT_TWITTER_DESCRIPTION
+            }
         ],
     }}
 />
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />

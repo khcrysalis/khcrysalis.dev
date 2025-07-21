@@ -1,0 +1,63 @@
+---
+import { REPO_ARRAY } from "@/utils/constants";
+import ProjectCard from "./ProjectCard.astro";
+
+const repoData = await Promise.all(
+    REPO_ARRAY.map(async repo => {
+        const requestInit = {
+            headers: new Headers({
+                "User-Agent": "khcrysalis.dev",
+            }),
+        } satisfies RequestInit;
+
+        if (repo.includes("api.github.com")) {
+            const token = Astro.locals.runtime.env.GITHUB_TOKEN;
+
+            requestInit.headers.set("Accept", "application/vnd.github.v3+json");
+            requestInit.headers.set("Authorization", `Bearer ${token}`);
+        }
+
+        return fetch(repo, requestInit)
+            .then(async r => {
+                if (!r.ok) {
+                    const e = await r.text().catch(() => "Unknown Error");
+                    throw new Error(
+                        `Failed to fetch repo info for ${repo}: ${r.status} ${r.statusText}\n${e}`
+                    );
+                }
+                return r.json();
+            })
+            .catch(e => {
+                console.error(e);
+                return null;
+            });
+    })
+);
+---
+
+<div>
+    {repoData.map(
+        data => (data ? <ProjectCard {...data} /> : null)
+    )}
+</div>
+
+<style>
+    div {
+        --cols: 2;
+        display: grid;
+        grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+        gap: 0.75em;
+    }
+
+    @media screen and (max-width: 1400px) {
+        div {
+            --cols: 2;
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        div {
+            --cols: 1;
+        }
+    }
+</style>

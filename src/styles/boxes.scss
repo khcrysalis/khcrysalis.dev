@@ -1,0 +1,57 @@
+// MARK: Boxes
+
+.box-container {
+    background-color: var(--background-tertiary);
+    border: 1.9px solid var(--background-secondary);
+    // border: 1.9px solid var(--button-background-hover);
+    box-shadow: 1px 1px 3px var(--shadow-color);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.special-box {
+    transition: all 0.2s ease;
+    background: var(--background-tertiary);
+}
+
+.special-box:hover {
+    background: var(--background-primary);
+    box-shadow: 0 8px 24px var(--shadow-color), 0 4px 8px var(--shadow-color);
+}
+
+.box-container p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.box-container a {
+    width: 100%;
+    position: relative;
+    display: block;
+}
+
+.box-container a > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+// MARK: - Friends
+
+.friend-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 5%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

@@ -1,0 +1,23 @@
+---
+import type { PostLayoutProps } from "@/utils/types";
+import FormattedDate from "../ui/FormattedDate.astro";
+
+const { title, pubDate } = Astro.props as PostLayoutProps;
+---
+
+<a href="/posts" astro-prefetch>← Back</a>
+<h1>{title}</h1>
+<p>
+    Posted on <abbr title=""><FormattedDate date={pubDate}/></abbr>
+    •
+    Written by <abbr title="">Samara M</abbr>
+</p>
+<hr/>
+
+<style>
+    p {
+        margin-top: -1em;
+        font-size: 0.9em;
+        color: var(--text-quaternary);
+    }
+</style>

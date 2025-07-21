@@ -1,0 +1,62 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<header>
+    <div class="header-container">
+        <div class="header-content">
+            <div class="header-links">
+                <a href="/" class={currentPath === '/' ? 'selected' : ''}>Home</a>
+                <a href="/posts" class={currentPath === '/posts' ? 'selected' : ''}>Posts</a>
+                <a href="/about" class={currentPath === '/about' ? 'selected' : ''}>About</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<style>
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 56px;
+        text-align: center;
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .header-links {
+        display: flex;
+        gap: 10px;
+    }
+
+    .header-links a {
+        padding: 8px 16px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: inherit;
+        border: 1px solid transparent;
+        box-shadow: 1px 1px 3px var(--shadow-color);
+    }
+
+    .header-links a.selected {
+        background-color: var(--background-tertiary);
+        border: 1px solid var(--background-secondary);
+        color: var(--text-secondary);
+    }
+
+    .header-links a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px var(--shadow-color), 0 4px 8px var(--shadow-color);
+    }
+
+    .header-links a:not(.selected) {
+        border: 1px solid var(--background-secondary);
+    }
+</style>

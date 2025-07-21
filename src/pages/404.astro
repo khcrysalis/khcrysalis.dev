@@ -1,10 +1,10 @@
 ---
-import Layout from "../layouts/Default.astro";
-import "../styles/page.css";
+import LayoutPage from "@/layouts/LayoutPage.astro";
+import "@/styles/generic.scss";
 ---
 
-<Layout>
-	<h1>404</h1>
-	<p>Page Not Found</p>
-	<a href="/">Go Home</a>
-</Layout>
+<LayoutPage>
+    <h1>404 - You seem lost.</h1>
+    <hr/>
+    <p>This is a dead end, let's go <a href="/">home</a>.</p>
+</LayoutPage>

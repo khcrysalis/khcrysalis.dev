@@ -1,0 +1,18 @@
+---
+import { ClientRouter } from "astro:transitions";
+import TransitionWrapper from "./TransitionWrapper.astro";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <ClientRouter/>
+        <slot name="head"/>
+    </head>
+
+    <body>
+        <TransitionWrapper type="page">
+            <slot/>
+        </TransitionWrapper>
+    </body>
+</html>
