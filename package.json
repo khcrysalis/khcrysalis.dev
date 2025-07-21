@@ -16,5 +16,8 @@
     },
     "devDependencies": {
         "sass-embedded": "^1.89.2"
+    },
+    "engines": {
+        "node": ">=18.20.8"
     }
 }
