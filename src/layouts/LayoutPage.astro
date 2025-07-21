@@ -24,21 +24,23 @@ import Footer from "@/components/layout/Footer.astro";
         flex-direction: column;
     }
 
-    .page-content::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 60%;
-        width: 600px;
-        height: 100%;
-        transform: translateX(-50%);
-        background-image: url('/heading.png');
-        background-size: contain;
-        background-position: top center;
-        background-repeat: no-repeat;
-        opacity: 0.1;
-        z-index: -1;
-        margin-top: -1rem;
+    @media (min-width: 769px) {
+        .page-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 60%;
+            width: 600px;
+            height: 100%;
+            transform: translateX(-50%);
+            background-image: url('/heading.png');
+            background-size: contain;
+            background-position: top center;
+            background-repeat: no-repeat;
+            opacity: 0.1;
+            z-index: -1;
+            margin-top: -1rem;
+        }
     }
 
     @media (prefers-color-scheme: dark) { .page-content::before {

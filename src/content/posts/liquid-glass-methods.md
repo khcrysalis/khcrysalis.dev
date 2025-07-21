@@ -31,7 +31,9 @@ Let's do some experimentation...
 
 All applications are able to save persistent settings, in Apple OS's, conveniently we have a class specifically for setting these persistent settings using [UserDefaults](https://developer.apple.com/documentation/foundation/userdefaults). We can assume these defaults are booleens, at least indicated by the names.
 
-`com.apple.SwiftUI.IgnoreSolariumLinkedOnCheck`, lets set this to `TRUE`
+```
+com.apple.SwiftUI.IgnoreSolariumLinkedOnCheck, lets set this to `TRUE`
+```
 
 UserDefaults class:
 
@@ -75,7 +77,9 @@ In addition to the app userdefault for ignoring the solarium check, there's also
 
 On iOS, the global defaults can be found at:
 
-`/private/var/mobile/.GlobalPreferences.plist`
+```
+/private/var/mobile/.GlobalPreferences.plist
+```
 
 We can set this key (bool)
 
@@ -110,7 +114,7 @@ defaults write -g com.apple.SwiftUI.DisableSolarium -bool TRUE
 
 There are times where you want to do this with an app that is out of your control, often times not wanting to mess with global settings.
 
-You may have noticed that Apple has mentioned that you will need to compile with Xcode 26 to be able to get Liquid Glass, but in reality it's using the *OS 26 SDK. When compiling a program successfully, there's a header set in the binary (machO) which contains which SDK version it was compiled with, and considering the name of this default "com.apple.SwiftUI.IgnoreSolariumLinkedOnCheck" it implies it most likely checks this value in the binary header to see if it should use the new redesign.
+You may have noticed that Apple has mentioned that you will need to compile with Xcode 26 to be able to get Liquid Glass, but in reality it's using the *OS 26 SDK. When compiling a program successfully, there's a header set in the binary (machO) which contains which SDK version it was compiled with, and considering the name of this default "Ignore Solarium Linked On Check" it implies it most likely checks this value in the binary header to see if it should use the new redesign.
 
 <!-- we should add credit to DUY, nyathea, little -->
 
@@ -133,7 +137,7 @@ This also seems to work! Here's Spotify patched with this simple motification, t
 
 ## Adding a Settings.bundle
 
-Alternatively to patching, we can add a bundle to the app so the user can change the userdefaults without the need of doing it programmatically. In the documentation about [Settings.bundle](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html), this lets users manage defaults, though through settings instead of the app itself. Conveniently. Similar to our Swift code above, we can also modify the "com.apple.SwiftUI.IgnoreSolariumLinkedOnCheck" value within this.
+Alternatively to patching, we can add a bundle to the app so the user can change the userdefaults without the need of doing it programmatically. In the documentation about [Settings.bundle](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html), this lets users manage defaults, though through settings instead of the app itself. Conveniently. Similar to our Swift code above, we can also modify the "Ignore Solarium Linked On Check" value within this.
 
 Add this dictionary to the bundle of the app you're modifying, if the Settings.bundle doesn't exist, learn to make one so you can do this yourself. Here are the proper keys so you can enable the settings without the need of patching the app:
 

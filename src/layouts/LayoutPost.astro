@@ -5,12 +5,13 @@ import Footer from "@/components/layout/Footer.astro";
 import PostHeading from "@/components/posts/PostHeading.astro";
 import TableOfContents from "@/components/posts/TableOfContents.astro";
 import type { PostLayoutProps } from "@/utils/types";
+import { formatDate } from "@/utils/utils";
 
 const { title, pubDate, toc } = Astro.props as PostLayoutProps
 ---
 
 <LayoutGeneral>
-    <Head title={title} description={pubDate} slot="head"/>
+    <Head title={title} description={formatDate(pubDate, 'YYYY-MM-DD')} slot="head"/>
     <div class="post-content">
         <TableOfContents toc={toc}/>
         <main>
@@ -31,21 +32,23 @@ const { title, pubDate, toc } = Astro.props as PostLayoutProps
         position: relative;
     }
 
-    .post-content::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 60%;
-        width: 600px;
-        height: 100%;
-        transform: translateX(-50%);
-        background-image: url('/heading.png');
-        background-size: contain;
-        background-position: top center;
-        background-repeat: no-repeat;
-        opacity: 0.1;
-        z-index: -1;
-        margin-top: -1rem;
+    @media (min-width: 769px) {
+        .post-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 60%;
+            width: 600px;
+            height: 100%;
+            transform: translateX(-50%);
+            background-image: url('/heading.png');
+            background-size: contain;
+            background-position: top center;
+            background-repeat: no-repeat;
+            opacity: 0.1;
+            z-index: -1;
+            margin-top: -1rem;
+        }
     }
 
     @media (prefers-color-scheme: dark) { .post-content::before {
