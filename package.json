@@ -14,6 +14,7 @@
         "astro": "^5.12.0",
         "astro-expressive-code": "^0.41.3",
         "astro-seo": "^0.8.4",
+        "sharp": "^0.34.3",
         "unist-util-visit": "^5.0.0"
     },
     "devDependencies": {
