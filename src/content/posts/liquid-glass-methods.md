@@ -83,7 +83,9 @@ On iOS, the global defaults can be found at:
 
 We can set this key (bool)
 
-`com.apple.SwiftUI.DisableSolarium`, set to `TRUE`
+```
+com.apple.SwiftUI.DisableSolarium, set to `TRUE`
+```
 
 For using an external tool (for example, backup modifications to write to normally inaccessible paths) we can forcefully write the file using these contents:
 
