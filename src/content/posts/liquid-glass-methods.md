@@ -69,49 +69,6 @@ Seems like it worked after restarting!
 
 ---
 
-## UserDefaults (Global)
-
-In addition to the app userdefault for ignoring the solarium check, there's also *global* defaults. Though there's a caveat, on iOS, you can't set this programmatically, rather you will need to set this manually yourself or using some external tool, but this is also a protected path that apps cannot access normally (at least on iOS)
-
-### iOS
-
-On iOS, the global defaults can be found at:
-
-```
-/private/var/mobile/.GlobalPreferences.plist
-```
-
-We can set this key (bool)
-
-```
-com.apple.SwiftUI.DisableSolarium, set to `TRUE`
-```
-
-For using an external tool (for example, backup modifications to write to normally inaccessible paths) we can forcefully write the file using these contents:
-
-```xml
-// .GlobalPreferences.plist
-
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>com.apple.SwiftUI.DisableSolarium</key>
-	<true/>
-</dict>
-</plist>
-```
-
-### macOS
-
-On macOS, disabling Liquid Glass globally is as simple as a simple terminal command:
-
-```sh
-defaults write -g com.apple.SwiftUI.DisableSolarium -bool TRUE
-```
-
----
-
 ## Patching
 
 There are times where you want to do this with an app that is out of your control, often times not wanting to mess with global settings.
@@ -163,6 +120,51 @@ Add this dictionary to the bundle of the app you're modifying, if the Settings.b
 It is now here in settings!
 
 ![_](./_assets/lgm-settings.png)
+
+---
+
+## Disabling Liquid Glass (Globally)
+
+With the many ways of enabling Liquid Glass, we can also disable it with the defaults we found in the SwiftUI framework.
+
+In addition to the app userdefault for ignoring the solarium check, there's also *global* defaults. Though there's a caveat, on iOS, you can't set this programmatically, rather you will need to set this manually yourself or using some external tool, but this is also a protected path that apps cannot access normally (at least on iOS)
+
+### iOS
+
+On iOS, the global defaults can be found at:
+
+```
+/private/var/mobile/.GlobalPreferences.plist
+```
+
+We can set this key (bool)
+
+```
+com.apple.SwiftUI.DisableSolarium, set to `TRUE`
+```
+
+For using an external tool (for example, backup modifications to write to normally inaccessible paths) we can forcefully write the file using these contents:
+
+```xml
+// .GlobalPreferences.plist
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>com.apple.SwiftUI.DisableSolarium</key>
+	<true/>
+</dict>
+</plist>
+```
+
+### macOS
+
+On macOS, disabling Liquid Glass globally is as simple as a simple terminal command:
+
+```sh
+defaults write -g com.apple.SwiftUI.DisableSolarium -bool TRUE
+```
 
 ---
 
