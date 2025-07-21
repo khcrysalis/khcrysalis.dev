@@ -11,6 +11,9 @@ importers:
       '@astrojs/cloudflare':
         specifier: ^12.6.0
         version: 12.6.0(@types/node@24.0.14)(astro@5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(typescript@5.8.3)(yaml@2.8.0))(sass-embedded@1.89.2)(yaml@2.8.0)
+      '@astrojs/markdown-remark':
+        specifier: ^6.3.3
+        version: 6.3.3
       astro:
         specifier: ^5.12.0
         version: 5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(typescript@5.8.3)(yaml@2.8.0)
