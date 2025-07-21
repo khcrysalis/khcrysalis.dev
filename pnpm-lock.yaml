@@ -10,25 +10,22 @@ importers:
     dependencies:
       '@astrojs/cloudflare':
         specifier: ^12.6.0
-        version: 12.6.0(@types/node@24.0.14)(astro@5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(typescript@5.8.3)(yaml@2.8.0))(sass-embedded@1.89.2)(yaml@2.8.0)
+        version: 12.6.0(@types/node@24.0.14)(astro@5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0))(sass-embedded@1.89.2)(tsx@4.20.3)(yaml@2.8.0)
       '@astrojs/markdown-remark':
         specifier: ^6.3.3
         version: 6.3.3
       astro:
         specifier: ^5.12.0
-        version: 5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(typescript@5.8.3)(yaml@2.8.0)
+        version: 5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0)
       astro-expressive-code:
         specifier: ^0.41.3
-        version: 0.41.3(astro@5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(typescript@5.8.3)(yaml@2.8.0))
+        version: 0.41.3(astro@5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0))
       astro-og-canvas:
         specifier: ^0.7.0
-        version: 0.7.0(astro@5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(typescript@5.8.3)(yaml@2.8.0))
+        version: 0.7.0(astro@5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0))
       astro-seo:
         specifier: ^0.8.4
         version: 0.8.4(typescript@5.8.3)
-      canvaskit-wasm:
-        specifier: ^0.40.0
-        version: 0.40.0
       sharp:
         specifier: ^0.34.3
         version: 0.34.3
@@ -39,6 +36,9 @@ importers:
       sass-embedded:
         specifier: ^1.89.2
         version: 1.89.2
+      tsx:
+        specifier: ^4.20.3
+        version: 4.20.3
 
 packages:
 
@@ -1086,9 +1086,6 @@ packages:
   canvaskit-wasm@0.39.1:
     resolution: {integrity: sha512-Gy3lCmhUdKq+8bvDrs9t8+qf7RvcjuQn+we7vTVVyqgOVO1UVfHpsnBxkTZw+R4ApEJ3D5fKySl9TU11hmjl/A==}
 
-  canvaskit-wasm@0.40.0:
-    resolution: {integrity: sha512-Od2o+ZmoEw9PBdN/yCGvzfu0WVqlufBPEWNG452wY7E9aT8RBE+ChpZF526doOlg7zumO4iCS+RAeht4P0Gbpw==}
-
   ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
 
@@ -1345,6 +1342,9 @@ packages:
   get-east-asian-width@1.3.0:
     resolution: {integrity: sha512-vpeMIQKxczTD/0s2CdEWHcb0eeJe6TFjxb+J5xgX7hScxqrGuyjmv4c1D4A/gelKfyox0gJJwIHF+fLjeaM8kQ==}
     engines: {node: '>=18'}
+
+  get-tsconfig@4.10.1:
+    resolution: {integrity: sha512-auHyJ4AgMz7vgS8Hp3N6HXSmlMdUyhSUrfBF16w153rxtLIEOE+HGqaBppczZvnHLqQJfiHotCYpNhl0lUROFQ==}
 
   github-slugger@2.0.0:
     resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
@@ -1845,6 +1845,9 @@ packages:
     resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
     engines: {node: '>=0.10.0'}
 
+  resolve-pkg-maps@1.0.0:
+    resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
+
   restructure@3.0.2:
     resolution: {integrity: sha512-gSfoiOEA0VPE6Tukkrr7I0RBdE0s7H1eFCDBk05l1KIQT1UIKNc5JZy6jdyW6eYH3aR3g5b3PuL77rq0hvwtAw==}
 
@@ -2083,6 +2086,11 @@ packages:
 
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
+
+  tsx@4.20.3:
+    resolution: {integrity: sha512-qjbnuR9Tr+FJOMBqJCW5ehvIo/buZq7vH7qD7JziU98h6l3qGy0a/yPFjwO+y0/T7GFpNgNAvEcPPVfyT8rrPQ==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
 
   type-fest@4.41.0:
     resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
@@ -2517,14 +2525,14 @@ snapshots:
       - prettier
       - prettier-plugin-astro
 
-  '@astrojs/cloudflare@12.6.0(@types/node@24.0.14)(astro@5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(typescript@5.8.3)(yaml@2.8.0))(sass-embedded@1.89.2)(yaml@2.8.0)':
+  '@astrojs/cloudflare@12.6.0(@types/node@24.0.14)(astro@5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0))(sass-embedded@1.89.2)(tsx@4.20.3)(yaml@2.8.0)':
     dependencies:
       '@astrojs/internal-helpers': 0.6.1
       '@astrojs/underscore-redirects': 1.0.0
       '@cloudflare/workers-types': 4.20250719.0
-      astro: 5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(typescript@5.8.3)(yaml@2.8.0)
+      astro: 5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0)
       tinyglobby: 0.2.14
-      vite: 6.3.5(@types/node@24.0.14)(sass-embedded@1.89.2)(yaml@2.8.0)
+      vite: 6.3.5(@types/node@24.0.14)(sass-embedded@1.89.2)(tsx@4.20.3)(yaml@2.8.0)
       wrangler: 4.25.0(@cloudflare/workers-types@4.20250719.0)
     transitivePeerDependencies:
       - '@types/node'
@@ -3305,14 +3313,14 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro-expressive-code@0.41.3(astro@5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(typescript@5.8.3)(yaml@2.8.0)):
+  astro-expressive-code@0.41.3(astro@5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0)):
     dependencies:
-      astro: 5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(typescript@5.8.3)(yaml@2.8.0)
+      astro: 5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0)
       rehype-expressive-code: 0.41.3
 
-  astro-og-canvas@0.7.0(astro@5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(typescript@5.8.3)(yaml@2.8.0)):
+  astro-og-canvas@0.7.0(astro@5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0)):
     dependencies:
-      astro: 5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(typescript@5.8.3)(yaml@2.8.0)
+      astro: 5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0)
       canvaskit-wasm: 0.39.1
       deterministic-object-hash: 2.0.2
       entities: 4.5.0
@@ -3325,7 +3333,7 @@ snapshots:
       - prettier-plugin-astro
       - typescript
 
-  astro@5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(typescript@5.8.3)(yaml@2.8.0):
+  astro@5.12.0(@types/node@24.0.14)(rollup@4.45.1)(sass-embedded@1.89.2)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0):
     dependencies:
       '@astrojs/compiler': 2.12.2
       '@astrojs/internal-helpers': 0.6.1
@@ -3381,8 +3389,8 @@ snapshots:
       unist-util-visit: 5.0.0
       unstorage: 1.16.1
       vfile: 6.0.3
-      vite: 6.3.5(@types/node@24.0.14)(sass-embedded@1.89.2)(yaml@2.8.0)
-      vitefu: 1.1.1(vite@6.3.5(@types/node@24.0.14)(sass-embedded@1.89.2)(yaml@2.8.0))
+      vite: 6.3.5(@types/node@24.0.14)(sass-embedded@1.89.2)(tsx@4.20.3)(yaml@2.8.0)
+      vitefu: 1.1.1(vite@6.3.5(@types/node@24.0.14)(sass-embedded@1.89.2)(tsx@4.20.3)(yaml@2.8.0))
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
       yocto-spinner: 0.2.3
@@ -3468,10 +3476,6 @@ snapshots:
   camelcase@8.0.0: {}
 
   canvaskit-wasm@0.39.1:
-    dependencies:
-      '@webgpu/types': 0.1.21
-
-  canvaskit-wasm@0.40.0:
     dependencies:
       '@webgpu/types': 0.1.21
 
@@ -3744,6 +3748,10 @@ snapshots:
   get-caller-file@2.0.5: {}
 
   get-east-asian-width@1.3.0: {}
+
+  get-tsconfig@4.10.1:
+    dependencies:
+      resolve-pkg-maps: 1.0.0
 
   github-slugger@2.0.0: {}
 
@@ -4504,6 +4512,8 @@ snapshots:
 
   require-from-string@2.0.2: {}
 
+  resolve-pkg-maps@1.0.0: {}
+
   restructure@3.0.2: {}
 
   retext-latin@4.0.0:
@@ -4787,6 +4797,13 @@ snapshots:
 
   tslib@2.8.1: {}
 
+  tsx@4.20.3:
+    dependencies:
+      esbuild: 0.25.6
+      get-tsconfig: 4.10.1
+    optionalDependencies:
+      fsevents: 2.3.3
+
   type-fest@4.41.0: {}
 
   typesafe-path@0.2.2: {}
@@ -4913,7 +4930,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite@6.3.5(@types/node@24.0.14)(sass-embedded@1.89.2)(yaml@2.8.0):
+  vite@6.3.5(@types/node@24.0.14)(sass-embedded@1.89.2)(tsx@4.20.3)(yaml@2.8.0):
     dependencies:
       esbuild: 0.25.6
       fdir: 6.4.6(picomatch@4.0.3)
@@ -4925,11 +4942,12 @@ snapshots:
       '@types/node': 24.0.14
       fsevents: 2.3.3
       sass-embedded: 1.89.2
+      tsx: 4.20.3
       yaml: 2.8.0
 
-  vitefu@1.1.1(vite@6.3.5(@types/node@24.0.14)(sass-embedded@1.89.2)(yaml@2.8.0)):
+  vitefu@1.1.1(vite@6.3.5(@types/node@24.0.14)(sass-embedded@1.89.2)(tsx@4.20.3)(yaml@2.8.0)):
     optionalDependencies:
-      vite: 6.3.5(@types/node@24.0.14)(sass-embedded@1.89.2)(yaml@2.8.0)
+      vite: 6.3.5(@types/node@24.0.14)(sass-embedded@1.89.2)(tsx@4.20.3)(yaml@2.8.0)
 
   volar-service-css@0.0.62(@volar/language-service@2.4.19):
     dependencies:

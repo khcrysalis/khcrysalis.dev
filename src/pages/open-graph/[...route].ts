@@ -1,5 +1,7 @@
 import { getCollection } from 'astro:content'
 import { OGImageRoute } from 'astro-og-canvas'
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
 
 const collectionEntries = await getCollection('posts')
 
@@ -9,6 +11,10 @@ const collectionEntries = await getCollection('posts')
 const pages = Object.fromEntries(
     collectionEntries.map(({ id, data }) => [id.replace(/\.(md|mdx)$/, ''), data])
 )
+
+if (typeof __dirname === 'undefined') {
+    globalThis.__dirname = dirname(fileURLToPath(import.meta.url))
+}
 
 export const { getStaticPaths, GET } = OGImageRoute({
     param: 'route',

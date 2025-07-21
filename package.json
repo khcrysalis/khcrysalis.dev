@@ -15,11 +15,11 @@
         "astro-expressive-code": "^0.41.3",
         "astro-og-canvas": "^0.7.0",
         "astro-seo": "^0.8.4",
-        "canvaskit-wasm": "^0.40.0",
         "sharp": "^0.34.3",
         "unist-util-visit": "^5.0.0"
     },
     "devDependencies": {
-        "sass-embedded": "^1.89.2"
+        "sass-embedded": "^1.89.2",
+        "tsx": "^4.20.3"
     }
 }
