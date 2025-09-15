@@ -79,7 +79,7 @@ export const FRIEND_ARRAY: Friend[] = [
         description: "Wong"
     },
     {
-        site: "https://kosuka.dev/",
+        site: "https://caitlyn.moe/",
         avatar: "https://github.com/fielstamper.png",
         description: "I just kept on retyping something to get a name which sounded good to me"
     },
