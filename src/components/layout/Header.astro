@@ -8,7 +8,6 @@ const currentPath = Astro.url.pathname;
             <div class="header-links">
                 <a href="/" class={currentPath === '/' ? 'selected' : ''}>Home</a>
                 <a href="/posts" class={currentPath === '/posts' ? 'selected' : ''}>Posts</a>
-                <a href="/about" class={currentPath === '/about' ? 'selected' : ''}>About</a>
             </div>
         </div>
     </div>
@@ -38,7 +37,7 @@ const currentPath = Astro.url.pathname;
 
     .header-links a {
         padding: 8px 16px;
-        border-radius: 10px;
+        border-radius: 5px;
         text-decoration: none;
         color: inherit;
         border: 1px solid transparent;

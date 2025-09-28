@@ -38,25 +38,6 @@ const ogImage = `/open-graph/${postSlug}.png`
         position: relative;
     }
 
-    @media (min-width: 769px) {
-        .post-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 60%;
-            width: 600px;
-            height: 100%;
-            transform: translateX(-50%);
-            background-image: url('/heading.png');
-            background-size: contain;
-            background-position: top center;
-            background-repeat: no-repeat;
-            opacity: 0.1;
-            z-index: -1;
-            margin-top: -1rem;
-        }
-    }
-
     @media (prefers-color-scheme: dark) { .post-content::before {
         opacity: 0.04;
     }}

@@ -3,11 +3,11 @@ import LayoutPage from "@/layouts/LayoutPage.astro";
 import "@/styles/generic.scss";
 import "@/styles/boxes.scss";
 import { shuffle } from "@/utils/utils";
-import { FRIEND_ARRAY, X_ARRAY } from "@/utils/constants";
+import { FRIEND_ARRAY, STACK_DATA, X_ARRAY } from "@/utils/constants";
 import Projects from "@/components/ui/Projects.astro";
 ---
 <LayoutPage>
-    <h1>hii, i'm sammy!</h1>
+    <h1>🌱 hii, i'm sammy!</h1>
     <hr/>
 
     <!-- Summary -->
@@ -18,15 +18,25 @@ import Projects from "@/components/ui/Projects.astro";
         <p>
             My name is samsam, and I'm someone who's passionate about darwin-related software, such as iOS / macOS. I'm mainly known for my projects below.
             <br/><br/>
-            Most of my projects are open-source, and I'm always trying to actively contribute to other projects alike. Though, to the closed-source projects I don't release them unless I'm happy with the codebase.
+            Most of my projects are open-source, and I'm always trying to actively contribute to other projects alike. Many of my projects consist of looking into some of Apple's internals and private api's, to achieve things that normally apps aren't really supposed to do.
         </p>
     </div>
+
+    <p> Find me on
+        {STACK_DATA.findme.map(([platform, url], index) => (
+            <>
+                <a href={url}>{platform}</a>{index < STACK_DATA.findme.length - 1 && ', '}
+            </>
+        ))}
+    </p>
+    <hr/>
 
     <!-- Projects -->
 
     <h2>Projects</h2>
     <p style="margin-top: -15px;">Here are some of the projects I've made or contributed to.</p>
     <Projects/>
+    <hr/>
 
     <!-- WTF -->
 

@@ -132,7 +132,7 @@ export const STACK_DATA = {
         ["Pixelmator Pro", "https://www.pixelmator.com/pro/"]
     ],
     findme: [
-        ["Twitter", TWITTER_URL],
+        ["X, The Everything App", TWITTER_URL],
         ["GitHub", GITHUB_URL]
     ]
 }
@@ -144,8 +144,10 @@ export const REPO_ARRAY = [
     "https://api.github.com/repos/khcrysalis/Protokolle",
     "https://api.github.com/repos/khcrysalis/Antrag",
     "https://api.github.com/repos/khcrysalis/Feather",
+    "https://api.github.com/repos/khcrysalis/EasyPKG",
     "https://api.github.com/repos/palera1n/palera1n",
     "https://api.github.com/repos/palera1n/palen1x",
     "https://api.github.com/repos/palera1n/loader",
     "https://api.github.com/repos/khcrysalis/Binder",
+    "https://api.github.com/repos/khcrysalis/khcrysalis.dev",
 ]
