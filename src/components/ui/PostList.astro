@@ -13,6 +13,14 @@ const groupedPosts = posts.reduce((acc, post) => {
 }, {} as Record<number, typeof posts>)
 
 const sortedYears = Object.keys(groupedPosts).sort((a, b) => Number(b) - Number(a))
+
+function getExcerpt(content: string, length = 500) {
+  return content
+    .replace(/[#_*`>~\-!\[\]\(\)]/g, "") // strip markdown chars
+    .trim()
+    .slice(0, length) + "…"
+}
+
 ---
 
 <div class="timeline">
@@ -28,8 +36,10 @@ const sortedYears = Object.keys(groupedPosts).sort((a, b) => Number(b) - Number(
                     <div class="post-content">
                         <div class="date"><FormattedDate date={post.data.pubDate}/></div>
                         <h3 class="title">{post.data.title}</h3>
+                        <p class="excerpt">{getExcerpt(post.body ? post.body : "")}</p>
                     </div>
                 </a>
+
             ))}
         </>
     ))}
@@ -117,5 +127,30 @@ const sortedYears = Object.keys(groupedPosts).sort((a, b) => Number(b) - Number(
         color: var(--text-primary);
         margin: 0.1rem 0 0;
         line-height: 1.3;
+    }
+
+    .excerpt {
+        overflow: hidden;
+        position: relative;
+        line-height: 1.5;
+        font-size: 0.95rem;
+        color: var(--text-quaternary);
+        margin: 0.6rem 0 0;
+    }
+
+    .excerpt::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1.5rem;
+        background: linear-gradient(to bottom, transparent, var(--background-tertiary));
+        pointer-events: none;
+        transition: all 0.2s ease;
+    }
+
+    .post-container:hover .excerpt::after {
+        background: linear-gradient(to bottom, transparent, var(--background-primary));
     }
 </style>
