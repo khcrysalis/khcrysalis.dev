@@ -11,6 +11,7 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
 ## Acknowledgements
+- The people I love
 - [Astro](https://astro.build)
 - [Chiri](https://github.com/the3ash/astro-chiri) - Plugins and types:
   - `./src/plugins/remark-toc.mjs`
