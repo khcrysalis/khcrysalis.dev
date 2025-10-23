@@ -20,7 +20,7 @@ export const FRIEND_ARRAY: Friend[] = [
     },
     {
         site: "https://hhls.xyz/",
-        avatar: "https://github.com/HAHALOSAH.png",
+        avatar: "https://github.com/nekohaxx.png",
         description: "HAHAWINNAH"
     },
     {
@@ -69,8 +69,8 @@ export const FRIEND_ARRAY: Friend[] = [
         description: "Minecraft geek"
     },
     {
-        site: "https://maize.moe/",
-        avatar: "https://github.com/oomfinator.png",
+        site: "https://github.com/paigely",
+        avatar: "https://github.com/paigely.png",
         description: "Korn"
     },
     {
@@ -82,12 +82,17 @@ export const FRIEND_ARRAY: Friend[] = [
         site: "https://caitlyn.moe/",
         avatar: "https://github.com/fielstamper.png",
         description: "I just kept on retyping something to get a name which sounded good to me"
-    },
+    }
 ];
 
 // MARK: MY FRIENDS 88x31's
 
 export const X_ARRAY = [
+    [
+        "https://khcrysalis.dev",
+        "./88x31/me.png",
+        "My dumb badge"
+    ],
     [
         "https://vendicated.dev",
         "https://github.com/Vendicated/Vendicated/assets/45497981/5794a4e1-292f-46cc-af3a-b33a27a2f15e",
@@ -95,7 +100,7 @@ export const X_ARRAY = [
     ],
     [
         "https://vencord.dev",
-        "https://lewisakura.moe/_astro/vencord.JMrtUh0o_ZH3WK2.webp",
+        "./88x31/vc.webp",
         "cutest client mod"
     ],
     [
@@ -104,7 +109,18 @@ export const X_ARRAY = [
     ],
     [
         "https://wingio.xyz/",
-        "https://wingio.xyz/88x31/badge.gif"
+        "https://wingio.xyz/88x31/badge.gif",
+        "Wong"
+    ],
+    [
+        "https://caitlyn.moe/",
+        "./88x31/caitlyn.png",
+        "cait"
+    ],
+    [
+        "https://worf.win",
+        "https://worf.win/images/worfwin.gif",
+        "worfie"
     ]
 ];
 
