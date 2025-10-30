@@ -121,6 +121,11 @@ export const X_ARRAY = [
         "https://worf.win",
         "https://worf.win/images/worfwin.gif",
         "worfie"
+    ],
+    [
+        "https://uwu.gal/about-us",
+        "https://uwu.gal/button.png",
+        "uwu.gal 88x31 button"
     ]
 ];
 
