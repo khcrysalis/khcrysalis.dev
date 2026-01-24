@@ -126,7 +126,7 @@ export const X_ARRAY = [
         "https://uwu.gal/about-us",
         "https://uwu.gal/button.png",
         "uwu.gal 88x31 button"
-    ]
+    ], ["https://elissa.moe","https://elissa.moe/88x31.png"," i dont have u blahai"]
 ];
 
 // MARK: MY STACK
