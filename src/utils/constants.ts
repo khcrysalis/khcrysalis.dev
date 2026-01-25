@@ -82,6 +82,11 @@ export const FRIEND_ARRAY: Friend[] = [
         site: "https://caitlyn.moe/",
         avatar: "https://github.com/fielstamper.png",
         description: "I just kept on retyping something to get a name which sounded good to me"
+    },
+    {
+        site: "https://mugman.tech/",
+        avatar: "https://github.com/mugman174.png",
+        description: "do not go gentle into that good night"
     }
 ];
 
@@ -126,7 +131,17 @@ export const X_ARRAY = [
         "https://uwu.gal/about-us",
         "https://uwu.gal/button.png",
         "uwu.gal 88x31 button"
-    ], ["https://elissa.moe","https://elissa.moe/88x31.png"," i dont have u blahai"]
+    ],
+    [
+        "https://elissa.moe",
+        "https://elissa.moe/88x31.png",
+        " i dont have u blahai"
+    ],
+    [
+        "https://mugman.tech",
+        "https://mugman.tech/88x31/me.gif",
+        "green, green, it's green, they say / on the far side of the hill"
+    ]
 ];
 
 // MARK: MY STACK
