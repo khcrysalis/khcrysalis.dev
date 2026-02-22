@@ -32,6 +32,14 @@ Also this might be ironic because I also changed a projects of mine name as well
 
 I do hope I end up staying with this alias and not end up changing it once again, but don't take my word on this. I'm the most indecisive person you will probably ever meet. Call me out if you notice though :)
 
+## Implications
+
+Changing is annoying, sometimes hardcoded links are no longer valid, but that's okay! Changing everything is not at all something realistic to do, but I personally commited to a few things that were most important (credit links on github, etc). 
+
+For this site's domain, someone other than me is actually paying for it (I think I know who).. I'll probably need to bother them on cancelling it later on, they're really sweet anyway so not a problem.
+
+Also, it may suck for search results, but maybe someday I'll get popular enough (again) that I'll reach the top page of Google.
+
 ## Conclusion
 
 Despite all this nonsense about me changing my alias, when you refer to me please call me by my name and not by alias, I prefer it that way.
