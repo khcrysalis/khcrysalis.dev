@@ -4,7 +4,7 @@ import { type Friend } from './types';
 
 export const SITE_TITLE    = "sammy's site";
 export const SITE_DESC     = "I'm a programmer interested in darwin software platforms.";
-export const MY_NAME       = "khcrysalis";
+export const MY_NAME       = "claration";
 export const WEBSITE_URL   = `https://${MY_NAME}.dev`;
 export const GITHUB_URL    = `https://github.com/${MY_NAME}`;
 export const TWITTER_URL   = `https://twitter.com/${MY_NAME}`;
@@ -176,16 +176,16 @@ export const STACK_DATA = {
 // MARK: MY REPOS
 
 export const REPO_ARRAY = [
-    "https://api.github.com/repos/khcrysalis/PlumeImpactor",
-    "https://api.github.com/repos/khcrysalis/Copyboard",
-    "https://api.github.com/repos/khcrysalis/Protokolle",
-    "https://api.github.com/repos/khcrysalis/Antrag",
-    "https://api.github.com/repos/khcrysalis/Feather",
-    "https://api.github.com/repos/khcrysalis/EasyPKG",
+    "https://api.github.com/repos/claration/PlumeImpactor",
+    "https://api.github.com/repos/claration/Copyboard",
+    "https://api.github.com/repos/claration/Protokolle",
+    "https://api.github.com/repos/claration/Antrag",
+    "https://api.github.com/repos/claration/Feather",
+    "https://api.github.com/repos/claration/EasyPKG",
     "https://api.github.com/repos/claration/Shasta",
     "https://api.github.com/repos/palera1n/palera1n",
     "https://api.github.com/repos/palera1n/palen1x",
     "https://api.github.com/repos/palera1n/loader",
-    "https://api.github.com/repos/khcrysalis/Binder",
-    "https://api.github.com/repos/khcrysalis/khcrysalis.dev",
+    "https://api.github.com/repos/claration/Binder",
+    "https://api.github.com/repos/claration/khcrysalis.dev",
 ]

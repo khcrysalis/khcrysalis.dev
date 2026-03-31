@@ -83,7 +83,7 @@ We have a list, and there seems to be some frameworks here that stand out:
 
 Most of Apple's frameworks are either written in Objective-C or Swift, Objective-C takes up the majority since it's the oldest, but conveniently Objective-C exposes all of it's headers at runtime.
 
-For our use, we can use [`runtimectl`](https://github.com/khcrysalis/runtimectl) to dynamically load these frameworks at runtime and list / dump their headers if needed.
+For our use, we can use [`runtimectl`](https://github.com/claration/runtimectl) to dynamically load these frameworks at runtime and list / dump their headers if needed.
 
 ```sh
 $ runtimectl -f /System/Library/PrivateFrameworks/PackageKit.framework/Versions/A/PackageKit -l
@@ -280,5 +280,5 @@ It took awhile to figure out what functions return what, or what they take in, o
 
 ![easypkg](./_assets/dip-easypkg.png)
 
-- You can find EasyPKG here: https://github.com/khcrysalis/EasyPKG
-- You can find runtimectl here: https://github.com/khcrysalis/runtimectl
+- You can find EasyPKG here: https://github.com/claration/EasyPKG
+- You can find runtimectl here: https://github.com/claration/runtimectl
