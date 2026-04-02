@@ -176,7 +176,7 @@ export const STACK_DATA = {
 // MARK: MY REPOS
 
 export const REPO_ARRAY = [
-    "https://api.github.com/repos/claration/PlumeImpactor",
+    "https://api.github.com/repos/claration/Impactor",
     "https://api.github.com/repos/claration/Copyboard",
     "https://api.github.com/repos/claration/Protokolle",
     "https://api.github.com/repos/claration/Antrag",
