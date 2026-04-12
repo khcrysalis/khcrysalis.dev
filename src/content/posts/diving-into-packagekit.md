@@ -278,7 +278,7 @@ I looked everywhere, but it seems like it purely just deletes the receiptPaths g
 
 It took awhile to figure out what functions return what, or what they take in, often leading to crashes or something similar. As well as using a private framework, this can change at any time, this app may not work in a year or two and could crash on launch due to relying on these headers (or symbols) to hopefully exist in the framework, which is fine, I don't exactly plan on upgrading to anything newer anytime soon.
 
-![easypkg](./_assets/dip-easypkg.png)
+![EasyPKG](./_assets/dip-easypkg.png)
 
 - You can find EasyPKG here: https://github.com/claration/EasyPKG
 - You can find runtimectl here: https://github.com/claration/runtimectl
