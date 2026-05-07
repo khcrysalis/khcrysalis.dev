@@ -3,9 +3,9 @@
 .box-container {
     background-color: var(--background-tertiary);
     border: 1.9px solid var(--background-secondary);
-    // border: 1.9px solid var(--button-background-hover);
     box-shadow: 1px 1px 3px var(--shadow-color);
     padding: 10px;
+    padding-top: 12px;
     border-radius: 5px;
 }
 
@@ -16,7 +16,9 @@
 
 .special-box:hover {
     background: var(--background-primary);
-    box-shadow: 0 8px 24px var(--shadow-color), 0 4px 8px var(--shadow-color);
+    box-shadow:
+        0 8px 24px var(--shadow-color),
+        0 4px 8px var(--shadow-color);
 }
 
 .box-container p {

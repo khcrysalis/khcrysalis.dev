@@ -6,8 +6,18 @@ const currentPath = Astro.url.pathname;
     <div class="header-container">
         <div class="header-content">
             <div class="header-links">
-                <a href="/" class={currentPath === '/' ? 'selected' : ''}>Home</a>
-                <a href="/posts/" class={currentPath === '/posts/' ? 'selected' : ''}>Posts</a>
+                <a href="/" class={currentPath === "/" ? "selected" : ""}
+                    >Home</a
+                >
+                <a
+                    href="/posts/"
+                    class={currentPath === "/posts/" ? "selected" : ""}>Posts</a
+                >
+                <a
+                    href="/products/"
+                    class={currentPath === "/products/" ? "selected" : ""}
+                    >Products</a
+                >
             </div>
         </div>
     </div>
@@ -52,7 +62,9 @@ const currentPath = Astro.url.pathname;
 
     .header-links a:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 24px var(--shadow-color), 0 4px 8px var(--shadow-color);
+        box-shadow:
+            0 8px 24px var(--shadow-color),
+            0 4px 8px var(--shadow-color);
     }
 
     .header-links a:not(.selected) {

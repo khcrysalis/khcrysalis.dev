@@ -1,65 +1,70 @@
 ---
 import { SEO } from "astro-seo";
-import { GITHUB_URL, SITE_DESC, SITE_TITLE, WEBSITE_URL } from "@/utils/constants";
+import {
+    GITHUB_URL,
+    SITE_DESC,
+    SITE_TITLE,
+    WEBSITE_URL,
+} from "@/utils/constants";
 
 const { title, ogImage } = Astro.props;
 
-const CANONICAL_URL = new URL(Astro.url.pathname, WEBSITE_URL)
+const CANONICAL_URL = new URL(Astro.url.pathname, WEBSITE_URL);
 const DEFAULT_IMAGE = `${GITHUB_URL}.png`;
 ---
 
 <SEO
-    title = `🌱 ${title ?? SITE_TITLE}`
-    description = {SITE_DESC}
-    canonical = {CANONICAL_URL}
-    extend = {{
+    title=`🌱 ${title ?? SITE_TITLE}`
+    description={SITE_DESC}
+    canonical={CANONICAL_URL}
+    extend={{
         link: [
             {
                 rel: "icon",
-                href: DEFAULT_IMAGE
+                href: DEFAULT_IMAGE,
             },
         ],
         meta: [
             {
                 name: "twitter:title",
-                content: `${title ?? '🌱 ' + SITE_TITLE}`
+                content: `${title ?? "🌱 " + SITE_TITLE}`,
             },
             {
                 name: "twitter:description",
-                content: SITE_DESC
+                content: SITE_DESC,
             },
             {
                 name: "twitter:image",
-                content: ogImage
+                content: ogImage,
             },
             {
                 name: "twitter:url",
-                content: Astro.url
+                content: Astro.url,
             },
             {
                 name: "twitter:card",
-                content: "summary_large_image"
+                content: "summary_large_image",
             },
             {
                 property: "og:title",
-                content: `${title ?? '🌱 ' + SITE_TITLE}`
+                content: `${title ?? "🌱 " + SITE_TITLE}`,
             },
             {
                 property: "og:description",
-                content: SITE_DESC
+                content: SITE_DESC,
             },
             {
                 property: "og:image",
-                content: ogImage
+                content: ogImage,
             },
             {
                 property: "og:url",
-                content: Astro.url
+                content: Astro.url,
             },
             {
                 property: "og:type",
-                content: "website"
-            }
+                content: "website",
+            },
         ],
     }}
 />
@@ -67,4 +72,4 @@ const DEFAULT_IMAGE = `${GITHUB_URL}.png`;
 <meta name="generator" content={Astro.generator} />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
-<meta name="darkreader-lock">
+<meta name="darkreader-lock" />

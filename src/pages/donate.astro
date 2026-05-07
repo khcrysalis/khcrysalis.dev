@@ -1,3 +1,4 @@
 ---
-return Astro.redirect('https://github.com/sponsors/claration');
+import { MY_NAME } from "@/utils/constants";
+return Astro.redirect(`https://github.com/sponsors/${MY_NAME}`);
 ---

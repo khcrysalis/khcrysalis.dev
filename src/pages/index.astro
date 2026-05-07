@@ -3,97 +3,36 @@ import LayoutPage from "@/layouts/LayoutPage.astro";
 import "@/styles/generic.scss";
 import "@/styles/boxes.scss";
 import { shuffle } from "@/utils/utils";
-import { FRIEND_ARRAY, STACK_DATA, X_ARRAY } from "@/utils/constants";
+import { FRIEND_ARRAY, X_ARRAY } from "@/utils/constants";
 import Projects from "@/components/ui/Projects.astro";
 ---
+
 <LayoutPage>
     <h1>🌱 hii, i'm sammy!</h1>
-    <hr/>
-
-    <!-- Summary -->
-
-    <h2>Summary</h2>
-    <p style="margin-top: -15px;">Get to know what I'm interested in, and what I try to make.</p>
-    <div class="box-container" style="border: 1.9px solid var(--button-background-hover)">
-        <p>
-            My name is samsam, and I'm someone who's passionate about darwin-related software, such as iOS / macOS. I'm mainly known for my projects below.
-            <br/><br/>
-            Most of my projects are open-source, and I'm always trying to actively contribute to other projects alike. Many of my projects consist of looking into some of Apple's internals and private api's, to achieve things that normally apps aren't really supposed to do.
-        </p>
-    </div>
-
-    <p> Find me on
-        {STACK_DATA.findme.map(([platform, url], index) => (
-            <>
-                <a href={url}>{platform}</a>{index < STACK_DATA.findme.length - 1 && ', '}
-            </>
-        ))}
-    </p>
-    <hr/>
-
-    <!-- Projects -->
+    <hr />
 
     <h2>Projects</h2>
-    <p style="margin-top: -15px;">Here are some of the projects I've made or contributed to.</p>
-    <Projects/>
-    <hr/>
+    <p>Here are some of the projects I've made or contributed to.</p>
+    <Projects />
+    <hr />
 
-    <!-- WTF -->
-
-    <h2>Friends :D</h2>
-    <p style="margin-top: -15px;">Check out these awesome people, I'm thankful for you being there.</p>
-    <div class="box-container" style="margin-bottom: 10px; display: grid; grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: 10px;">
-        { X_ARRAY.map((thing) => (
-            <a style="display:flex;" href={thing[0]}>
-                <img style="image-rendering: pixelated; border-radius: 0px;" src={thing[1]} title={thing[2]} />
-            </a>
-        ))}
-    </div>
-    <div class="box-container" style={{ paddingTop: '12px', marginBottom: '10px', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(50px, 1fr))', gap: '10px' }}>
-        { shuffle(FRIEND_ARRAY).map((profile) => (
-            <a href={profile.site} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', paddingTop: '100%' }}>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-                    <div class="tooltip">
-                        <img src={profile.avatar} alt={profile.description} class="friend-avatar"/>
-                        <span class="tooltip-text">{profile.description}</span>
-                    </div>
-                </div>
-            </a>
-        ))}
+    <h2>Friends</h2>
+    <p>Check out these awesome people, I'm thankful for you being there.</p>
+    <div>
+        {
+            X_ARRAY.map((thing) => (
+                <a href={thing.site}>
+                    <img
+                        src={thing.image}
+                        title={thing.site}
+                        width="88"
+                        height="31"
+                        style={{
+                            imageRendering: "pixelated",
+                        }}
+                    />
+                </a>
+            ))
+        }
     </div>
 </LayoutPage>
-
-<style>
-    .tooltip {
-        position: relative;
-        display: inline-block;
-    }
-
-    .tooltip-text {
-        visibility: hidden;
-        opacity: 0;
-        position: absolute;
-        bottom: 85%;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: var(--background-tertiary);
-        color: #fff;
-        border: 1.9px solid var(--background-secondary);
-        box-shadow: 1px 1px 3px var(--shadow-color);
-        padding: 4px 8px;
-        border-radius: 4px;
-        font-size: 12px;
-        white-space: nowrap;
-        z-index: 10;
-        transition: opacity 0.2s ease-in-out;
-    }
-
-    .tooltip:hover .tooltip-text {
-        visibility: visible;
-        opacity: 1;
-    }
-
-    .box-container a:hover {
-        opacity: 1;
-    }
-</style>

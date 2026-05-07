@@ -4,19 +4,20 @@
     * This does not include markdown styles, WIP
 */
 
-@import './fonts.css';
+@import "./fonts.css";
 
 // MARK: Colors
 
 :root {
-    --sans: apple-system-font, BlinkMacSystemFont, "DM Sans", "Nunito", sans-serif;
+    --sans:
+        apple-system-font, BlinkMacSystemFont, "DM Sans", "Nunito", sans-serif;
 
     --text-primary: #54534d;
     --text-secondary: #555555;
     --text-quaternary: #7a7a7a;
     --text-prominent: #318172;
 
-    --background-primary: #E6DAC2;
+    --background-primary: #e6dac2;
     --background-secondary: #cbc2af;
     --background-tertiary: #dfd4c2;
 
@@ -27,26 +28,29 @@
     --shadow-color: #0000001a;
 }
 
-@media (prefers-color-scheme: dark) { :root {
-    //
+@media (prefers-color-scheme: dark) {
+    :root {
+        //
 
-    --text-primary: #d8d8d8;
-    --text-secondary: #d7d7d7;
-    --text-quaternary: #969696;
-    --text-prominent: #7bd6c6;
+        --text-primary: #d8d8d8;
+        --text-secondary: #d7d7d7;
+        --text-quaternary: #969696;
+        --text-prominent: #7bd6c6;
 
-    --background-primary: #151515;
-    --background-secondary: #2a2a2a;
-    --background-tertiary: #1e1e1e;
+        --background-primary: #151515;
+        --background-secondary: #2a2a2a;
+        --background-tertiary: #1e1e1e;
 
-    --button-background: #318172;
-    --button-background-hover: #22584f;
-    --button-background-border: #47ae9b;
+        --button-background: #318172;
+        --button-background-hover: #22584f;
+        --button-background-border: #47ae9b;
 
-    --shadow-color: #00000066;
-}}
+        --shadow-color: #00000066;
+    }
+}
 
-body, html {
+body,
+html {
     font-family: var(--sans);
     color: var(--text-primary);
     background-color: var(--background-primary);
@@ -59,6 +63,10 @@ body, html {
 h1 {
     font-size: 2.5em;
     color: var(--text-prominent);
+}
+
+h2 {
+    margin-bottom: -10px;
 }
 
 h5 {
@@ -118,7 +126,8 @@ pre {
     overflow-x: auto;
 }
 
-pre, code {
+pre,
+code {
     font-family: monospace;
     font-size: 0.9em;
     background-color: var(--background-secondary);
@@ -163,23 +172,22 @@ kbd {
         background: linear-gradient(to bottom, #2b2b2b, #1e1e1e);
         border: 1px solid #444;
         box-shadow:
-        inset 0 -2px 0 #111,
-        0 2px 3px rgba(0, 0, 0, 0.6);
+            inset 0 -2px 0 #111,
+            0 2px 3px rgba(0, 0, 0, 0.6);
         text-shadow: none;
 
         &:active {
             transform: translateY(1px);
             box-shadow:
-            inset 0 2px 3px rgba(0, 0, 0, 0.5),
-            0 1px 1px rgba(0, 0, 0, 0.3);
+                inset 0 2px 3px rgba(0, 0, 0, 0.5),
+                0 1px 1px rgba(0, 0, 0, 0.3);
             background: linear-gradient(to bottom, #1e1e1e, #151515);
         }
     }
 }
 
-
-
-ul, ol {
+ul,
+ol {
     padding-left: 1.5rem;
     line-height: 1.6;
 }
@@ -277,7 +285,8 @@ table {
     box-shadow: 1px 1px 3px var(--shadow-color);
 }
 
-th, td {
+th,
+td {
     padding: 16px 20px;
     text-align: left;
     border-bottom: 1.9px solid var(--background-secondary);
@@ -298,9 +307,11 @@ td {
     font-size: 1rem;
 }
 
-tr:last-child { td {
-    border-bottom: none;
-}}
+tr:last-child {
+    td {
+        border-bottom: none;
+    }
+}
 
 // MARK: Button Styles
 
@@ -328,13 +339,17 @@ img {
     max-width: 100%;
     height: auto;
     border: 1.9px solid var(--background-secondary);
-    border-radius: 8px;
     box-shadow: 1px 1px 3px var(--shadow-color);
 }
 
 // MARK: Anchor Styles for Headings
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     position: relative;
 
     .anchor {

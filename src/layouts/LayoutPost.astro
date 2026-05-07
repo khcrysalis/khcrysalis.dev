@@ -2,29 +2,23 @@
 import LayoutGeneral from "./LayoutGeneral.astro";
 import Head from "@/components/Head.astro";
 import Footer from "@/components/layout/Footer.astro";
-import PostHeading from "@/components/posts/PostHeading.astro";
-import TableOfContents from "@/components/posts/TableOfContents.astro";
+import PostHeading from "@/components/ui/PostHeading.astro";
 import type { PostLayoutProps } from "@/utils/types";
 
-const { title, pubDate, toc } = Astro.props as PostLayoutProps
+const { title, pubDate, toc } = Astro.props as PostLayoutProps;
 
-const postSlug = Astro.url.pathname.split('/').filter(Boolean).pop() || ''
-const ogImage = `/open-graph/${postSlug}.png`
+const postSlug = Astro.url.pathname.split("/").filter(Boolean).pop() || "";
+const ogImage = `/open-graph/${postSlug}.png`;
 ---
 
 <LayoutGeneral>
-    <Head
-        title={title}
-        ogImage={ogImage}
-        slot="head"
-    />
+    <Head title={title} ogImage={ogImage} slot="head" />
     <div class="post-content">
-        <TableOfContents toc={toc}/>
         <main>
-            <PostHeading title={title} pubDate={pubDate}/>
-            <slot/>
-            <hr/>
-            <Footer/>
+            <PostHeading title={title} pubDate={pubDate} />
+            <slot />
+            <hr />
+            <Footer />
         </main>
     </div>
 </LayoutGeneral>
@@ -38,9 +32,11 @@ const ogImage = `/open-graph/${postSlug}.png`
         position: relative;
     }
 
-    @media (prefers-color-scheme: dark) { .post-content::before {
-        opacity: 0.04;
-    }}
+    @media (prefers-color-scheme: dark) {
+        .post-content::before {
+            opacity: 0.04;
+        }
+    }
 
     .post-content main {
         flex: 1;

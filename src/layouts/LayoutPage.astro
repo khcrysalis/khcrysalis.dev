@@ -6,13 +6,13 @@ import Footer from "@/components/layout/Footer.astro";
 ---
 
 <LayoutGeneral>
-    <Head slot="head"/>
-    <Header/>
+    <Head slot="head" />
+    <Header />
     <div class="page-content">
         <main>
-            <slot/>
-            <hr/>
-            <Footer/>
+            <slot />
+            <hr />
+            <Footer />
         </main>
     </div>
 </LayoutGeneral>
@@ -24,9 +24,11 @@ import Footer from "@/components/layout/Footer.astro";
         flex-direction: column;
     }
 
-    @media (prefers-color-scheme: dark) { .page-content::before {
-        opacity: 0.04;
-    }}
+    @media (prefers-color-scheme: dark) {
+        .page-content::before {
+            opacity: 0.04;
+        }
+    }
 
     .page-content main {
         flex: 1;

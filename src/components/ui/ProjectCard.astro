@@ -16,7 +16,8 @@ const {
 
 const starCount = stars_count ?? stargazers_count;
 
-const stars = starCount > 1000 ? `${(starCount / 1000).toFixed(1)}k` : starCount;
+const stars =
+    starCount > 1000 ? `${(starCount / 1000).toFixed(1)}k` : starCount;
 
 const avatarUrl = new URL(owner.avatar_url);
 avatarUrl.searchParams.set("size", "64");
@@ -24,22 +25,28 @@ avatarUrl.searchParams.set("size", "64");
 
 <a href={html_url}>
     <span class="open-external">
-        <OpenExternalIcon/>
+        <OpenExternalIcon />
     </span>
 
     <div class="author">
         <img src={avatarUrl.toString()} alt="" />
-        <span>{owner.login} <span style="color: var(--text-quaternary);">/</span> {name}</span>
+        <span
+            >{owner.login}
+            <span style="color: var(--text-quaternary);">/</span>
+            {name}</span
+        >
     </div>
 
     <span class="description">{description}</span>
 
     <div class="info">
         <div class="stars">
-            <Star/>
+            <Star />
             <span>{stars}</span>
         </div>
-        <span class="language" style={`--lang-color: ${getLanguageColor(language)};`}/>
+        <span
+            class="language"
+            style={`--lang-color: ${getLanguageColor(language)};`}></span>
     </div>
 </a>
 
@@ -59,7 +66,9 @@ avatarUrl.searchParams.set("size", "64");
     a:is(:hover, :active) {
         background: var(--background-primary);
         transform: translateY(-2px);
-        box-shadow: 0 8px 24px var(--shadow-color), 0 4px 8px var(--shadow-color);
+        box-shadow:
+            0 8px 24px var(--shadow-color),
+            0 4px 8px var(--shadow-color);
     }
 
     span {

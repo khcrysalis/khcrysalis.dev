@@ -1,0 +1,26 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import LayoutPost from "@/layouts/LayoutPost.astro";
+import { render } from "astro:content";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("posts");
+    return posts
+        .filter((post) => !post.id.startsWith("_"))
+        .map((post) => ({
+            params: { slug: post.id },
+            props: post,
+        }));
+}
+
+type Props = CollectionEntry<"posts">;
+
+const post = Astro.props;
+const { Content, remarkPluginFrontmatter } = await render(post);
+
+const toc = remarkPluginFrontmatter.toc || [];
+---
+
+<LayoutPost {...post.data} toc={toc}>
+    <Content />
+</LayoutPost>

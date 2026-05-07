@@ -3,7 +3,7 @@ import { REPO_ARRAY } from "@/utils/constants";
 import ProjectCard from "./ProjectCard.astro";
 
 const repoData = await Promise.all(
-    REPO_ARRAY.map(async repo => {
+    REPO_ARRAY.map(async (repo) => {
         const requestInit = {
             headers: new Headers({
                 "User-Agent": "khcrysalis.dev",
@@ -18,27 +18,25 @@ const repoData = await Promise.all(
         }
 
         return fetch(repo, requestInit)
-            .then(async r => {
+            .then(async (r) => {
                 if (!r.ok) {
                     const e = await r.text().catch(() => "Unknown Error");
                     throw new Error(
-                        `Failed to fetch repo info for ${repo}: ${r.status} ${r.statusText}\n${e}`
+                        `Failed to fetch repo info for ${repo}: ${r.status} ${r.statusText}\n${e}`,
                     );
                 }
                 return r.json();
             })
-            .catch(e => {
+            .catch((e) => {
                 console.error(e);
                 return null;
             });
-    })
+    }),
 );
 ---
 
 <div>
-    {repoData.map(
-        data => (data ? <ProjectCard {...data} /> : null)
-    )}
+    {repoData.map((data) => (data ? <ProjectCard {...data} /> : null))}
 </div>
 
 <style>

@@ -1,48 +1,62 @@
 ---
-import FormattedDate from './FormattedDate.astro'
-import type { PostListProps } from '@/utils/types'
-const { posts } = Astro.props as PostListProps
+import FormattedDate from "./FormattedDate.astro";
+import type { PostListProps } from "@/utils/types";
+const { posts } = Astro.props as PostListProps;
 import "@/styles/boxes.scss";
 
 // Group posts by year
-const groupedPosts = posts.reduce((acc, post) => {
-    const year = new Date(post.data.pubDate).getFullYear()
-    if (!acc[year]) acc[year] = []
-    acc[year].push(post)
-    return acc
-}, {} as Record<number, typeof posts>)
+const groupedPosts = posts.reduce(
+    (acc, post) => {
+        const year = new Date(post.data.pubDate).getFullYear();
+        if (!acc[year]) acc[year] = [];
+        acc[year].push(post);
+        return acc;
+    },
+    {} as Record<number, typeof posts>,
+);
 
-const sortedYears = Object.keys(groupedPosts).sort((a, b) => Number(b) - Number(a))
+const sortedYears = Object.keys(groupedPosts).sort(
+    (a, b) => Number(b) - Number(a),
+);
 
 function getExcerpt(content: string, length = 500) {
-  return content
-    .replace(/[#_*`>~\-!\[\]\(\)]/g, "") // strip markdown chars
-    .trim()
-    .slice(0, length) + "…"
+    return (
+        content
+            .replace(/[#_*`>~\-!\[\]\(\)]/g, "") // strip markdown chars
+            .trim()
+            .slice(0, length) + "…"
+    );
 }
-
 ---
 
 <div class="timeline">
-    { sortedYears.map((year) => (
-        <>
-            <div class="year-container">
-                <span class="dot year-dot"></span>
-                <div class="year-heading">{year}</div>
-            </div>
-            { groupedPosts[Number(year)].map((post) => (
-                <a href={`/${post.id}`} class="box-container special-box post-container">
-                    <span class="dot post-dot"></span>
-                    <div class="post-content">
-                        <div class="date"><FormattedDate date={post.data.pubDate}/></div>
-                        <h3 class="title">{post.data.title}</h3>
-                        <p class="excerpt">{getExcerpt(post.body ? post.body : "")}</p>
-                    </div>
-                </a>
-
-            ))}
-        </>
-    ))}
+    {
+        sortedYears.map((year) => (
+            <>
+                <div class="year-container">
+                    <span class="dot year-dot" />
+                    <div class="year-heading">{year}</div>
+                </div>
+                {groupedPosts[Number(year)].map((post) => (
+                    <a
+                        href={`/posts/${post.id}`}
+                        class="box-container special-box post-container"
+                    >
+                        <span class="dot post-dot" />
+                        <div class="post-content">
+                            <div class="date">
+                                <FormattedDate date={post.data.pubDate} />
+                            </div>
+                            <h3 class="title">{post.data.title}</h3>
+                            <p class="excerpt">
+                                {getExcerpt(post.body ? post.body : "")}
+                            </p>
+                        </div>
+                    </a>
+                ))}
+            </>
+        ))
+    }
 </div>
 
 <style>
@@ -102,7 +116,7 @@ function getExcerpt(content: string, length = 500) {
     }
 
     .year-heading {
-        font-size: 2.0rem;
+        font-size: 2rem;
         font-weight: 700;
         color: var(--text-prominent);
         margin-top: 1rem;
@@ -145,12 +159,20 @@ function getExcerpt(content: string, length = 500) {
         left: 0;
         right: 0;
         height: 1.5rem;
-        background: linear-gradient(to bottom, transparent, var(--background-tertiary));
+        background: linear-gradient(
+            to bottom,
+            transparent,
+            var(--background-tertiary)
+        );
         pointer-events: none;
         transition: all 0.2s ease;
     }
 
     .post-container:hover .excerpt::after {
-        background: linear-gradient(to bottom, transparent, var(--background-primary));
+        background: linear-gradient(
+            to bottom,
+            transparent,
+            var(--background-primary)
+        );
     }
 </style>
