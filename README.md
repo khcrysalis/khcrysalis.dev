@@ -1,4 +1,4 @@
-# khcrysalis.dev ☘️
+# claration.dev ☘️
 All commands are run from the root of the project, from a terminal:
 
 | Command                   | Action                                           |
@@ -16,6 +16,3 @@ All commands are run from the root of the project, from a terminal:
 - [Chiri](https://github.com/the3ash/astro-chiri) - Plugins and types:
   - `./src/plugins/remark-toc.mjs`
   - `./src/utils/types.ts`
-  - `./src/components/posts/TableOfContents.astro`
-- [Palera.in](https://github.com/palera1n/palera.in) - Plugins:
-  - `./src/plugins/anchors.mjs`
