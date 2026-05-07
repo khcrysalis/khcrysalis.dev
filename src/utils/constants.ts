@@ -52,6 +52,10 @@ export const X_ARRAY: Friend[] = [
         site: "https://mugman.tech",
         image: "./88x31/mugman.gif",
     },
+    {
+        site: "https://wearr.dev",
+        image: "https://wearr.dev/88x31.gif",
+    },
 ];
 
 // MARK: REPOS
