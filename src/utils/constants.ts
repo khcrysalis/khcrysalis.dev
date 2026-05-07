@@ -58,7 +58,7 @@ export const X_ARRAY: Friend[] = [
     },
     {
         site: "https://nin0.dev",
-        image: "./88x31/nino.gif",
+        image: "./88x31/nino.png",
     },
 ];
 
