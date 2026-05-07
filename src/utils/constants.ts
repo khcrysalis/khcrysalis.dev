@@ -56,6 +56,10 @@ export const X_ARRAY: Friend[] = [
         site: "https://wearr.dev",
         image: "https://wearr.dev/88x31.gif",
     },
+    {
+        site: "https://nin0.dev",
+        image: "./88x31/nino.gif",
+    },
 ];
 
 // MARK: REPOS
