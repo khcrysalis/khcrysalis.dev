@@ -25,6 +25,18 @@ export const X_ARRAY: Friend[] = [
         image: "./88x31/vc.webp",
     },
     {
+        site: "https://paige.moe",
+        image: "https://paige.moe/88x31.gif",
+    },
+    {
+        site: "https://lumina0machina.github.io",
+        image: "https://lumina0machina.github.io/lumina88x31.png",
+    },
+    {
+        site: "https://instellate.xyz",
+        image: "https://instellate.xyz/img/button-old.png",
+    },
+    {
         site: "https://circulars.dev/",
         image: "./88x31/circular.gif",
     },
